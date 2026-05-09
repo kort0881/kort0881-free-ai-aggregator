@@ -2,8 +2,8 @@ name: Collect Free AI Repos
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Ежедневно в 00:00 UTC (03:00 MSK)
-  workflow_dispatch:  # Ручной запуск
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   collect:
@@ -37,10 +37,10 @@ jobs:
 
       - name: Commit and push results
         run: |
-          git add data/
+          git add data/ links/ README.md
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Update collected repos [bot]"
+            git commit -m "Update collected repos and links [bot]"
             git push
           fi
