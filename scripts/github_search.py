@@ -36,7 +36,7 @@ def search_github_repos(query, config):
     
     gh_config = config["github"]
     
-    # ✅ ИСПРАВЛЕНО: корректный синтаксис для нескольких языков (AND через пробел)
+    # Корректный синтаксис для нескольких языков (AND через пробел)
     languages = gh_config.get("languages", [])
     if languages:
         lang_query = " ".join(f"language:{lang}" for lang in languages)
@@ -49,7 +49,7 @@ def search_github_repos(query, config):
         "q": full_query,
         "sort": gh_config.get("sort_by", "stars"),
         "order": gh_config.get("order", "desc"),
-        "per_page": min(gh_config.get("per_page", 30), 100)  # максимум 100
+        "per_page": min(gh_config.get("per_page", 30), 100)
     }
     
     print(f"🔍 Поиск по запросу: {full_query}")
@@ -64,20 +64,20 @@ def search_github_repos(query, config):
             print(f"ℹ️ Всего доступно: {data['total_count']}")
         
         for item in data.get("items", []):
+            # Используем только поля, которые гарантированно есть в поисковом ответе
             repo_info = {
                 "name": item["full_name"],
                 "url": item["html_url"],
-                "description": item["description"] or "",
+                "description": item.get("description") or "",
                 "stars": item["stargazers_count"],
                 "forks": item["forks_count"],
                 "open_issues": item["open_issues_count"],
-                "language": item["language"] or "N/A",
-                "license": item["license"]["key"] if item["license"] else "none",
+                "language": item.get("language") or "N/A",
+                "license": item["license"]["key"] if item.get("license") else "none",
                 "updated_at": item["updated_at"],
                 "created_at": item["created_at"],
-                "owner": item["owner"]["login"],
-                "has_readme": item["has_readme"],
-                "default_branch": item["default_branch"]
+                "owner": item["owner"]["login"]
+                # has_readme и default_branch отсутствуют в поиске, убраны
             }
             repos.append(repo_info)
         
@@ -114,7 +114,7 @@ def call_ai_filter(repo_info, config):
 - Форки: {repo_info['forks']}
 - Лицензия: {repo_info['license']}
 - Последнее обновление: {repo_info['updated_at']}
-- Есть README: {repo_info['has_readme']}
+- Создан: {repo_info['created_at']}
 
 Критерии мусора:
 - Крипта, bitcoin, скам, платный контент под видом бесплатного
@@ -220,8 +220,7 @@ def heuristic_filter(repo_info, config):
     
     # Набор замечаний (не критичных, но снижающих оценку)
     reason_checks = []
-    if not repo_info["has_readme"]:
-        reason_checks.append("нет README")
+    # В поиске нет has_readme, поэтому проверку убираем
     if repo_info["license"] == "none":
         reason_checks.append("нет лицензии")
     
@@ -254,7 +253,7 @@ def save_repos(trigger_name, repos, output_folder, analysis_results=None):
     os.makedirs(output_folder, exist_ok=True)
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    safe_name = trigger_name.replace(" ", "_").replace("/", "_")  # убираем пробелы и слеши
+    safe_name = trigger_name.replace(" ", "_").replace("/", "_")
     filename = f"{output_folder}/{safe_name}_{timestamp}.json"
     
     data = {
@@ -282,14 +281,13 @@ def main():
         print(f"🎯 Обработка триггера: {trigger['name']}")
         print(f"{'='*60}\n")
         
-        # Проверяем наличие обязательных полей
         query = trigger.get("query")
         if not query:
             print(f"⚠️ Пропуск триггера '{trigger['name']}': отсутствует поле 'query'")
             continue
         
         output_folder = trigger.get("output_folder", "output")
-        filtered_folder = trigger.get("filtered_folder", "filtered")  # значение по умолчанию
+        filtered_folder = trigger.get("filtered_folder", "filtered")
         
         repos = search_github_repos(query, config)
         
@@ -303,7 +301,7 @@ def main():
         filtered_repos = []
         
         for repo in repos:
-            analysis = call_ai_filter(repo, config)   # напрямую, без лишней обёртки
+            analysis = call_ai_filter(repo, config)
             analysis_results.append({
                 "repo": repo["name"],
                 **analysis
@@ -328,7 +326,6 @@ def main():
         print(f"   Прошли фильтр: {len(filtered_repos)}")
         print(f"   Отбраковано (мусор): {len(repos) - len(filtered_repos)}")
     
-    # Общий итог
     print(f"\n{'='*60}")
     print("🎉 ОБЩИЕ РЕЗУЛЬТАТЫ:")
     print(f"{'='*60}")
