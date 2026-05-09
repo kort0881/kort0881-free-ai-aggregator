@@ -2,7 +2,7 @@ name: Collect Free AI Repos
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Ежедневно в 00:00 UTC
+    - cron: "0 0 * * *"  # Ежедневно в 00:00 UTC (03:00 MSK)
   workflow_dispatch:  # Ручной запуск
 
 jobs:
@@ -23,9 +23,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run GitHub search
+      - name: Run GitHub search with AI filter
         env:
-          AI_AGGREGATOR: ${{ secrets.AI_AGGREGATOR }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Автоматический токен GitHub
+          MODELS_ROUTER: ${{ secrets.MODELS_ROUTER }}  # Твой OpenRouter ключ
         run: python scripts/github_search.py
 
       - name: Commit and push results
