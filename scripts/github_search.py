@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
-Поиск репозиториев GitHub по триггерам с AI-фильтрацией.
-Сохраняет результаты в JSON, создаёт Markdown-файлы со ссылками,
-обновляет README.md и автоматически пушит изменения в репозиторий (в CI).
+Поиск репозиториев GitHub с AI-фильтрацией через Groq API.
+Использует секрет MODELS_ROUTER.
 """
 
 import requests
@@ -13,12 +12,13 @@ import re
 import subprocess
 from datetime import datetime
 from pathlib import Path
+from groq import Groq  # Требуется установить: pip install groq
 
 # ====================== КОНФИГУРАЦИЯ ======================
 def load_config():
     config_path = Path("config.json")
     if not config_path.exists():
-        raise SystemExit("❌ config.json не найден. Создайте его по примеру.")
+        raise SystemExit("❌ config.json не найден.")
     with open(config_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -37,7 +37,6 @@ def search_github_repos(query, config):
     else:
         full_query = f"{query} stars:>={gh_config['min_stars']}"
     
-    url = "https://api.github.com/search/repositories"
     params = {
         "q": full_query,
         "sort": gh_config.get("sort_by", "stars"),
@@ -48,7 +47,7 @@ def search_github_repos(query, config):
     
     repos = []
     try:
-        response = requests.get(url, headers=headers, params=params, timeout=30)
+        response = requests.get("https://api.github.com/search/repositories", headers=headers, params=params, timeout=30)
         response.raise_for_status()
         data = response.json()
         print(f"ℹ️ Всего доступно: {data.get('total_count', 0)}")
@@ -69,28 +68,7 @@ def search_github_repos(query, config):
         print(f"❌ Ошибка поиска: {e}")
     return repos
 
-# ====================== AI ФИЛЬТР ======================
-def safe_json_parse(text):
-    if not text:
-        return None
-    text = text.strip()
-    if text.startswith("```"):
-        lines = text.splitlines()
-        if lines[0].startswith("```"):
-            lines = lines[1:]
-        if lines and lines[-1].startswith("```"):
-            lines = lines[:-1]
-        text = "\n".join(lines).strip()
-    start = text.find('{')
-    end = text.rfind('}')
-    if start != -1 and end != -1:
-        text = text[start:end+1]
-    text = text.replace("\\'", "'")
-    try:
-        return json.loads(text)
-    except:
-        return None
-
+# ====================== ЭВРИСТИЧЕСКИЙ ФИЛЬТР (ЗАПАСНОЙ) ======================
 def heuristic_filter(repo_info, config):
     ai_config = config.get("ai_filter", {})
     spam_keywords = ai_config.get("spam_keywords", [])
@@ -116,42 +94,62 @@ def heuristic_filter(repo_info, config):
         return {"is_spam": True, "reason": f"Низкое качество: {', '.join(reason_checks)}", "quality_score": quality_score}
     return {"is_spam": False, "reason": "OK" if not reason_checks else f"Принят: {', '.join(reason_checks)}", "quality_score": quality_score}
 
+# ====================== AI ФИЛЬТР (GROQ) ======================
 def call_ai_filter(repo_info, config):
     ai_config = config.get("ai_filter", {})
     if not ai_config.get("enabled", False):
         return {"is_spam": False, "reason": "AI отключён", "quality_score": 10}
-    rate_limit_delay = ai_config.get("rate_limit_delay", 1.5)
-    time.sleep(rate_limit_delay)
-    prompt = f"""Ты эксперт по GitHub. Репозиторий: {repo_info['name']}. Описание: {repo_info['description']}. Язык: {repo_info['language']}. Звёзды: {repo_info['stars']}. Форки: {repo_info['forks']}. Лицензия: {repo_info['license']}. Обновлён: {repo_info['updated_at']}. Мусор? Ответь JSON: {{"is_spam": true/false, "reason": "...", "quality_score": 0-10}}"""
-    for attempt in range(3):
-        try:
-            api_key = os.getenv("MODELS_ROUTER")
-            if not api_key:
-                return heuristic_filter(repo_info, config)
-            response = requests.post(
-                "https://openrouter.ai/api/v1/chat/completions",
-                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
-                json={
-                    "model": ai_config.get("model", "openrouter/free"),
-                    "messages": [{"role": "user", "content": prompt}],
-                    "max_tokens": 500
-                },
-                timeout=60
-            )
-            if response.status_code == 429:
-                time.sleep(2 ** attempt)
-                continue
-            response.raise_for_status()
-            ai_text = response.json()["choices"][0]["message"]["content"]
-            analysis = safe_json_parse(ai_text)
-            if analysis:
-                return analysis
-        except Exception as e:
-            print(f"⚠️ AI ошибка {repo_info['name']}: {e}")
-        time.sleep(1)
-    return heuristic_filter(repo_info, config)
 
-# ====================== СОХРАНЕНИЕ И ОБНОВЛЕНИЕ README ======================
+    api_key = os.getenv("MODELS_ROUTER")   # <-- используем ваш существующий секрет
+    if not api_key:
+        print("⚠️ MODELS_ROUTER не задан, используется эвристический фильтр.")
+        return heuristic_filter(repo_info, config)
+    
+    # Задержка между запросами для соблюдения лимитов (30 RPM)
+    rate_limit_delay = ai_config.get("rate_limit_delay", 2.0)
+    time.sleep(rate_limit_delay)
+
+    prompt = f"""Ты эксперт по GitHub. Оцени репозиторий строго по критериям:
+
+Данные:
+- Название: {repo_info['name']}
+- Описание: {repo_info['description']}
+- Звёзды: {repo_info['stars']}
+- Язык: {repo_info['language']}
+- Лицензия: {repo_info['license']}
+- Обновлён: {repo_info['updated_at']}
+
+Критерии мусора: крипта/скам, пустые репозитории, устаревшие (>3 лет), накрутка звёзд, не по теме, OnlyFans/adult/порно, только бинарники.
+
+Ответь только JSON: {{"is_spam": true/false, "reason": "краткая причина", "quality_score": число 0-10}}"""
+
+    try:
+        client = Groq(api_key=api_key)
+        model = ai_config.get("model", "mixtral-8x7b-32768")
+        chat_completion = client.chat.completions.create(
+            messages=[
+                {"role": "system", "content": "Ты строгий эксперт. Отвечай только JSON."},
+                {"role": "user", "content": prompt}
+            ],
+            model=model,
+            temperature=0.2,
+            max_tokens=500,
+        )
+        ai_response = chat_completion.choices[0].message.content
+        ai_response = ai_response.strip().strip('`')
+        if ai_response.startswith("json"):
+            ai_response = ai_response[4:].strip()
+        analysis = json.loads(ai_response)
+        return {
+            "is_spam": analysis.get("is_spam", False),
+            "reason": analysis.get("reason", "AI не дал причины"),
+            "quality_score": analysis.get("quality_score", 5)
+        }
+    except Exception as e:
+        print(f"⚠️ Ошибка Groq API для {repo_info['name']}: {e}")
+        return heuristic_filter(repo_info, config)
+
+# ====================== СОХРАНЕНИЕ ФАЙЛОВ ======================
 def save_json(trigger_name, repos, out_folder, analysis=None):
     os.makedirs(out_folder, exist_ok=True)
     safe = trigger_name.replace(" ", "_").replace("/", "_")
@@ -202,19 +200,16 @@ def update_readme(trigger_name, repos, readme_path="README.md"):
     start_marker = f"<!-- START_{trigger_name.upper()} -->"
     end_marker = f"<!-- END_{trigger_name.upper()} -->"
     new_block = f"{start_marker}\n{block}\n{end_marker}"
-    
     if os.path.exists(readme_path):
         with open(readme_path, "r", encoding="utf-8") as f:
             content = f.read()
     else:
         content = "# GitHub Free AI Aggregator\n\n"
-    
     if start_marker in content and end_marker in content:
         pattern = rf"{re.escape(start_marker)}.*?{re.escape(end_marker)}"
         content = re.sub(pattern, new_block, content, flags=re.DOTALL)
     else:
         content += f"\n{new_block}\n"
-    
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"📝 README.md обновлён для {trigger_name}")
@@ -237,11 +232,9 @@ def commit_and_push(files=["README.md", "links/"]):
     except Exception as e:
         print(f"⚠️ Ошибка коммита/пуша: {e}")
 
-# ====================== MAIN ======================
+# ====================== ОСНОВНАЯ ФУНКЦИЯ ======================
 def main():
     config = load_config()
-    all_results = {}
-    
     for trigger in config["triggers"]:
         print(f"\n{'='*60}\n🎯 {trigger['name']}\n{'='*60}")
         query = trigger.get("query")
@@ -251,7 +244,6 @@ def main():
         if not repos:
             save_json(trigger["name"], [], trigger.get("output_folder", "output"))
             continue
-        
         analysis_results = []
         filtered = []
         for repo in repos:
@@ -259,17 +251,14 @@ def main():
             analysis_results.append({"repo": repo["name"], **analysis})
             if not analysis["is_spam"]:
                 filtered.append(repo)
-        
         save_json(trigger["name"], repos, trigger.get("output_folder", "output"), analysis_results)
         if filtered:
             save_json(f"{trigger['name']}_filtered", filtered, trigger.get("filtered_folder", "filtered"))
             generate_markdown_links(trigger["name"], filtered, trigger.get("links_folder", "links"))
             update_readme(trigger["name"], filtered)
-        
-        all_results[trigger["name"]] = {"total": len(repos), "filtered": len(filtered)}
         print(f"📊 Итог: {len(filtered)} / {len(repos)} прошли фильтр")
-    
     commit_and_push(["README.md", "links/"])
+    print("\n🎉 Готово!")
 
 if __name__ == "__main__":
     main()
