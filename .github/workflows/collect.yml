@@ -1,46 +1,35 @@
-name: Collect Free AI Repos
+name: Update repo lists
 
 on:
   schedule:
-    - cron: "0 0 * * *"
-  workflow_dispatch:
+    - cron: '0 10 * * *'   # каждый день в 10:00 UTC
+  workflow_dispatch:        # можно запустить вручную
 
 jobs:
-  collect:
+  update:
     runs-on: ubuntu-latest
-    
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
+      - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+        run: pip install requests
 
-      - name: Run GitHub search with AI filter
+      - name: Run search script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           MODELS_ROUTER: ${{ secrets.MODELS_ROUTER }}
         run: python scripts/github_search.py
 
-      - name: Configure git
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global --add safe.directory /github/workspace
-
-      - name: Commit and push results
-        run: |
-          git add data/ links/ README.md
-          if git diff --staged --quiet; then
-            echo "No changes to commit"
-          else
-            git commit -m "Update collected repos and links [bot]"
-            git push
-          fi
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Автообновление списков репозиториев"
+          file_pattern: "README.md links/*.md data/**/*.json"
