@@ -11,7 +11,7 @@ jobs:
     
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,14 +25,22 @@ jobs:
 
       - name: Run GitHub search with AI filter
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Автоматический токен GitHub
-          MODELS_ROUTER: ${{ secrets.MODELS_ROUTER }}  # Твой OpenRouter ключ
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MODELS_ROUTER: ${{ secrets.MODELS_ROUTER }}
         run: python scripts/github_search.py
 
-      - name: Commit and push results
+      - name: Configure git
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global --add safe.directory /github/workspace
+
+      - name: Commit and push results
+        run: |
           git add data/
-          git diff --staged --quiet || git commit -m "Update collected repos [bot]"
-          git push
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update collected repos [bot]"
+            git push
+          fi
