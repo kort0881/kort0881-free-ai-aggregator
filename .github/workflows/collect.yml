@@ -25,7 +25,7 @@ jobs:
 
       - name: Run GitHub search
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          AI_AGGREGATOR: ${{ secrets.AI_AGGREGATOR }}
         run: python scripts/github_search.py
 
       - name: Commit and push results
