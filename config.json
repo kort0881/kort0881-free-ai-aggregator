@@ -1,0 +1,19 @@
+{
+  "triggers": [
+    {"name": "free", "query": "free", "output_folder": "data/raw/free"},
+    {"name": "ai", "query": "ai", "output_folder": "data/raw/ai"},
+    {"name": "free_ai", "query": "\"free ai\"", "output_folder": "data/raw/free-ai", "priority": true}
+  ],
+  "github": {
+    "min_stars": 50,
+    "languages": ["python", "javascript", "typescript"],
+    "sort_by": "stars",
+    "order": "desc",
+    "per_page": 30
+  },
+  "ai_filter": {
+    "enabled": true,
+    "model": "qwen:7b",
+    "token_limit": 4000
+  }
+}
