@@ -1,8 +1,27 @@
 {
   "triggers": [
-    {"name": "free", "query": "free", "output_folder": "data/raw/free"},
-    {"name": "ai", "query": "ai", "output_folder": "data/raw/ai"},
-    {"name": "free_ai", "query": "\"free ai\"", "output_folder": "data/raw/free-ai", "priority": true}
+    {
+      "name": "free",
+      "query": "free",
+      "output_folder": "data/raw/free",
+      "filtered_folder": "data/filtered/free",
+      "description": "Все репозитории со словом 'free'"
+    },
+    {
+      "name": "ai",
+      "query": "ai",
+      "output_folder": "data/raw/ai",
+      "filtered_folder": "data/filtered/ai",
+      "description": "Все репозитории со словом 'ai'"
+    },
+    {
+      "name": "free_ai",
+      "query": "\"free ai\"",
+      "output_folder": "data/raw/free-ai",
+      "filtered_folder": "data/filtered/free-ai",
+      "description": "Репозитории с точным совпадением 'free ai' (основной триггер)",
+      "priority": true
+    }
   ],
   "github": {
     "min_stars": 50,
@@ -13,7 +32,10 @@
   },
   "ai_filter": {
     "enabled": true,
-    "model": "qwen:7b",
-    "token_limit": 4000
+    "api_type": "openrouter/free",
+    "model": "openrouter/free",
+    "token_limit": 4000,
+    "spam_keywords": ["crypto", "bitcoin", "scam", "paid", "subscription", "OnlyFans", "cam", "porn", "adult", "disappear"],
+    "min_quality_score": 6
   }
 }
