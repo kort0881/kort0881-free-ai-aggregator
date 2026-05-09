@@ -2,7 +2,7 @@
 """
 Поиск репозиториев GitHub по триггерам с сохранением метаданных.
 Поддерживает триггеры: free, ai, free ai
-С AI-фильтрацией мусора через Ollama / OpenRouter
+С AI-фильтрацией мусора через OpenRouter
 """
 
 import requests
@@ -13,17 +13,22 @@ from pathlib import Path
 
 
 def load_config():
-    """Загрузка конфигурации из config.json"""
-    with open("config.json", "r", encoding="utf-8") as f:
+    """Загрузка конфигурации из config.json с проверкой существования файла."""
+    config_path = Path("config.json")
+    if not config_path.exists():
+        raise SystemExit(
+            "❌ config.json не найден.\n"
+            "Создайте файл конфигурации на основе примера (см. документацию)."
+        )
+    with open(config_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
 def search_github_repos(query, config):
     """
     Поиск репозиториев через GitHub API.
-    Использует GITHUB_TOKEN (автоматически от GitHub Actions).
     """
-    github_token = os.getenv("GITHUB_TOKEN")  # Автомат от GitHub Actions
+    github_token = os.getenv("GITHUB_TOKEN")
     
     headers = {"Accept": "application/vnd.github.v3+json"}
     if github_token:
@@ -31,15 +36,20 @@ def search_github_repos(query, config):
     
     gh_config = config["github"]
     
-    language_filter = " OR ".join([f"language:{lang}" for lang in gh_config["languages"]])
-    full_query = f"{query} stars:>={gh_config['min_stars']} {language_filter}"
+    # ✅ ИСПРАВЛЕНО: корректный синтаксис для нескольких языков (AND через пробел)
+    languages = gh_config.get("languages", [])
+    if languages:
+        lang_query = " ".join(f"language:{lang}" for lang in languages)
+        full_query = f"{query} stars:>={gh_config['min_stars']} {lang_query}".strip()
+    else:
+        full_query = f"{query} stars:>={gh_config['min_stars']}"
     
     url = "https://api.github.com/search/repositories"
     params = {
         "q": full_query,
-        "sort": gh_config["sort_by"],
-        "order": gh_config["order"],
-        "per_page": gh_config["per_page"]
+        "sort": gh_config.get("sort_by", "stars"),
+        "order": gh_config.get("order", "desc"),
+        "per_page": min(gh_config.get("per_page", 30), 100)  # максимум 100
     }
     
     print(f"🔍 Поиск по запросу: {full_query}")
@@ -49,6 +59,9 @@ def search_github_repos(query, config):
         response = requests.get(url, headers=headers, params=params, timeout=30)
         response.raise_for_status()
         data = response.json()
+        
+        if "total_count" in data:
+            print(f"ℹ️ Всего доступно: {data['total_count']}")
         
         for item in data.get("items", []):
             repo_info = {
@@ -72,26 +85,24 @@ def search_github_repos(query, config):
         
     except requests.exceptions.RequestException as e:
         print(f"❌ Ошибка поиска: {e}")
+        if hasattr(e, 'response') and e.response is not None:
+            print(f"📋 Ответ сервера: {e.response.text[:500]}")
     
     return repos
 
 
 def call_ai_filter(repo_info, config):
     """
-    Вызов AI для анализа репозитория через Ollama / OpenRouter / Free Router.
-    
-    Returns:
-        dict: {is_spam: bool, reason: str, quality_score: int}
+    Вызов AI для анализа репозитория через OpenRouter Free Router.
     """
-    ai_config = config["ai_filter"]
+    ai_config = config.get("ai_filter", {})
     
     if not ai_config.get("enabled", False):
-        return {"is_spam": False, "reason": "AI фильтр отключен", "quality_score": 10}
+        return {"is_spam": False, "reason": "AI фильтр отключён", "quality_score": 10}
     
-    api_type = ai_config.get("api_type", "openrouter")
+    api_type = ai_config.get("api_type", "openrouter/free")
     model = ai_config.get("model", "openrouter/free")
     
-    # Формируем промпт для AI
     prompt = f"""
 Ты эксперт по оценке качества GitHub репозиториев. Проанализируй репозиторий и определи, является ли он мусором/спамом.
 
@@ -123,24 +134,12 @@ def call_ai_filter(repo_info, config):
 """.strip()
 
     try:
-        if api_type == "ollama":
-            # Локальный Ollama (для запуска на Windows с Ollama)
-            api_url = ai_config.get("api_url", "http://localhost:11434/api/generate")
-            payload = {
-                "model": model,
-                "prompt": prompt,
-                "stream": False,
-                "options": {"num_predict": ai_config.get("token_limit", 4000)}
-            }
-            response = requests.post(api_url, json=payload, timeout=60)
-            response.raise_for_status()
-            result = response.json()
-            ai_response = result.get("response", "{}")
+        if api_type in ["openrouter/free", "openrouter"]:
+            api_key = os.getenv("MODELS_ROUTER")
+            if not api_key:
+                print("⚠️ MODELS_ROUTER не задан – AI-фильтр отключён для этого вызова")
+                return heuristic_filter(repo_info, config)
             
-        elif api_type in ["openrouter", "openrouter/free"]:
-            # OpenRouter API (облачный AI, работает в GitHub Actions)
-            # Использует MODELS_ROUTER секрет
-            api_key = os.getenv("MODELS_ROUTER")  # ✅ Твой секрет для OpenRouter
             api_url = "https://openrouter.ai/api/v1/chat/completions"
             headers = {
                 "Authorization": f"Bearer {api_key}",
@@ -160,10 +159,22 @@ def call_ai_filter(repo_info, config):
             response.raise_for_status()
             ai_response = response.json()["choices"][0]["message"]["content"]
         
+        elif api_type == "ollama":
+            api_url = ai_config.get("api_url", "http://localhost:11434/api/generate")
+            payload = {
+                "model": model,
+                "prompt": prompt,
+                "stream": False,
+                "options": {"num_predict": ai_config.get("token_limit", 4000)}
+            }
+            response = requests.post(api_url, json=payload, timeout=60)
+            response.raise_for_status()
+            result = response.json()
+            ai_response = result.get("response", "{}")
+        
         else:
             return {"is_spam": False, "reason": f"Неизвестный API: {api_type}", "quality_score": 10}
         
-        # Парсим JSON ответ AI
         ai_response = ai_response.strip().strip("`")
         if ai_response.startswith("json"):
             ai_response = ai_response[4:].strip()
@@ -178,18 +189,16 @@ def call_ai_filter(repo_info, config):
         
     except Exception as e:
         print(f"⚠️ Ошибка AI-анализа для {repo_info['name']}: {e}")
-        # Фолбэк на эвристику если AI не сработал
         return heuristic_filter(repo_info, config)
 
 
 def heuristic_filter(repo_info, config):
-    """Быстрая эвристика как запасной вариант если AI не работает"""
-    spam_keywords = config["ai_filter"].get("spam_keywords", [])
-    min_score = config["ai_filter"].get("min_quality_score", 6)
+    """Быстрая эвристика как запасной вариант."""
+    ai_config = config.get("ai_filter", {})
+    spam_keywords = ai_config.get("spam_keywords", [])
+    min_score = ai_config.get("min_quality_score", 6)
     
-    reason_checks = []
-    
-    # Проверка по ключевым словам спам
+    # Проверка на спам-слова в описании
     desc_lower = repo_info["description"].lower()
     for keyword in spam_keywords:
         if keyword.lower() in desc_lower:
@@ -199,7 +208,7 @@ def heuristic_filter(repo_info, config):
                 "quality_score": 0
             }
     
-    # Устаревший репозиторий
+    # Проверка на устаревший репозиторий (более 3 лет без обновлений)
     updated = datetime.fromisoformat(repo_info["updated_at"].replace("Z", "+00:00"))
     days_old = (datetime.now(updated.tzinfo) - updated).days
     if days_old > 1095:
@@ -209,19 +218,20 @@ def heuristic_filter(repo_info, config):
             "quality_score": 2
         }
     
+    # Набор замечаний (не критичных, но снижающих оценку)
+    reason_checks = []
     if not repo_info["has_readme"]:
         reason_checks.append("нет README")
-    
     if repo_info["license"] == "none":
         reason_checks.append("нет лицензии")
     
     created = datetime.fromisoformat(repo_info["created_at"].replace("Z", "+00:00"))
     days_since_creation = (datetime.now(created.tzinfo) - created).days
     stars_per_month = (repo_info["stars"] / days_since_creation) * 30 if days_since_creation > 0 else 0
-    
     if stars_per_month < 1 and repo_info["stars"] < 100:
         reason_checks.append("низкая популярность")
     
+    # Качество: базовое 10 минус штрафы
     quality_score = 10 - len(reason_checks) * 2 - days_old // 365
     quality_score = max(0, quality_score)
     
@@ -239,17 +249,13 @@ def heuristic_filter(repo_info, config):
     }
 
 
-def analyze_repo_with_ai(repo_info, config):
-    """Обёртка для AI-анализа с фолбэком на эвристику"""
-    return call_ai_filter(repo_info, config)
-
-
 def save_repos(trigger_name, repos, output_folder, analysis_results=None):
-    """Сохранение репозиториев в JSON"""
+    """Сохранение репозиториев в JSON (имя файла безопасно от пробелов)."""
     os.makedirs(output_folder, exist_ok=True)
     
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    filename = f"{output_folder}/{trigger_name}_{timestamp}.json"
+    safe_name = trigger_name.replace(" ", "_").replace("/", "_")  # убираем пробелы и слеши
+    filename = f"{output_folder}/{safe_name}_{timestamp}.json"
     
     data = {
         "trigger": trigger_name,
@@ -267,9 +273,8 @@ def save_repos(trigger_name, repos, output_folder, analysis_results=None):
 
 
 def main():
-    """Основная функция"""
+    """Основная функция."""
     config = load_config()
-    
     all_results = {}
     
     for trigger in config["triggers"]:
@@ -277,17 +282,28 @@ def main():
         print(f"🎯 Обработка триггера: {trigger['name']}")
         print(f"{'='*60}\n")
         
-        repos = search_github_repos(trigger["query"], config)
+        # Проверяем наличие обязательных полей
+        query = trigger.get("query")
+        if not query:
+            print(f"⚠️ Пропуск триггера '{trigger['name']}': отсутствует поле 'query'")
+            continue
+        
+        output_folder = trigger.get("output_folder", "output")
+        filtered_folder = trigger.get("filtered_folder", "filtered")  # значение по умолчанию
+        
+        repos = search_github_repos(query, config)
         
         if not repos:
             print("⚠️ Ничего не найдено, пропускаем")
+            save_repos(trigger["name"], [], output_folder)
+            all_results[trigger["name"]] = {"total": 0, "filtered": 0, "spam": 0}
             continue
         
         analysis_results = []
         filtered_repos = []
         
         for repo in repos:
-            analysis = analyze_repo_with_ai(repo, config)
+            analysis = call_ai_filter(repo, config)   # напрямую, без лишней обёртки
             analysis_results.append({
                 "repo": repo["name"],
                 **analysis
@@ -296,18 +312,10 @@ def main():
             if not analysis["is_spam"]:
                 filtered_repos.append({**repo, "quality_score": analysis["quality_score"]})
         
-        save_repos(
-            trigger["name"],
-            repos,
-            trigger["output_folder"]
-        )
+        save_repos(trigger["name"], repos, output_folder, analysis_results)
         
         if filtered_repos:
-            save_repos(
-                f"{trigger['name']}_filtered",
-                filtered_repos,
-                trigger["filtered_folder"]
-            )
+            save_repos(f"{trigger['name']}_filtered", filtered_repos, filtered_folder)
         
         all_results[trigger["name"]] = {
             "total": len(repos),
@@ -320,8 +328,9 @@ def main():
         print(f"   Прошли фильтр: {len(filtered_repos)}")
         print(f"   Отбраковано (мусор): {len(repos) - len(filtered_repos)}")
     
+    # Общий итог
     print(f"\n{'='*60}")
-    print("🎉 ВСЕГО РЕЗУЛЬТАТЫ:")
+    print("🎉 ОБЩИЕ РЕЗУЛЬТАТЫ:")
     print(f"{'='*60}")
     for trigger, res in all_results.items():
         print(f"{trigger}: {res['total']} → {res['filtered']} чистых, {res['spam']} мусора")
