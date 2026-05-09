@@ -3,11 +3,13 @@
 Поиск репозиториев GitHub по триггерам с сохранением метаданных.
 Поддерживает триггеры: free, ai, free ai
 С AI-фильтрацией мусора через OpenRouter
+Генерирует отдельный Markdown-файл со списком активных ссылок на чистые репозитории.
 """
 
 import requests
 import json
 import os
+import time
 from datetime import datetime
 from pathlib import Path
 
@@ -64,7 +66,6 @@ def search_github_repos(query, config):
             print(f"ℹ️ Всего доступно: {data['total_count']}")
         
         for item in data.get("items", []):
-            # Используем только поля, которые гарантированно есть в поисковом ответе
             repo_info = {
                 "name": item["full_name"],
                 "url": item["html_url"],
@@ -77,7 +78,6 @@ def search_github_repos(query, config):
                 "updated_at": item["updated_at"],
                 "created_at": item["created_at"],
                 "owner": item["owner"]["login"]
-                # has_readme и default_branch отсутствуют в поиске, убраны
             }
             repos.append(repo_info)
         
@@ -91,9 +91,39 @@ def search_github_repos(query, config):
     return repos
 
 
+def safe_json_parse(text):
+    """Безопасный парсинг JSON с очисткой от маркдауна и лишних символов."""
+    if not text:
+        return None
+    text = text.strip()
+    # Удаляем обрамление ```json ... ```
+    if text.startswith("```"):
+        lines = text.splitlines()
+        if lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].startswith("```"):
+            lines = lines[:-1]
+        text = "\n".join(lines).strip()
+    # Пробуем найти JSON-подобный фрагмент
+    start = text.find('{')
+    end = text.rfind('}')
+    if start != -1 and end != -1:
+        text = text[start:end+1]
+    # Исправляем распространённые ошибки экранирования
+    # Например, заменяем \' на ' (но осторожно)
+    text = text.replace("\\'", "'")
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        # Если не удалось, пробуем eval (очень опасно, но для доверенного AI допустимо)
+        # Лучше вернуть None
+        return None
+
+
 def call_ai_filter(repo_info, config):
     """
     Вызов AI для анализа репозитория через OpenRouter Free Router.
+    С повторными попытками при 429 и задержками.
     """
     ai_config = config.get("ai_filter", {})
     
@@ -102,6 +132,12 @@ def call_ai_filter(repo_info, config):
     
     api_type = ai_config.get("api_type", "openrouter/free")
     model = ai_config.get("model", "openrouter/free")
+    max_retries = ai_config.get("max_retries", 3)
+    retry_delay = ai_config.get("retry_delay", 2)  # секунд
+    rate_limit_delay = ai_config.get("rate_limit_delay", 1.5)  # задержка между вызовами
+    
+    # Простая задержка, чтобы не превысить лимит запросов
+    time.sleep(rate_limit_delay)
     
     prompt = f"""
 Ты эксперт по оценке качества GitHub репозиториев. Проанализируй репозиторий и определи, является ли он мусором/спамом.
@@ -133,63 +169,82 @@ def call_ai_filter(repo_info, config):
 }}
 """.strip()
 
-    try:
-        if api_type in ["openrouter/free", "openrouter"]:
-            api_key = os.getenv("MODELS_ROUTER")
-            if not api_key:
-                print("⚠️ MODELS_ROUTER не задан – AI-фильтр отключён для этого вызова")
-                return heuristic_filter(repo_info, config)
+    for attempt in range(max_retries):
+        try:
+            if api_type in ["openrouter/free", "openrouter"]:
+                api_key = os.getenv("MODELS_ROUTER")
+                if not api_key:
+                    print("⚠️ MODELS_ROUTER не задан – AI-фильтр отключён для этого вызова")
+                    return heuristic_filter(repo_info, config)
+                
+                api_url = "https://openrouter.ai/api/v1/chat/completions"
+                headers = {
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                    "HTTP-Referer": "https://github.com/free-ai-aggregator",
+                    "X-Title": "Free AI Aggregator"
+                }
+                payload = {
+                    "model": model,
+                    "messages": [
+                        {"role": "system", "content": "Ты эксперт по оценке GitHub репозиториев. Ответ ТОЛЬКО JSON."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    "max_tokens": ai_config.get("token_limit", 4000)
+                }
+                response = requests.post(api_url, headers=headers, json=payload, timeout=60)
+                
+                if response.status_code == 429:
+                    # Too Many Requests – ждём и повторяем
+                    wait = retry_delay * (2 ** attempt)
+                    print(f"⚠️ 429 Too Many Requests для {repo_info['name']}, ждём {wait} сек...")
+                    time.sleep(wait)
+                    continue
+                
+                response.raise_for_status()
+                ai_response = response.json()["choices"][0]["message"]["content"]
             
-            api_url = "https://openrouter.ai/api/v1/chat/completions"
-            headers = {
-                "Authorization": f"Bearer {api_key}",
-                "Content-Type": "application/json",
-                "HTTP-Referer": "https://github.com/free-ai-aggregator",
-                "X-Title": "Free AI Aggregator"
+            elif api_type == "ollama":
+                api_url = ai_config.get("api_url", "http://localhost:11434/api/generate")
+                payload = {
+                    "model": model,
+                    "prompt": prompt,
+                    "stream": False,
+                    "options": {"num_predict": ai_config.get("token_limit", 4000)}
+                }
+                response = requests.post(api_url, json=payload, timeout=60)
+                response.raise_for_status()
+                result = response.json()
+                ai_response = result.get("response", "{}")
+            
+            else:
+                return {"is_spam": False, "reason": f"Неизвестный API: {api_type}", "quality_score": 10}
+            
+            # Парсим ответ
+            analysis = safe_json_parse(ai_response)
+            if analysis is None:
+                raise ValueError(f"Невалидный JSON от AI: {ai_response[:200]}")
+            
+            return {
+                "is_spam": analysis.get("is_spam", False),
+                "reason": analysis.get("reason", "AI не дал причины"),
+                "quality_score": analysis.get("quality_score", 5)
             }
-            payload = {
-                "model": model,
-                "messages": [
-                    {"role": "system", "content": "Ты эксперт по оценке GitHub репозиториев. Ответ ТОЛЬКО JSON."},
-                    {"role": "user", "content": prompt}
-                ],
-                "max_tokens": ai_config.get("token_limit", 4000)
-            }
-            response = requests.post(api_url, headers=headers, json=payload, timeout=60)
-            response.raise_for_status()
-            ai_response = response.json()["choices"][0]["message"]["content"]
-        
-        elif api_type == "ollama":
-            api_url = ai_config.get("api_url", "http://localhost:11434/api/generate")
-            payload = {
-                "model": model,
-                "prompt": prompt,
-                "stream": False,
-                "options": {"num_predict": ai_config.get("token_limit", 4000)}
-            }
-            response = requests.post(api_url, json=payload, timeout=60)
-            response.raise_for_status()
-            result = response.json()
-            ai_response = result.get("response", "{}")
-        
-        else:
-            return {"is_spam": False, "reason": f"Неизвестный API: {api_type}", "quality_score": 10}
-        
-        ai_response = ai_response.strip().strip("`")
-        if ai_response.startswith("json"):
-            ai_response = ai_response[4:].strip()
-        
-        analysis = json.loads(ai_response)
-        
-        return {
-            "is_spam": analysis.get("is_spam", False),
-            "reason": analysis.get("reason", "AI не дал причины"),
-            "quality_score": analysis.get("quality_score", 5)
-        }
-        
-    except Exception as e:
-        print(f"⚠️ Ошибка AI-анализа для {repo_info['name']}: {e}")
-        return heuristic_filter(repo_info, config)
+            
+        except requests.exceptions.RequestException as e:
+            if attempt == max_retries - 1:
+                print(f"⚠️ Ошибка AI-анализа для {repo_info['name']} после {max_retries} попыток: {e}")
+                return heuristic_filter(repo_info, config)
+            else:
+                wait = retry_delay * (2 ** attempt)
+                print(f"⚠️ Ошибка {e}, повтор через {wait} сек...")
+                time.sleep(wait)
+        except Exception as e:
+            print(f"⚠️ Ошибка AI-анализа для {repo_info['name']}: {e}")
+            return heuristic_filter(repo_info, config)
+    
+    # Если вышли из цикла без результата
+    return heuristic_filter(repo_info, config)
 
 
 def heuristic_filter(repo_info, config):
@@ -220,7 +275,6 @@ def heuristic_filter(repo_info, config):
     
     # Набор замечаний (не критичных, но снижающих оценку)
     reason_checks = []
-    # В поиске нет has_readme, поэтому проверку убираем
     if repo_info["license"] == "none":
         reason_checks.append("нет лицензии")
     
@@ -271,6 +325,48 @@ def save_repos(trigger_name, repos, output_folder, analysis_results=None):
     return filename
 
 
+def generate_links_markdown(trigger_name, repos, output_folder, suffix="filtered"):
+    """
+    Генерирует Markdown-файл с активными ссылками на репозитории.
+    Параметры:
+        trigger_name - имя триггера
+        repos - список репозиториев (каждый содержит 'name' и 'url')
+        output_folder - папка для сохранения
+        suffix - суффикс файла (например, 'filtered' или 'all')
+    """
+    if not repos:
+        print(f"⚠️ Нет данных для генерации ссылок по триггеру '{trigger_name}'")
+        return None
+    
+    os.makedirs(output_folder, exist_ok=True)
+    
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    safe_name = trigger_name.replace(" ", "_").replace("/", "_")
+    filename = f"{output_folder}/{safe_name}_links_{suffix}_{timestamp}.md"
+    
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(f"# Репозитории по триггеру: {trigger_name}\n\n")
+        f.write(f"*Сгенерировано: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}*\n\n")
+        f.write(f"Всего репозиториев: {len(repos)}\n\n")
+        f.write("## Список ссылок\n\n")
+        
+        for idx, repo in enumerate(repos, 1):
+            name = repo.get("name", "Unknown")
+            url = repo.get("url", "#")
+            stars = repo.get("stars", 0)
+            description = repo.get("description", "")
+            if len(description) > 100:
+                description = description[:97] + "..."
+            
+            line = f"- [{name}]({url}) — ⭐️ {stars}"
+            if description:
+                line += f": {description}"
+            f.write(line + "\n")
+    
+    print(f"🔗 Ссылки сохранены в: {filename}")
+    return filename
+
+
 def main():
     """Основная функция."""
     config = load_config()
@@ -288,6 +384,7 @@ def main():
         
         output_folder = trigger.get("output_folder", "output")
         filtered_folder = trigger.get("filtered_folder", "filtered")
+        links_folder = trigger.get("links_folder", "links")  # новая опция
         
         repos = search_github_repos(query, config)
         
@@ -310,10 +407,16 @@ def main():
             if not analysis["is_spam"]:
                 filtered_repos.append({**repo, "quality_score": analysis["quality_score"]})
         
+        # Сохраняем полные JSON
         save_repos(trigger["name"], repos, output_folder, analysis_results)
         
         if filtered_repos:
             save_repos(f"{trigger['name']}_filtered", filtered_repos, filtered_folder)
+            # Генерируем Markdown с активными ссылками для отфильтрованных репозиториев
+            generate_links_markdown(trigger["name"], filtered_repos, links_folder, suffix="filtered")
+        
+        # Опционально: можно также сгенерировать ссылки для всех репозиториев (включая спам)
+        # generate_links_markdown(trigger["name"], repos, links_folder, suffix="all")
         
         all_results[trigger["name"]] = {
             "total": len(repos),
