@@ -1,28 +1,4 @@
 {
-  "triggers": [
-    {
-      "name": "free",
-      "query": "free",
-      "output_folder": "data/raw/free",
-      "filtered_folder": "data/filtered/free",
-      "description": "Все репозитории со словом 'free'"
-    },
-    {
-      "name": "ai",
-      "query": "ai",
-      "output_folder": "data/raw/ai",
-      "filtered_folder": "data/filtered/ai",
-      "description": "Все репозитории со словом 'ai'"
-    },
-    {
-      "name": "free_ai",
-      "query": "\"free ai\"",
-      "output_folder": "data/raw/free-ai",
-      "filtered_folder": "data/filtered/free-ai",
-      "description": "Репозитории с точным совпадением 'free ai' (основной триггер)",
-      "priority": true
-    }
-  ],
   "github": {
     "min_stars": 50,
     "languages": ["python", "javascript", "typescript"],
@@ -30,12 +6,35 @@
     "order": "desc",
     "per_page": 30
   },
+  "triggers": [
+    {
+      "name": "free",
+      "query": "free",
+      "output_folder": "data/raw/free",
+      "filtered_folder": "data/filtered/free",
+      "links_folder": "links"
+    },
+    {
+      "name": "ai",
+      "query": "ai",
+      "output_folder": "data/raw/ai",
+      "filtered_folder": "data/filtered/ai",
+      "links_folder": "links"
+    },
+    {
+      "name": "free_ai",
+      "query": "\"free ai\"",
+      "output_folder": "data/raw/free-ai",
+      "filtered_folder": "data/filtered/free-ai",
+      "links_folder": "links"
+    }
+  ],
   "ai_filter": {
     "enabled": true,
-    "api_type": "openrouter/free",
-    "model": "openrouter/free",
-    "token_limit": 4000,
-    "spam_keywords": ["crypto", "bitcoin", "scam", "paid", "subscription", "OnlyFans", "cam", "porn", "adult", "disappear"],
-    "min_quality_score": 6
+    "api_type": "groq",
+    "model": "mixtral-8x7b-32768",
+    "rate_limit_delay": 2.0,
+    "min_quality_score": 6,
+    "spam_keywords": ["crypto", "bitcoin", "onlyfans", "porn", "adult"]
   }
 }
