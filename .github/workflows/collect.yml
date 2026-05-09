@@ -2,8 +2,8 @@ name: Update repo lists
 
 on:
   schedule:
-    - cron: '0 10 * * *'   # каждый день в 10:00 UTC
-  workflow_dispatch:        # можно запустить вручную
+    - cron: '0 10 * * *'
+  workflow_dispatch:
 
 jobs:
   update:
@@ -20,7 +20,8 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests
+        run: |
+          pip install -r requirements.txt
 
       - name: Run search script
         env:
