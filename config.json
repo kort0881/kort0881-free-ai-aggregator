@@ -32,7 +32,7 @@
   "ai_filter": {
     "enabled": true,
     "api_type": "groq",
-    "model": "mixtral-8x7b-32768",
+    "model": "llama-3.3-70b-versatile",
     "rate_limit_delay": 2.0,
     "min_quality_score": 6,
     "spam_keywords": ["crypto", "bitcoin", "onlyfans", "porn", "adult"]
