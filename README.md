@@ -6,18 +6,18 @@
 
 | Репозиторий | ⭐️ Звёзды | Описание |
 |-------------|-----------|-----------|
-| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 444418 | freeCodeCamp.org's open-source codebase and curriculum. Lear... |
-| [public-apis/public-apis](https://github.com/public-apis/public-apis) | 433674 | A collective list of free APIs |
+| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 444421 | freeCodeCamp.org's open-source codebase and curriculum. Lear... |
+| [public-apis/public-apis](https://github.com/public-apis/public-apis) | 433682 | A collective list of free APIs |
 | [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 387975 | :books: Freely available programming books |
 | [mui/material-ui](https://github.com/mui/material-ui) | 98299 | Material UI: Comprehensive React component library that impl... |
 | [xtekky/gpt4free](https://github.com/xtekky/gpt4free) | 66202 | The official gpt4free repository | various collection of pow... |
-| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 62971 | 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative |
-| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | 51808 | The best-benchmarked open-source AI memory system. And it's ... |
-| [freqtrade/freqtrade](https://github.com/freqtrade/freqtrade) | 50071 | Free, open source crypto trading bot |
-| [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) | 45281 | The Secure CommsOS™ for mission-critical operations |
+| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 62970 | 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative |
+| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | 51809 | The best-benchmarked open-source AI memory system. And it's ... |
+| [freqtrade/freqtrade](https://github.com/freqtrade/freqtrade) | 50074 | Free, open source crypto trading bot |
+| [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) | 45282 | The Secure CommsOS™ for mission-critical operations |
 | [upscayl/upscayl](https://github.com/upscayl/upscayl) | 45173 | 🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Li... |
-| [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) | 44076 | OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PD... |
-| [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) | 43774 | A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化... |
+| [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) | 44077 | OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PD... |
+| [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) | 43775 | A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化... |
 | [HeyPuter/puter](https://github.com/HeyPuter/puter) | 40990 | 🌐 The Internet Computer! Free, Open-Source, and Self-Hostabl... |
 | [phaserjs/phaser](https://github.com/phaserjs/phaser) | 39602 | Phaser is a fun, free and fast 2D game framework for making ... |
 | [drawdb-io/drawdb](https://github.com/drawdb-io/drawdb) | 37177 | Free, simple, and intuitive online database diagram editor a... |
@@ -32,21 +32,21 @@
 
 | Репозиторий | ⭐️ Звёзды | Описание |
 |-------------|-----------|-----------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 370343 | Your own personal AI assistant. Any OS. Any Platform. The lo... |
-| [n8n-io/n8n](https://github.com/n8n-io/n8n) | 187284 | Fair-code workflow automation platform with native AI capabi... |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 370348 | Your own personal AI assistant. Any OS. Any Platform. The lo... |
+| [n8n-io/n8n](https://github.com/n8n-io/n8n) | 187286 | Fair-code workflow automation platform with native AI capabi... |
 | [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | 184129 | AutoGPT is the vision of accessible AI for everyone, to use ... |
-| [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | 162784 | Stable Diffusion web UI |
+| [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | 162786 | Stable Diffusion web UI |
 | [langflow-ai/langflow](https://github.com/langflow-ai/langflow) | 147911 | Langflow is a powerful tool for building and deploying AI-po... |
-| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 141469 | The agent that grows with you |
-| [langgenius/dify](https://github.com/langgenius/dify) | 140777 | Production-ready platform for agentic workflow development. |
+| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 141515 | The agent that grows with you |
+| [langgenius/dify](https://github.com/langgenius/dify) | 140780 | Production-ready platform for agentic workflow development. |
 | [open-webui/open-webui](https://github.com/open-webui/open-webui) | 136380 | User-friendly AI Interface (Supports Ollama, OpenAI API, ...... |
 | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 136282 | The agent engineering platform. Available in TypeScript! |
-| [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 117624 | 🔥 The API to search, scrape, and interact with the web for A... |
-| [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 112200 | The most powerful and modular diffusion model GUI, api and b... |
-| [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 109523 | 100+ AI Agent & RAG apps you can actually run — clone, custo... |
-| [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 103572 | An open-source AI agent that brings the power of Gemini dire... |
+| [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 117637 | 🔥 The API to search, scrape, and interact with the web for A... |
+| [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 112206 | The most powerful and modular diffusion model GUI, api and b... |
+| [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 109525 | 100+ AI Agent & RAG apps you can actually run — clone, custo... |
+| [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 103575 | An open-source AI agent that brings the power of Gemini dire... |
 | [supabase/supabase](https://github.com/supabase/supabase) | 102114 | The Postgres development platform. Supabase gives you a dedi... |
-| [github/spec-kit](https://github.com/github/spec-kit) | 94722 | 💫 Toolkit to help you get started with Spec-Driven Developme... |
+| [github/spec-kit](https://github.com/github/spec-kit) | 94741 | 💫 Toolkit to help you get started with Spec-Driven Developme... |
 
 *... и ещё 15 репозиториев. Полный список в папке [links/](links).*
 
@@ -77,41 +77,6 @@
 *... и ещё 11 репозиториев. Полный список в папке [links/](links).*
 
 
-# 🤖 GitHub Free AI Aggregator
-
-[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/)
-[![GitHub Actions](https://img.shields.io/badge/CI-GitHub%20Actions-blue)](https://github.com/features/actions)
-[![Groq](https://img.shields.io/badge/AI-Groq-6600cc)](https://groq.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-**Автоматический сбор и AI‑фильтрация репозиториев GitHub** по запросам `free`, `ai` и `free ai`.  
-Скрипт каждый день ищет топ‑30 проектов (по звёздам) на Python/JavaScript/TypeScript, отсеивает мусор через **Groq API** и обновляет этот README актуальными таблицами.
-
-👉 **Результат** – всегда свежий список качественных open‑source проектов с прямыми ссылками.
-
----
-
-## ✨ Возможности
-
-- 🔍 **GitHub API** – поиск репозиториев с `stars ≥ 50` и ограничением по языкам.
-- 🧠 **AI‑фильтр** – Groq (модели `llama-3.3-70b-versatile` с fallback) отбраковывает: крипту/скам, устаревшие (>3 лет), пустые, не по теме, adult‑контент.
-- 📄 **Генерация кликабельных списков** – отдельные Markdown‑файлы в папке [`links/`](links).
-- 📝 **Автообновление README** – в этом файле автоматически появляются таблицы с лучшими 15 проектами для каждого триггера.
-- ⏱ **Ежедневный запуск** – через GitHub Actions (cron: `0 10 * * *`). Можно запустить и вручную.
-
----
-
-## 📊 Текущие результаты
-
-*Ниже приведены таблицы с чистыми репозиториями, сгенерированные автоматически.*
-
-<!-- START_FREE -->
-<!-- END_FREE -->
-
-<!-- START_AI -->
-<!-- END_AI -->
-
-<!-- START_FREE_AI -->
 <!-- END_FREE_AI -->
 
 > **Полные списки** (со всеми проектами) лежат в папке [`links/`](links).  
@@ -176,7 +141,31 @@ text
 ## Пояснения по использованию
 
 1. **Бейджи** – настроены под типовой репозиторий. При желании вы можете заменить ссылки на свои или убрать.
-2. **Маркеры `<!-- START_FREE -->` ... `<!-- END_FREE -->`** – именно их будет искать и заменять скрипт. В исходном шаблоне они пустые, после первого запуска внутри появятся таблицы.
+2. **Маркеры `<!-- START_FREE -->
+## 🚀 FREE – чистые репозитории
+
+| Репозиторий | ⭐️ Звёзды | Описание |
+|-------------|-----------|-----------|
+| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 444421 | freeCodeCamp.org's open-source codebase and curriculum. Lear... |
+| [public-apis/public-apis](https://github.com/public-apis/public-apis) | 433682 | A collective list of free APIs |
+| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 387975 | :books: Freely available programming books |
+| [mui/material-ui](https://github.com/mui/material-ui) | 98299 | Material UI: Comprehensive React component library that impl... |
+| [xtekky/gpt4free](https://github.com/xtekky/gpt4free) | 66202 | The official gpt4free repository | various collection of pow... |
+| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 62970 | 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative |
+| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | 51809 | The best-benchmarked open-source AI memory system. And it's ... |
+| [freqtrade/freqtrade](https://github.com/freqtrade/freqtrade) | 50074 | Free, open source crypto trading bot |
+| [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) | 45282 | The Secure CommsOS™ for mission-critical operations |
+| [upscayl/upscayl](https://github.com/upscayl/upscayl) | 45173 | 🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Li... |
+| [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) | 44077 | OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PD... |
+| [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) | 43775 | A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化... |
+| [HeyPuter/puter](https://github.com/HeyPuter/puter) | 40990 | 🌐 The Internet Computer! Free, Open-Source, and Self-Hostabl... |
+| [phaserjs/phaser](https://github.com/phaserjs/phaser) | 39602 | Phaser is a fun, free and fast 2D game framework for making ... |
+| [drawdb-io/drawdb](https://github.com/drawdb-io/drawdb) | 37177 | Free, simple, and intuitive online database diagram editor a... |
+
+*... и ещё 15 репозиториев. Полный список в папке [links/](links).*
+
+
+<!-- END_FREE -->`** – именно их будет искать и заменять скрипт. В исходном шаблоне они пустые, после первого запуска внутри появятся таблицы.
 3. **Папка `links/`** – скрипт создаёт в ней файлы вида `free_links_filtered_*.md`, на которые есть ссылка в README.
 4. **Адаптация под ваш аккаунт** – замените `kort0881/kort0881-free-ai-aggregator` в команде `git clone` на ваш реальный путь (можно оставить как есть, так как это ваш репозиторий).
 
