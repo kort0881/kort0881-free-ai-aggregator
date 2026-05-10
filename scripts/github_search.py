@@ -12,7 +12,7 @@ import re
 import subprocess
 from datetime import datetime
 from pathlib import Path
-from groq import Groq  # Требуется установить: pip install groq
+from groq import Groq
 
 # ====================== КОНФИГУРАЦИЯ ======================
 def load_config():
@@ -94,18 +94,17 @@ def heuristic_filter(repo_info, config):
         return {"is_spam": True, "reason": f"Низкое качество: {', '.join(reason_checks)}", "quality_score": quality_score}
     return {"is_spam": False, "reason": "OK" if not reason_checks else f"Принят: {', '.join(reason_checks)}", "quality_score": quality_score}
 
-# ====================== AI ФИЛЬТР (GROQ) ======================
+# ====================== AI ФИЛЬТР (GROQ) С FALLBACK ======================
 def call_ai_filter(repo_info, config):
     ai_config = config.get("ai_filter", {})
     if not ai_config.get("enabled", False):
         return {"is_spam": False, "reason": "AI отключён", "quality_score": 10}
 
-    api_key = os.getenv("MODELS_ROUTER")   # <-- используем ваш существующий секрет
+    api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         print("⚠️ MODELS_ROUTER не задан, используется эвристический фильтр.")
         return heuristic_filter(repo_info, config)
-    
-    # Задержка между запросами для соблюдения лимитов (30 RPM)
+
     rate_limit_delay = ai_config.get("rate_limit_delay", 2.0)
     time.sleep(rate_limit_delay)
 
@@ -123,31 +122,38 @@ def call_ai_filter(repo_info, config):
 
 Ответь только JSON: {{"is_spam": true/false, "reason": "краткая причина", "quality_score": число 0-10}}"""
 
-    try:
-        client = Groq(api_key=api_key)
-        model = ai_config.get("model", "mixtral-8x7b-32768")
-        chat_completion = client.chat.completions.create(
-            messages=[
-                {"role": "system", "content": "Ты строгий эксперт. Отвечай только JSON."},
-                {"role": "user", "content": prompt}
-            ],
-            model=model,
-            temperature=0.2,
-            max_tokens=500,
-        )
-        ai_response = chat_completion.choices[0].message.content
-        ai_response = ai_response.strip().strip('`')
-        if ai_response.startswith("json"):
-            ai_response = ai_response[4:].strip()
-        analysis = json.loads(ai_response)
-        return {
-            "is_spam": analysis.get("is_spam", False),
-            "reason": analysis.get("reason", "AI не дал причины"),
-            "quality_score": analysis.get("quality_score", 5)
-        }
-    except Exception as e:
-        print(f"⚠️ Ошибка Groq API для {repo_info['name']}: {e}")
-        return heuristic_filter(repo_info, config)
+    # Список моделей для последовательных попыток
+    main_model = ai_config.get("model", "llama-3.3-70b-versatile")
+    models_to_try = [main_model, "llama-4-scout-17b-16e-instruct", "llama-3.1-8b-instant"]
+    
+    for model in models_to_try:
+        try:
+            client = Groq(api_key=api_key)
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {"role": "system", "content": "Ты строгий эксперт. Отвечай только JSON."},
+                    {"role": "user", "content": prompt}
+                ],
+                model=model,
+                temperature=0.2,
+                max_tokens=500,
+            )
+            ai_response = chat_completion.choices[0].message.content
+            ai_response = ai_response.strip().strip('`')
+            if ai_response.startswith("json"):
+                ai_response = ai_response[4:].strip()
+            analysis = json.loads(ai_response)
+            return {
+                "is_spam": analysis.get("is_spam", False),
+                "reason": analysis.get("reason", "AI не дал причины"),
+                "quality_score": analysis.get("quality_score", 5)
+            }
+        except Exception as e:
+            print(f"⚠️ Ошибка с моделью {model} для {repo_info['name']}: {e}")
+            continue  # пробуем следующую модель
+
+    # Если все модели не сработали
+    return heuristic_filter(repo_info, config)
 
 # ====================== СОХРАНЕНИЕ ФАЙЛОВ ======================
 def save_json(trigger_name, repos, out_folder, analysis=None):
