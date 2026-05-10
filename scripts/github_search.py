@@ -30,12 +30,21 @@ def search_github_repos(query, config):
         headers["Authorization"] = f"token {github_token}"
     
     gh_config = config["github"]
+    min_stars = gh_config.get("min_stars", 0)
+    filter_readme = gh_config.get("filter_has_readme", False)
     languages = gh_config.get("languages", [])
+    
+    # Собираем части запроса
+    parts = [query]
+    if min_stars > 0:
+        parts.append(f"stars:>={min_stars}")
+    if filter_readme:
+        parts.append("has:readme")
     if languages:
         lang_query = " ".join(f"language:{lang}" for lang in languages)
-        full_query = f"{query} stars:>={gh_config['min_stars']} {lang_query}".strip()
-    else:
-        full_query = f"{query} stars:>={gh_config['min_stars']}"
+        parts.append(lang_query)
+    
+    full_query = " ".join(parts)
     
     params = {
         "q": full_query,
