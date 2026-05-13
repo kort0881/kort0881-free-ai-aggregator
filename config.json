@@ -7,6 +7,17 @@
     "per_page": 30,
     "filter_has_readme": true
   },
+
+  "trending": {
+    "enabled": true,
+    "max_age_days": 90,
+    "min_stars": 5,
+    "min_stars_per_day": 0.3,
+    "max_days_since_update": 14,
+    "min_trending_score": 12,
+    "sort_by": "updated"
+  },
+
   "triggers": [
     {
       "name": "free",
@@ -30,6 +41,7 @@
       "links_folder": "links"
     }
   ],
+
   "ai_filter": {
     "enabled": true,
     "api_type": "groq",
