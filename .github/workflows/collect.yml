@@ -8,8 +8,12 @@ on:
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           persist-credentials: true
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -18,6 +22,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
+      - name: Cache pip dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
 
       - name: Install dependencies
         run: |
@@ -29,8 +41,20 @@ jobs:
           MODELS_ROUTER: ${{ secrets.MODELS_ROUTER }}
         run: python scripts/github_search.py
 
+      - name: Check if files changed
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "::notice::No changes detected, skipping commit"
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected, preparing commit"
+          fi
+
       - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v5
+        if: steps.changes.outputs.changed == 'true'
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "Автообновление списков репозиториев"
+          commit_message: "Автообновление списков репозиториев [auto]"
           file_pattern: "README.md links/*.md data/**/*.json"
