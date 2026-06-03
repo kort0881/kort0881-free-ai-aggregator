@@ -6,21 +6,21 @@
 
 | Репозиторий | ⭐️ | Описание |
 |-------------|-----|----------|
-| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 445835 | freeCodeCamp.org's open-source codebase and curriculum. Lear... |
-| [public-apis/public-apis](https://github.com/public-apis/public-apis) | 438683 | A collective list of free APIs |
-| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 389420 | :books: Freely available programming books |
-| [mui/material-ui](https://github.com/mui/material-ui) | 98373 | Material UI: Comprehensive React component library that impl... |
+| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 445960 | freeCodeCamp.org's open-source codebase and curriculum. Lear... |
+| [public-apis/public-apis](https://github.com/public-apis/public-apis) | 439044 | A collective list of free APIs |
+| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 389583 | :books: Freely available programming books |
+| [mui/material-ui](https://github.com/mui/material-ui) | 98374 | Material UI: Comprehensive React component library that impl... |
 | [xtekky/gpt4free](https://github.com/xtekky/gpt4free) | 66280 | The official gpt4free repository | various collection of pow... |
-| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 63215 | 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative |
-| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | 53303 | The best-benchmarked open-source AI memory system. And it's ... |
-| [freqtrade/freqtrade](https://github.com/freqtrade/freqtrade) | 51065 | Free, open source crypto trading bot |
-| [upscayl/upscayl](https://github.com/upscayl/upscayl) | 45709 | 🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Li... |
-| [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) | 45394 | The Secure CommsOS™ for mission-critical operations |
-| [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) | 44760 | OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PD... |
-| [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) | 43910 | A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化... |
-| [HeyPuter/puter](https://github.com/HeyPuter/puter) | 42063 | 🌐 The Internet Computer! Free, Open-Source, and Self-Hostabl... |
+| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 63236 | 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative |
+| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | 53358 | The best-benchmarked open-source AI memory system. And it's ... |
+| [freqtrade/freqtrade](https://github.com/freqtrade/freqtrade) | 51098 | Free, open source crypto trading bot |
+| [upscayl/upscayl](https://github.com/upscayl/upscayl) | 45742 | 🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Li... |
+| [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) | 45400 | The Secure CommsOS™ for mission-critical operations |
+| [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) | 44814 | OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PD... |
+| [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) | 43916 | A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化... |
+| [HeyPuter/puter](https://github.com/HeyPuter/puter) | 42085 | 🌐 The Internet Computer! Free, Open-Source, and Self-Hostabl... |
 | [phaserjs/phaser](https://github.com/phaserjs/phaser) | 39722 | Phaser is a fun, free and fast 2D game framework for making ... |
-| [amruthpillai/reactive-resume](https://github.com/amruthpillai/reactive-resume) | 38154 | A one-of-a-kind resume builder that keeps your privacy in mi... |
+| [amruthpillai/reactive-resume](https://github.com/amruthpillai/reactive-resume) | 38179 | A one-of-a-kind resume builder that keeps your privacy in mi... |
 
 *... и ещё 15 репозиториев. Полный список в папке links/*
 
@@ -32,21 +32,21 @@
 
 | Репозиторий | ⭐️ | Описание |
 |-------------|-----|----------|
-| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 376196 | Your own personal AI assistant. Any OS. Any Platform. The lo... |
-| [n8n-io/n8n](https://github.com/n8n-io/n8n) | 190738 | Fair-code workflow automation platform with native AI capabi... |
-| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | 184714 | AutoGPT is the vision of accessible AI for everyone, to use ... |
-| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 176850 | The agent that grows with you |
-| [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | 163395 | Stable Diffusion web UI |
-| [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide) | 156058 | Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发 |
-| [langflow-ai/langflow](https://github.com/langflow-ai/langflow) | 149086 | Langflow is a powerful tool for building and deploying AI-po... |
-| [langgenius/dify](https://github.com/langgenius/dify) | 143533 | Production-ready platform for agentic workflow development. |
-| [open-webui/open-webui](https://github.com/open-webui/open-webui) | 139687 | User-friendly AI Interface (Supports Ollama, OpenAI API, ...... |
-| [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 138318 | The agent engineering platform. |
-| [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 127547 | The API to search, scrape, and interact with the web at scal... |
-| [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 115394 | The most powerful and modular diffusion model GUI, api and b... |
-| [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 112603 | 100+ AI Agent & RAG apps you can actually run — clone, custo... |
-| [github/spec-kit](https://github.com/github/spec-kit) | 107709 | 💫 Toolkit to help you get started with Spec-Driven Developme... |
-| [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 104860 | An open-source AI agent that brings the power of Gemini dire... |
+| [openclaw/openclaw](https://github.com/openclaw/openclaw) | 376487 | Your own personal AI assistant. Any OS. Any Platform. The lo... |
+| [n8n-io/n8n](https://github.com/n8n-io/n8n) | 190916 | Fair-code workflow automation platform with native AI capabi... |
+| [Significant-Gravitas/AutoGPT](https://github.com/Significant-Gravitas/AutoGPT) | 184727 | AutoGPT is the vision of accessible AI for everyone, to use ... |
+| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | 178518 | The agent that grows with you |
+| [AUTOMATIC1111/stable-diffusion-webui](https://github.com/AUTOMATIC1111/stable-diffusion-webui) | 163410 | Stable Diffusion web UI |
+| [Snailclimb/JavaGuide](https://github.com/Snailclimb/JavaGuide) | 156091 | Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发 |
+| [langflow-ai/langflow](https://github.com/langflow-ai/langflow) | 149169 | Langflow is a powerful tool for building and deploying AI-po... |
+| [langgenius/dify](https://github.com/langgenius/dify) | 143709 | Production-ready platform for agentic workflow development. |
+| [open-webui/open-webui](https://github.com/open-webui/open-webui) | 139824 | User-friendly AI Interface (Supports Ollama, OpenAI API, ...... |
+| [langchain-ai/langchain](https://github.com/langchain-ai/langchain) | 138418 | The agent engineering platform. |
+| [firecrawl/firecrawl](https://github.com/firecrawl/firecrawl) | 128060 | The API to search, scrape, and interact with the web at scal... |
+| [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI) | 115534 | The most powerful and modular diffusion model GUI, api and b... |
+| [Shubhamsaboo/awesome-llm-apps](https://github.com/Shubhamsaboo/awesome-llm-apps) | 112741 | 100+ AI Agent & RAG apps you can actually run — clone, custo... |
+| [github/spec-kit](https://github.com/github/spec-kit) | 107999 | 💫 Toolkit to help you get started with Spec-Driven Developme... |
+| [google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) | 104885 | An open-source AI agent that brings the power of Gemini dire... |
 
 *... и ещё 15 репозиториев. Полный список в папке links/*
 
@@ -58,21 +58,21 @@
 
 | Репозиторий | ⭐️ | Описание |
 |-------------|-----|----------|
-| [Anil-matcha/Open-Generative-AI](https://github.com/Anil-matcha/Open-Generative-AI) | 17887 | Open-source alternative to AI video platforms — Free AI imag... |
-| [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) | 5652 | Never stop coding. Free AI gateway: one endpoint, 160+ provi... |
-| [romgX/openrelay](https://github.com/romgX/openrelay) | 2169 | 几百个免费 AI 模型配额，一键接入本地项目。| Hundreds of free AI model quotas, o... |
-| [NimaNzrii/comfyui-photoshop](https://github.com/NimaNzrii/comfyui-photoshop) | 1670 | ComfyUi inside of your Photoshop! you can install the plugin... |
-| [flyhunterl/flymd](https://github.com/flyhunterl/flymd) | 819 | 高性能Markdown笔记工具！免费AI，智能便签、TODO推送、本地知识库、AI小说引擎。PDF解析、自动语音笔记、录... |
+| [Anil-matcha/Open-Generative-AI](https://github.com/Anil-matcha/Open-Generative-AI) | 17985 | Open-source alternative to AI video platforms — Free AI imag... |
+| [diegosouzapw/OmniRoute](https://github.com/diegosouzapw/OmniRoute) | 5688 | Never stop coding. Free AI gateway: one endpoint, 160+ provi... |
+| [romgX/openrelay](https://github.com/romgX/openrelay) | 2173 | 几百个免费 AI 模型配额，一键接入本地项目。| Hundreds of free AI model quotas, o... |
+| [Anil-matcha/Free-AI-Social-Media-Scheduler](https://github.com/Anil-matcha/Free-AI-Social-Media-Scheduler) | 2063 | Free open-source AI social media scheduler — self-hostable a... |
+| [NimaNzrii/comfyui-photoshop](https://github.com/NimaNzrii/comfyui-photoshop) | 1672 | ComfyUi inside of your Photoshop! you can install the plugin... |
+| [flyhunterl/flymd](https://github.com/flyhunterl/flymd) | 820 | 高性能Markdown笔记工具！免费AI，智能便签、TODO推送、本地知识库、AI小说引擎。PDF解析、自动语音笔记、录... |
 | [ochyai/vibe-local](https://github.com/ochyai/vibe-local) | 790 | Free AI coding environment: Ollama + Python |
-| [IgorShadurin/app.yumcut.com](https://github.com/IgorShadurin/app.yumcut.com) | 723 | YumCut - free AI video generator to turn a prompt into ready... |
+| [IgorShadurin/app.yumcut.com](https://github.com/IgorShadurin/app.yumcut.com) | 720 | YumCut - free AI video generator to turn a prompt into ready... |
+| [eduardolat/kokoro-web](https://github.com/eduardolat/kokoro-web) | 639 | 🔊 Kokoro Web: Free AI text-to-speech, online or self-hosted,... |
 | [business-science/free-ai-tips](https://github.com/business-science/free-ai-tips) | 638 | Free AI-Tips is a FREE Newsletter provided by Business Scien... |
-| [eduardolat/kokoro-web](https://github.com/eduardolat/kokoro-web) | 637 | 🔊 Kokoro Web: Free AI text-to-speech, online or self-hosted,... |
 | [Free-The-Ai/free-ai](https://github.com/Free-The-Ai/free-ai) | 532 | FreeTheAi (Free The AI): free OpenAI-compatible AI API with ... |
-| [sb2702/free-ai-video-upscaler](https://github.com/sb2702/free-ai-video-upscaler) | 451 | Source code for free AI video upscaler tool |
-| [ShaikhWarsi/free-ai-tools](https://github.com/ShaikhWarsi/free-ai-tools) | 387 | Curated list of free and low cost AI tools, LLM APIs, IDEs, ... |
+| [sb2702/free-ai-video-upscaler](https://github.com/sb2702/free-ai-video-upscaler) | 453 | Source code for free AI video upscaler tool |
+| [ShaikhWarsi/free-ai-tools](https://github.com/ShaikhWarsi/free-ai-tools) | 395 | Curated list of free and low cost AI tools, LLM APIs, IDEs, ... |
 | [funny-vibes/agent-vibes](https://github.com/funny-vibes/agent-vibes) | 320 | Unified Agent Gateway — Enables Claude Code CLI and Cursor I... |
 | [aicademyorg/AIcademy](https://github.com/aicademyorg/AIcademy) | 309 | A friendly community offering free AI education. |
-| [bytonylee/free-router](https://github.com/bytonylee/free-router) | 290 | The free AI model router, API for everyday AI work. Find the... |
 
 *... и ещё 12 репозиториев. Полный список в папке links/*
 
@@ -146,21 +146,21 @@ text
 
 | Репозиторий | ⭐️ | Описание |
 |-------------|-----|----------|
-| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 445835 | freeCodeCamp.org's open-source codebase and curriculum. Lear... |
-| [public-apis/public-apis](https://github.com/public-apis/public-apis) | 438683 | A collective list of free APIs |
-| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 389420 | :books: Freely available programming books |
-| [mui/material-ui](https://github.com/mui/material-ui) | 98373 | Material UI: Comprehensive React component library that impl... |
+| [freeCodeCamp/freeCodeCamp](https://github.com/freeCodeCamp/freeCodeCamp) | 445960 | freeCodeCamp.org's open-source codebase and curriculum. Lear... |
+| [public-apis/public-apis](https://github.com/public-apis/public-apis) | 439044 | A collective list of free APIs |
+| [EbookFoundation/free-programming-books](https://github.com/EbookFoundation/free-programming-books) | 389583 | :books: Freely available programming books |
+| [mui/material-ui](https://github.com/mui/material-ui) | 98374 | Material UI: Comprehensive React component library that impl... |
 | [xtekky/gpt4free](https://github.com/xtekky/gpt4free) | 66280 | The official gpt4free repository | various collection of pow... |
-| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 63215 | 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative |
-| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | 53303 | The best-benchmarked open-source AI memory system. And it's ... |
-| [freqtrade/freqtrade](https://github.com/freqtrade/freqtrade) | 51065 | Free, open source crypto trading bot |
-| [upscayl/upscayl](https://github.com/upscayl/upscayl) | 45709 | 🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Li... |
-| [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) | 45394 | The Secure CommsOS™ for mission-critical operations |
-| [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) | 44760 | OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PD... |
-| [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) | 43910 | A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化... |
-| [HeyPuter/puter](https://github.com/HeyPuter/puter) | 42063 | 🌐 The Internet Computer! Free, Open-Source, and Self-Hostabl... |
+| [nocodb/nocodb](https://github.com/nocodb/nocodb) | 63236 | 🔥 🔥 🔥 A Free & Self-hostable Airtable Alternative |
+| [MemPalace/mempalace](https://github.com/MemPalace/mempalace) | 53358 | The best-benchmarked open-source AI memory system. And it's ... |
+| [freqtrade/freqtrade](https://github.com/freqtrade/freqtrade) | 51098 | Free, open source crypto trading bot |
+| [upscayl/upscayl](https://github.com/upscayl/upscayl) | 45742 | 🆙 Upscayl - #1 Free and Open Source AI Image Upscaler for Li... |
+| [RocketChat/Rocket.Chat](https://github.com/RocketChat/Rocket.Chat) | 45400 | The Secure CommsOS™ for mission-critical operations |
+| [hiroi-sora/Umi-OCR](https://github.com/hiroi-sora/Umi-OCR) | 44814 | OCR software, free and offline. 开源、免费的离线OCR软件。支持截屏/批量导入图片，PD... |
+| [NaiboWang/EasySpider](https://github.com/NaiboWang/EasySpider) | 43916 | A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化... |
+| [HeyPuter/puter](https://github.com/HeyPuter/puter) | 42085 | 🌐 The Internet Computer! Free, Open-Source, and Self-Hostabl... |
 | [phaserjs/phaser](https://github.com/phaserjs/phaser) | 39722 | Phaser is a fun, free and fast 2D game framework for making ... |
-| [amruthpillai/reactive-resume](https://github.com/amruthpillai/reactive-resume) | 38154 | A one-of-a-kind resume builder that keeps your privacy in mi... |
+| [amruthpillai/reactive-resume](https://github.com/amruthpillai/reactive-resume) | 38179 | A one-of-a-kind resume builder that keeps your privacy in mi... |
 
 *... и ещё 15 репозиториев. Полный список в папке links/*
 
@@ -186,23 +186,23 @@ text
 
 | Репозиторий | ⭐️ | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |-------------|-----|-----------|-----------|------------|----------|
-| [midudev/subvid.app](https://github.com/midudev/subvid.app) | 14 | 14.0 | 1д | 0д назад | Put subtitles to any video directly from your brow... |
-| [freestyle-voice/freestyle](https://github.com/freestyle-voice/freestyle) | 228 | 28.5 | 8д | 0д назад | Voice-to-text dictation app. Local first, free, an... |
-| [KatrielMoses/MailAccess](https://github.com/KatrielMoses/MailAccess) | 120 | 8.571 | 14д | 0д назад | Free email OSINT tool, 2500+ platforms, identity c... |
-| [sepehrbayat/SEPCC](https://github.com/sepehrbayat/SEPCC) | 16 | 5.333 | 3д | 0д назад | SEPCC — A Claude Code proxy with context that surv... |
-| [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 7077 | 168.5 | 42д | 0д назад | OpenAI-compatible proxy that stacks the free tiers... |
-| [lidge-jun/ima2-gen](https://github.com/lidge-jun/ima2-gen) | 336 | 8.195 | 41д | 0д назад | Minimal CLI + web UI for OpenAI GPT Image 2 genera... |
-| [phuc-nt/my-translator](https://github.com/phuc-nt/my-translator) | 1143 | 14.111 | 81д | 0д назад | Real-time speech translation — macOS & Windows, fr... |
-| [brightbeanxyz/brightbean-studio](https://github.com/brightbeanxyz/brightbean-studio) | 1733 | 25.116 | 69д | 0д назад | Open-source, self-hostable social media management... |
-| [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys) | 1443 | 20.324 | 71д | 0д назад | Free LLM API keys for GPT-5.5, Claude, DeepSeek, G... |
-| [Branding-Brevity/Core-Builds-By-Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) | 46 | 2.706 | 17д | 0д назад | A collection of highly optimized AIOStreams templa... |
-| [rookiestar28/Agentique](https://github.com/rookiestar28/Agentique) | 12 | 2.4 | 5д | 0д назад | An open-source companion repo for Agentique.io: a ... |
-| [MohammadBahemmat/V2ray-Collector](https://github.com/MohammadBahemmat/V2ray-Collector) | 42 | 1.235 | 34д | 0д назад | 💠جمع‌آوری خودکار و رایگان کانفیگ‌های V2Ray از گیته... |
-| [ProxyScrape/free-proxy-list](https://github.com/ProxyScrape/free-proxy-list) | 6 | 1.2 | 5д | 0д назад | Free HTTP, HTTPS, SOCKS4 & SOCKS5 proxy list. ~22k... |
-| [WOLFTECH-254/wolfXspotify-API](https://github.com/WOLFTECH-254/wolfXspotify-API) | 6 | 0.5 | 12д | 0д назад | Free, unlimited Spotify music data API. No API key... |
-| [inferdi/inferdi](https://github.com/inferdi/inferdi) | 29 | 0.967 | 30д | 0д назад | Zero-dependency, decorator-free, strictly typed DI... |
+| [wellingfeng/FreeUltraCode](https://github.com/wellingfeng/FreeUltraCode) | 16 | 4.0 | 4д | 0д назад | FreeUltraCode — Visual editor for Claude Code work... |
+| [midudev/subvid.app](https://github.com/midudev/subvid.app) | 21 | 21.0 | 1д | 0д назад | Put subtitles to any video directly from your brow... |
+| [huawei-csl/KVarN](https://github.com/huawei-csl/KVarN) | 22 | 4.4 | 5д | 0д назад | KVarN is a native vLLM KV-cache quantization backe... |
+| [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | 7291 | 169.558 | 43д | 0д назад | OpenAI-compatible proxy that stacks the free tiers... |
+| [brightbeanxyz/brightbean-studio](https://github.com/brightbeanxyz/brightbean-studio) | 1734 | 24.771 | 70д | 0д назад | Open-source, self-hostable social media management... |
+| [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys) | 1496 | 20.778 | 72д | 0д назад | Free LLM API keys for GPT-5.5, Claude, DeepSeek, G... |
+| [AbdoKnbGit/tau](https://github.com/AbdoKnbGit/tau) | 193 | 3.271 | 59д | 0д назад | your orchestrator for all dev agents, sessions, an... |
+| [Branding-Brevity/Core-Builds-By-Brevity](https://github.com/Branding-Brevity/Core-Builds-By-Brevity) | 47 | 2.611 | 18д | 0д назад | A collection of highly optimized AIOStreams templa... |
+| [emreturkmencom/antigravity-telegram-suite](https://github.com/emreturkmencom/antigravity-telegram-suite) | 101 | 2.349 | 43д | 0д назад | A hands-free experience for Google's Antigravity f... |
+| [thepriyanshbhatt/Shrynkly-URL-Shortner](https://github.com/thepriyanshbhatt/Shrynkly-URL-Shortner) | 19 | 1.9 | 10д | 0д назад | Shrynkly — A fast, modern URL shortener. Paste lon... |
+| [ProxyScrape/free-proxy-list](https://github.com/ProxyScrape/free-proxy-list) | 9 | 1.5 | 6д | 0д назад | Free HTTP, HTTPS, SOCKS4 & SOCKS5 proxy list. ~22k... |
+| [Zayrix-bit/Anixo](https://github.com/Zayrix-bit/Anixo) | 11 | 0.367 | 30д | 0д назад | 🎌 AniXO — A high-performance, next-gen anime strea... |
+| [ilhajs/ilha](https://github.com/ilhajs/ilha) | 103 | 1.451 | 71д | 0д назад | A tiny, framework-free island architecture library... |
+| [kubeara/core](https://github.com/kubeara/core) | 13 | 0.65 | 20д | 0д назад | Self-hosted PaaS for private infrastructure.  Depl... |
+| [WOLFTECH-254/wolfXspotify-API](https://github.com/WOLFTECH-254/wolfXspotify-API) | 6 | 0.462 | 13д | 0д назад | Free, unlimited Spotify music data API. No API key... |
 
-*... и ещё 5 репозиториев. Полный список в папке links/*
+*... и ещё 6 репозиториев. Полный список в папке links/*
 
 
 <!-- END_FREE_TRENDING -->
@@ -212,23 +212,23 @@ text
 
 | Репозиторий | ⭐️ | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |-------------|-----|-----------|-----------|------------|----------|
-| [pewdiepie-archdaemon/odysseus](https://github.com/pewdiepie-archdaemon/odysseus) | 26915 | 13457.5 | 2д | 0д назад | Self-hosted AI workspace.  |
-| [v9ai/ai-engineer-roadmap](https://github.com/v9ai/ai-engineer-roadmap) | 173 | 10.176 | 17д | 0д назад |  |
-| [SudoJacky/tinybot](https://github.com/SudoJacky/tinybot) | 247 | 4.66 | 53д | 0д назад | Tinybot is a lightweight personal AI Agent that is... |
-| [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys) | 1444 | 20.338 | 71д | 0д назад | Free LLM API keys for GPT-5.5, Claude, DeepSeek, G... |
-| [shobcoder/shob](https://github.com/shobcoder/shob) | 267 | 3.87 | 69д | 0д назад | Shob – an AI agent that delivers high-quality codi... |
-| [gug007/lpm](https://github.com/gug007/lpm) | 234 | 3.656 | 64д | 0д назад | Start, stop, and duplicate dev projects with one c... |
-| [rookiestar28/Agentique](https://github.com/rookiestar28/Agentique) | 12 | 2.4 | 5д | 0д назад | An open-source companion repo for Agentique.io: a ... |
-| [Joanium/Joanium](https://github.com/Joanium/Joanium) | 65 | 2.097 | 31д | 0д назад | Your smart, reliable, and friendly personal AI ass... |
-| [caura-ai/caura-memclaw](https://github.com/caura-ai/caura-memclaw) | 65 | 1.857 | 35д | 0д назад | MemClaw — persistent memory for AI agent fleets (O... |
-| [durdana3105/peer-learning](https://github.com/durdana3105/peer-learning) | 31 | 0.544 | 57д | 0д назад | Peer Learning Platform : An AI-powered collaborati... |
-| [MontrealAI/skillos](https://github.com/MontrealAI/skillos) | 5 | 0.833 | 6д | 0д назад | Agent SkillOS — the wealth-accumulation layer for ... |
-| [Reluctant2828/System-Fitness-Advisor-skill](https://github.com/Reluctant2828/System-Fitness-Advisor-skill) | 7 | 0.875 | 8д | 2д назад | 一个基于用户数据、训练知识库的系统化 AI 健身规划建议 Skill，适用于增肌、减脂塑形、部位专攻... |
-| [OctaFuse/octafuse-gateway](https://github.com/OctaFuse/octafuse-gateway) | 10 | 0.455 | 22д | 0д назад | Octafuse Gateway 是一个开源 AI 网关，提供 OpenAI / Anthropic... |
-| [alias8818/enoch-agentic-research-system](https://github.com/alias8818/enoch-agentic-research-system) | 15 | 0.441 | 34д | 0д назад | Agentic research control plane: queue state, worke... |
-| [oomkapwn/enquire-mcp](https://github.com/oomkapwn/enquire-mcp) | 9 | 0.3 | 30д | 0д назад | The most advanced Obsidian MCP — long-term memory ... |
+| [ganbo-gab/open-storyboard-canvas](https://github.com/ganbo-gab/open-storyboard-canvas) | 54 | 18.0 | 3д | 0д назад | 开源的 AI 分镜与导演台画布，支持全景图、摄像机控制、提示词预设和自定义供应商调用。 |
+| [loveyu43/ai-agent-workflows-jp](https://github.com/loveyu43/ai-agent-workflows-jp) | 7 | 7.0 | 1д | 0д назад | Japanese workflow templates, safety checklists, an... |
+| [OpenOSINT/OpenOSINT](https://github.com/OpenOSINT/OpenOSINT) | 475 | 16.964 | 28д | 0д назад | AI-powered OSINT agent with interactive REPL, MCP ... |
+| [VigoZhao/AI-Visual-Prompt-Cookbook](https://github.com/VigoZhao/AI-Visual-Prompt-Cookbook) | 203 | 8.826 | 23д | 0д назад | Curated collection of reusable JSON prompt templat... |
+| [PatterAI/Patter](https://github.com/PatterAI/Patter) | 467 | 8.193 | 57д | 0д назад | Open-source voice-AI SDK. The Vapi/Retell alternat... |
+| [safishamsi/graphify](https://github.com/safishamsi/graphify) | 58743 | 979.05 | 60д | 0д назад | AI coding assistant skill (Claude Code, Codex, Ope... |
+| [alistaitsacle/free-llm-api-keys](https://github.com/alistaitsacle/free-llm-api-keys) | 1496 | 20.778 | 72д | 0д назад | Free LLM API keys for GPT-5.5, Claude, DeepSeek, G... |
+| [hanshuaikang/nezha](https://github.com/hanshuaikang/nezha) | 1398 | 19.417 | 72д | 0д назад | Code Editor for the AI Agents Era. Run multiple Cl... |
+| [hunvreus/heypi](https://github.com/hunvreus/heypi) | 50 | 2.174 | 23д | 0д назад | Chat agents for your team, with approvals and sand... |
+| [ClipboardHealth/groundcrew](https://github.com/ClipboardHealth/groundcrew) | 35 | 1.944 | 18д | 0д назад | Dispatch your ticket backlog to local, interactive... |
+| [adityasharmadotai-hash/amazing-ai-agents](https://github.com/adityasharmadotai-hash/amazing-ai-agents) | 15 | 1.0 | 15д | 0д назад |  |
+| [max-ng/datamoat](https://github.com/max-ng/datamoat) | 58 | 1.568 | 37д | 0д назад | Export and back up ChatGPT, Claude, Codex, Cursor,... |
+| [OpenHands/agent-canvas](https://github.com/OpenHands/agent-canvas) | 26 | 0.65 | 40д | 0д назад | OpenHands Agent Canvas is a self-hostable AI codin... |
+| [voiceyBill/voiceyBill-web](https://github.com/voiceyBill/voiceyBill-web) | 9 | 0.31 | 29д | 0д назад | Web App for VoiceyBill to track income and expense... |
+| [GuruhTech/ULTRA-GURU](https://github.com/GuruhTech/ULTRA-GURU) | 38 | 0.551 | 69д | 2д назад | ⚡ ULTRA GURU MD — A powerful multi-device WhatsApp... |
 
-*... и ещё 4 репозиториев. Полный список в папке links/*
+*... и ещё 6 репозиториев. Полный список в папке links/*
 
 
 <!-- END_AI_TRENDING -->
@@ -238,23 +238,23 @@ text
 
 | Репозиторий | ⭐️ | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |-------------|-----|-----------|-----------|------------|----------|
-| [Free-The-Ai/free-ai](https://github.com/Free-The-Ai/free-ai) | 532 | 12.976 | 41д | 0д назад | FreeTheAi (Free The AI): free OpenAI-compatible AI... |
-| [ShaikhWarsi/free-ai-tools](https://github.com/ShaikhWarsi/free-ai-tools) | 387 | 7.442 | 52д | 0д назад | Curated list of free and low cost AI tools, LLM AP... |
-| [romgX/openrelay](https://github.com/romgX/openrelay) | 2169 | 24.931 | 87д | 0д назад | 几百个免费 AI 模型配额，一键接入本地项目。| Hundreds of free AI model... |
-| [funny-vibes/agent-vibes](https://github.com/funny-vibes/agent-vibes) | 320 | 3.721 | 86д | 0д назад | Unified Agent Gateway — Enables Claude Code CLI an... |
-| [nexscope-ai/Amazon-Skills](https://github.com/nexscope-ai/Amazon-Skills) | 210 | 2.5 | 84д | 0д назад | Free AI agent skills for Amazon sellers—  keyword ... |
-| [airesearch-official/free-aistudio](https://github.com/airesearch-official/free-aistudio) | 14 | 1.556 | 9д | 0д назад | ) 🚀 A free, open-source tool to generate high-qual... |
-| [AppsGanin/ai-free-vscode](https://github.com/AppsGanin/ai-free-vscode) | 11 | 1.222 | 9д | 0д назад | Free AI models in VS Code Copilot Chat via browser... |
-| [context-dot-dev/ai-seo-audit](https://github.com/context-dot-dev/ai-seo-audit) | 36 | 1.565 | 23д | 2д назад | Free AI SEO / GEO auditor |
-| [HerStack-org/website](https://github.com/HerStack-org/website) | 16 | 0.485 | 33д | 0д назад | She doesn't just use AI. She builds it. — Open sou... |
-| [Joe-Huber/AI-For-Brokies](https://github.com/Joe-Huber/AI-For-Brokies) | 39 | 1.114 | 35д | 0д назад | A collection of free AI coding tools! |
-| [kelvinagyareyeboah/KelvCodes](https://github.com/kelvinagyareyeboah/KelvCodes) | 5 | 1.0 | 5д | 1д назад | kelvcodes is an AI-native, lightweight VS Code ext... |
-| [SynapCores/synapcores-agent](https://github.com/SynapCores/synapcores-agent) | 6 | 0.857 | 7д | 2д назад | Real, framework-free AI support agent where SynapC... |
-| [abbosaliboev/free-ai-bible](https://github.com/abbosaliboev/free-ai-bible) | 40 | 0.87 | 46д | 0д назад | 🧠 The Ultimate Directory of Free AI APIs & Tools f... |
-| [Shaivpidadi/FreeRideV3](https://github.com/Shaivpidadi/FreeRideV3) | 19 | 0.731 | 26д | 2д назад | One free AI endpoint, every free tier behind it. L... |
-| [ClabstreamTeam/Open-Higgsfield-AI](https://github.com/ClabstreamTeam/Open-Higgsfield-AI) | 27 | 0.519 | 52д | 3д назад | Open-source alternative to Higgsfield AI — Free AI... |
+| [Free-The-Ai/free-ai](https://github.com/Free-The-Ai/free-ai) | 532 | 12.667 | 42д | 0д назад | FreeTheAi (Free The AI): free OpenAI-compatible AI... |
+| [ShaikhWarsi/free-ai-tools](https://github.com/ShaikhWarsi/free-ai-tools) | 395 | 7.453 | 53д | 0д назад | Curated list of free and low cost AI tools, LLM AP... |
+| [romgX/openrelay](https://github.com/romgX/openrelay) | 2173 | 24.693 | 88д | 0д назад | 几百个免费 AI 模型配额，一键接入本地项目。| Hundreds of free AI model... |
+| [funny-vibes/agent-vibes](https://github.com/funny-vibes/agent-vibes) | 320 | 3.678 | 87д | 0д назад | Unified Agent Gateway — Enables Claude Code CLI an... |
+| [nexscope-ai/Amazon-Skills](https://github.com/nexscope-ai/Amazon-Skills) | 215 | 2.529 | 85д | 0д назад | Free AI agent skills for Amazon sellers—  keyword ... |
+| [airesearch-official/free-aistudio](https://github.com/airesearch-official/free-aistudio) | 15 | 1.5 | 10д | 0д назад | ) 🚀 A free, open-source tool to generate high-qual... |
+| [context-dot-dev/ai-seo-audit](https://github.com/context-dot-dev/ai-seo-audit) | 36 | 1.5 | 24д | 3д назад | Free AI SEO / GEO auditor |
+| [HerStack-org/website](https://github.com/HerStack-org/website) | 15 | 0.441 | 34д | 0д назад | She doesn't just use AI. She builds it. — Open sou... |
+| [AppsGanin/ai-free-vscode](https://github.com/AppsGanin/ai-free-vscode) | 11 | 1.0 | 11д | 1д назад | Free AI models in VS Code Copilot Chat via browser... |
+| [Joe-Huber/AI-For-Brokies](https://github.com/Joe-Huber/AI-For-Brokies) | 39 | 1.083 | 36д | 1д назад | A collection of free AI coding tools! |
+| [Shaivpidadi/FreeRideV3](https://github.com/Shaivpidadi/FreeRideV3) | 20 | 0.741 | 27д | 0д назад | One free AI endpoint, every free tier behind it. L... |
+| [abbosaliboev/free-ai-bible](https://github.com/abbosaliboev/free-ai-bible) | 41 | 0.872 | 47д | 0д назад | 🧠 The Ultimate Directory of Free AI APIs & Tools f... |
+| [network-tocoder/Claude-Code-NVIDIA-Free-AI-Coding-Agent](https://github.com/network-tocoder/Claude-Code-NVIDIA-Free-AI-Coding-Agent) | 20 | 0.606 | 33д | 0д назад |  |
+| [kelvinagyareyeboah/KelvCodes](https://github.com/kelvinagyareyeboah/KelvCodes) | 5 | 0.833 | 6д | 2д назад | kelvcodes is an AI-native, lightweight VS Code ext... |
+| [samibajwaisking/Nvidia-Agent-Core](https://github.com/samibajwaisking/Nvidia-Agent-Core) | 5 | 0.385 | 13д | 0д назад | A production-ready, open-source autonomous AI agen... |
 
-*... и ещё 4 репозиториев. Полный список в папке links/*
+*... и ещё 5 репозиториев. Полный список в папке links/*
 
 
 <!-- END_FREE_AI_TRENDING -->
