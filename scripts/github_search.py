@@ -10,6 +10,7 @@ import os
 import time
 import re
 import subprocess
+import shutil
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from groq import Groq
@@ -316,46 +317,101 @@ def generate_markdown_links(trigger_name: str, repos: list, out_folder: str = "l
     path = f"{out_folder}/{safe}_links_{suffix}_{timestamp}.md"
     with open(path, "w", encoding="utf-8") as f:
         title = "🔥 TRENDING (молодые и быстро растущие)" if trending_mode else trigger_name.upper()
-        f.write(f"# {title}\n\n")
-        f.write(f"Обновлено: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n\n")
-        for repo in repos:
+        f.write(f"# 📦 Архив проектов: {title}\n\n")
+        f.write(f"📅 Дата архивации: {datetime.now().strftime('%d.%m.%Y %H:%M')}\n\n")
+        f.write("| # | Репозиторий | ⭐ Звёзд | 📅 Создан | 🔄 Обновлён | Описание |\n")
+        f.write("|---|-------------|----------|-----------|------------|----------|\n")
+        for idx, repo in enumerate(repos, start=1):
             m = repo.get("metrics", {})
-            f.write(f"- [{repo['name']}]({repo['url']}) — ⭐️ {repo['stars']}")
-            if trending_mode and m:
-                f.write(f" | 📈 {m['stars_per_day']} зв/день | 🕐 {m['age_days']} дней | 🔄 {m['days_since_update']} дн. назад")
-            f.write("\n")
-            if repo["description"]:
-                f.write(f"  {repo['description'][:150]}\n")
+            created = repo.get("created_at", "")[:10]
+            updated = repo.get("updated_at", "")[:10]
+            desc = repo["description"][:100] if repo["description"] else ""
+            f.write(f"| {idx} | [{repo['name']}]({repo['url']}) | {repo['stars']} | {created} | {updated} | {desc} |\n")
     print(f"🔗 Markdown: {path}")
     return path
 
+# ====================== НОВЫЕ ФУНКЦИИ ДЛЯ ОБНОВЛЕНИЯ README И АРХИВИРОВАНИЯ ======================
+def get_latest_archive_link(trigger_name: str, links_folder: str = "links") -> str | None:
+    """Возвращает имя последнего архивного файла для данного триггера (по времени модификации)."""
+    pattern = re.compile(rf"{re.escape(trigger_name)}.*\.md")
+    files = []
+    for f in Path(links_folder).glob("*.md"):
+        if pattern.match(f.name):
+            files.append(f)
+    if not files:
+        return None
+    latest = max(files, key=lambda p: p.stat().st_mtime)
+    return str(latest)
+
+def rotate_archives(links_folder: str = "links", keep_days: int = 7):
+    """Перемещает файлы старше keep_days дней в подпапку archive/"""
+    archive_dir = Path(links_folder) / "archive"
+    archive_dir.mkdir(exist_ok=True)
+
+    now = datetime.now(timezone.utc)
+    for f in Path(links_folder).glob("*.md"):
+        # Из имени файла вытаскиваем дату (формат YYYYMMDD)
+        match = re.search(r'(\d{8})', f.name)
+        if match:
+            file_date = datetime.strptime(match.group(1), "%Y%m%d").replace(tzinfo=timezone.utc)
+            if (now - file_date).days > keep_days:
+                shutil.move(str(f), archive_dir / f.name)
+                print(f"📦 Архив: {f.name} → archive/")
+
 def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md",
-                  trending_mode: bool = False):
+                  trending_mode: bool = False, max_days_in_readme: int = 7):
+    """
+    Обновляет README, показывая только проекты младше max_days_in_readme дней.
+    Добавляет нумерацию и русские заголовки.
+    """
     if not repos:
         return
 
-    if trending_mode:
-        header = f"## 🔥 {trigger_name.upper()} – Trending (молодые + быстро растущие)\n\n"
-        table = "| Репозиторий | ⭐️ | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |\n"
-        table += "|-------------|-----|-----------|-----------|------------|----------|\n"
-        for repo in repos[:15]:
-            m = repo.get("metrics", {})
-            url, name = repo["url"], repo["name"]
-            desc = (repo["description"][:50] + "...") if len(repo["description"]) > 50 else repo["description"]
-            table += (f"| [{name}]({url}) | {repo['stars']} | {m.get('stars_per_day','?')} "
-                      f"| {m.get('age_days','?')}д | {m.get('days_since_update','?')}д назад | {desc} |\n")
+    now = datetime.now(timezone.utc)
+    # Фильтруем свежие проекты (по created_at)
+    fresh_repos = []
+    for repo in repos:
+        created = datetime.fromisoformat(repo["created_at"].replace("Z", "+00:00"))
+        age_days = (now - created).days
+        if age_days <= max_days_in_readme:
+            fresh_repos.append(repo)
+    # Сортируем от новых к старым
+    fresh_repos.sort(key=lambda r: r["created_at"], reverse=True)
+
+    # Если новых нет – выводим сообщение
+    if not fresh_repos:
+        block = f"## 🚀 {trigger_name.upper()} – новые проекты\n\n_Новых проектов за последние {max_days_in_readme} дней не найдено._\n\n"
     else:
-        header = f"## 🚀 {trigger_name.upper()} – чистые репозитории\n\n"
-        table = "| Репозиторий | ⭐️ | Описание |\n|-------------|-----|----------|\n"
-        for repo in repos[:15]:
-            url, name = repo["url"], repo["name"]
-            desc = (repo["description"][:60] + "...") if len(repo["description"]) > 60 else repo["description"]
-            table += f"| [{name}]({url}) | {repo['stars']} | {desc} |\n"
+        if trending_mode:
+            header = f"## 🔥 {trigger_name.upper()} – свежие Trending-проекты\n\n"
+            table = "| # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |\n"
+            table += "|---|-------------|----------|-----------|-----------|------------|----------|\n"
+            for idx, repo in enumerate(fresh_repos[:15], start=1):
+                m = repo.get("metrics", {})
+                url, name = repo["url"], repo["name"]
+                desc = (repo["description"][:50] + "...") if len(repo["description"]) > 50 else repo["description"]
+                table += (f"| {idx} | [{name}]({url}) | {repo['stars']} | {m.get('stars_per_day','?')} "
+                          f"| {m.get('age_days','?')}д | {m.get('days_since_update','?')}д назад | {desc} |\n")
+        else:
+            header = f"## 🚀 {trigger_name.upper()} – свежие проекты\n\n"
+            table = "| # | Репозиторий | ⭐ Звёзд | Описание |\n"
+            table += "|---|-------------|----------|----------|\n"
+            for idx, repo in enumerate(fresh_repos[:15], start=1):
+                url, name = repo["url"], repo["name"]
+                desc = (repo["description"][:60] + "...") if len(repo["description"]) > 60 else repo["description"]
+                table += f"| {idx} | [{name}]({url}) | {repo['stars']} | {desc} |\n"
 
-    if len(repos) > 15:
-        table += f"\n*... и ещё {len(repos) - 15} репозиториев. Полный список в папке links/*\n"
+        if len(fresh_repos) > 15:
+            table += f"\n*... и ещё {len(fresh_repos) - 15} новых проектов. Полный архив — см. ниже.*\n"
 
-    block = header + table + "\n"
+        # Добавляем ссылку на последний архивный файл (если есть)
+        archive_link = get_latest_archive_link(trigger_name)
+        if archive_link:
+            table += f"\n📦 **Архив всех проектов**: [{archive_link}]({archive_link})\n"
+
+        block = header + table + "\n"
+
+    # Вставка/замена между маркерами
     marker_key = trigger_name.upper().replace(" ", "_")
     start_marker = f"<!-- START_{marker_key} -->"
     end_marker = f"<!-- END_{marker_key} -->"
@@ -376,7 +432,7 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
 
     with open(readme_path, "w", encoding="utf-8") as f:
         f.write(content)
-    print(f"📝 README.md обновлён: {trigger_name}")
+    print(f"📝 README обновлён: {trigger_name} (показано {len(fresh_repos)} новых проектов)")
 
 def commit_and_push(files=None):
     if files is None:
@@ -425,7 +481,9 @@ def process_trigger(trigger: dict, config: dict):
         if filtered:
             save_json(f"{name}_filtered", filtered, filtered_folder)
             generate_markdown_links(name, filtered, links_folder, suffix="filtered")
-            update_readme(name, filtered)
+            # Обновляем README с фильтром по дате
+            max_days = config.get("readme", {}).get("max_days_to_show", 7)
+            update_readme(name, filtered, trending_mode=False, max_days_in_readme=max_days)
         print(f"📊 Обычный итог: {len(filtered)} / {len(repos)}")
 
     # --- Trending поиск (молодые + быстро растущие) ---
@@ -452,17 +510,21 @@ def process_trigger(trigger: dict, config: dict):
             save_json(f"{trend_name}_filtered", trend_filtered, filtered_folder)
             generate_markdown_links(trend_name, trend_filtered, links_folder,
                                     suffix="trending", trending_mode=True)
-            update_readme(trend_name, trend_filtered, trending_mode=True)
+            max_days = config.get("readme", {}).get("max_days_to_show", 7)
+            update_readme(trend_name, trend_filtered, trending_mode=True, max_days_in_readme=max_days)
         print(f"📊 Trending итог: {len(trend_filtered)} / {len(trending_repos)}")
-
 
 def main():
     config = load_config()
     for trigger in config["triggers"]:
         process_trigger(trigger, config)
+
+    # Ротация архивов: перемещаем старые файлы из links/ в links/archive/
+    max_days = config.get("readme", {}).get("max_days_to_show", 7)
+    rotate_archives(links_folder="links", keep_days=max_days)
+
     commit_and_push(["README.md", "links/"])
     print("\n🎉 Готово!")
-
 
 if __name__ == "__main__":
     main()
