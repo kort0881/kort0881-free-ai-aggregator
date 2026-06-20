@@ -18,6 +18,10 @@
     "sort_by": "updated"
   },
 
+  "readme": {
+    "max_days_to_show": 7
+  },
+
   "triggers": [
     {
       "name": "free",
