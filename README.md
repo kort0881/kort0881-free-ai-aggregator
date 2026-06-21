@@ -114,13 +114,13 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [paulfruitful/freeaitokens](https://github.com/paulfruitful/freeaitokens) | 11 | 11.0 | 1д | 0д назад | Free Local AI inference without need for GPUs or h... |
-| 2 | [jinhanchen/Murmur](https://github.com/jinhanchen/Murmur) | 5 | 5.0 | 1д | 0д назад | Free, local, privacy-first voice typing for Window... |
-| 3 | [inni918/warashi](https://github.com/inni918/warashi) | 82 | 27.333 | 3д | 0д назад | Warashi — a free, open-source desktop AI companion... |
-| 4 | [AlexJefri3107/Crypto_Market_Analyzer](https://github.com/AlexJefri3107/Crypto_Market_Analyzer) | 5 | 0.833 | 6д | 0д назад | Live crypto market dashboard showing top gainers a... |
-| 5 | [halitsever/watchbear](https://github.com/halitsever/watchbear) | 26 | 3.714 | 7д | 0д назад | 🐻 Watch together in sync; Free Chrome extension fo... |
+| 1 | [elemenopyunome/open-infra](https://github.com/elemenopyunome/open-infra) | 6 | 3.0 | 2д | 0д назад | A free, self-hostable mini-cloud: write one infra.... |
+| 2 | [PINTO0309/screen-eye-tracking](https://github.com/PINTO0309/screen-eye-tracking) | 31 | 10.333 | 3д | 0д назад | A desktop application that estimates where the use... |
+| 3 | [SantanderAI/genetic-algorithm](https://github.com/SantanderAI/genetic-algorithm) | 9 | 3.0 | 3д | 0д назад | A dependency-free Python genetic-algorithm engine ... |
+| 4 | [heinthaw-dev/blood-help](https://github.com/heinthaw-dev/blood-help) | 7 | 1.75 | 4д | 0д назад | Blood Help is a free app that instantly connects s... |
+| 5 | [jestasecurity/thumper](https://github.com/jestasecurity/thumper) | 117 | 19.5 | 6д | 0д назад | Thumper is an open-source tripwire for the Shai-Hu... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260620_181645.md](links/free_trending_links_trending_20260620_181645.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260621_121458.md](links/free_trending_links_trending_20260621_121458.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -130,9 +130,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [paulfruitful/freeaitokens](https://github.com/paulfruitful/freeaitokens) | 11 | 11.0 | 1д | 0д назад | Free Local AI inference without need for GPUs or h... |
+| 1 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 6.0 | 1д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
+| 2 | [6wa1t/408-ai-tutor](https://github.com/6wa1t/408-ai-tutor) | 5 | 2.5 | 2д | 0д назад | 408考研AI专属助教 — 智能刷题、错题分析与AI答疑。支持PDF题库导入/刷题练习/答题统计/错... |
+| 3 | [realchendahuang/cloudflare-playbook](https://github.com/realchendahuang/cloudflare-playbook) | 25 | 5.0 | 5д | 0д назад | Vibe coding 时代的 Cloudflare 实战手册——用 AI 写代码，用 Cloudf... |
+| 4 | [agentsmill/age-of-agents](https://github.com/agentsmill/age-of-agents) | 50 | 8.333 | 6д | 0д назад | Age of Agents — watch your AI coding sessions grow... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260620_181831.md](links/ai_trending_links_trending_20260620_181831.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260621_121659.md](links/ai_trending_links_trending_20260621_121659.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -142,9 +145,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [ezBuilder/omnigen-vault](https://github.com/ezBuilder/omnigen-vault) | 25 | 8.333 | 3д | 0д назад | Infinite text-free AI image generator + SQLite-ind... |
+| 1 | [ezBuilder/omnigen-vault](https://github.com/ezBuilder/omnigen-vault) | 25 | 8.333 | 3д | 1д назад | Infinite text-free AI image generator + SQLite-ind... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260620_182015.md](links/free_ai_trending_links_trending_20260620_182015.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260621_121849.md](links/free_ai_trending_links_trending_20260621_121849.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
