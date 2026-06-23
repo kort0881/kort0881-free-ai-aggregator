@@ -114,15 +114,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Johell1NS/browser-search](https://github.com/Johell1NS/browser-search) | 13 | 13.0 | 1д | 0д назад | A skill for AI agents: search the web with SearXNG... |
-| 2 | [ekkoee/thelimitsofmylanguagemeanthelimitsofmyworld](https://github.com/ekkoee/thelimitsofmylanguagemeanthelimitsofmyworld) | 20 | 20.0 | 1д | 0д назад | 免費開源的 Chrome 雙語對照閱讀器：原文一行、中文一行,支援 X / Reddit / You... |
-| 3 | [SulgX/V2X-Panel](https://github.com/SulgX/V2X-Panel) | 14 | 14.0 | 1д | 0д назад | 🚀 V2X Panel: A single-file, powerful, and free pan... |
-| 4 | [TheProductArchitect/appshots](https://github.com/TheProductArchitect/appshots) | 7 | 7.0 | 1д | 0д назад | Free App Store & Google Play screenshot generator ... |
-| 5 | [Env-Kit/envkit-releases](https://github.com/Env-Kit/envkit-releases) | 14 | 7.0 | 2д | 0д назад | EnvKit — free local development environment for Wi... |
-| 6 | [harn3ss/open-infra](https://github.com/harn3ss/open-infra) | 6 | 2.0 | 3д | 0д назад | A free, self-hostable mini-cloud: write one infra.... |
-| 7 | [blueprintparadise/Screex](https://github.com/blueprintparadise/Screex) | 12 | 1.714 | 7д | 0д назад | Screen-recording understanding for agents — turn a... |
+| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 7 | 7.0 | 1д | 0д назад | A single archive of public exploit PoCs and vulner... |
+| 2 | [ekkoee/thelimitsofmylanguagemeanthelimitsofmyworld](https://github.com/ekkoee/thelimitsofmylanguagemeanthelimitsofmyworld) | 21 | 21.0 | 1д | 0д назад | 免費開源的 Chrome 雙語對照閱讀器：原文一行、中文一行,支援 X / Reddit / You... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260622_152844.md](links/free_trending_links_trending_20260622_152844.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260623_124020.md](links/free_trending_links_trending_20260623_124020.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -132,11 +127,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [patibandlavenkatamanideep/memoryops-ai](https://github.com/patibandlavenkatamanideep/memoryops-ai) | 5 | 5.0 | 1д | 0д назад | Enterprise-shaped memory governance layer for AI a... |
-| 2 | [bhoon716/flowness](https://github.com/bhoon716/flowness) | 6 | 2.0 | 3д | 0д назад | Issue-driven AI development operating system and w... |
-| 3 | [brunoflma/jurisprudenciaia-mcp](https://github.com/brunoflma/jurisprudenciaia-mcp) | 6 | 0.857 | 7д | 0д назад | Conector MCP para usar o JurisprudênciaIA no Claud... |
+| 1 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 2.0 | 3д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
+| 2 | [amitpatole/agent-vision](https://github.com/amitpatole/agent-vision) | 5 | 1.25 | 4д | 0д назад | Eyes for AI coding agents 👁️ — render → perceive →... |
+| 3 | [ssamssae/codex-telegram-bridge](https://github.com/ssamssae/codex-telegram-bridge) | 6 | 1.2 | 5д | 0д назад | Run Codex from Telegram. Built to support other te... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260622_153055.md](links/ai_trending_links_trending_20260622_153055.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260623_124226.md](links/ai_trending_links_trending_20260623_124226.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -148,7 +143,7 @@ _Новых проектов за последние 7 дней не найде�
 |---|-------------|----------|-----------|-----------|------------|----------|
 | 1 | [ezBuilder/omnigen-vault](https://github.com/ezBuilder/omnigen-vault) | 26 | 5.2 | 5д | 1д назад | Infinite text-free AI image generator + SQLite-ind... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260622_153241.md](links/free_ai_trending_links_trending_20260622_153241.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260623_124431.md](links/free_ai_trending_links_trending_20260623_124431.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
