@@ -114,13 +114,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 32 | 32.0 | 1д | 0д назад | A single archive of public exploit PoCs and vulner... |
-| 2 | [Johell1NS/browser-search](https://github.com/Johell1NS/browser-search) | 154 | 154.0 | 1д | 0д назад | A skill for AI agents: search the web with SearXNG... |
-| 3 | [Env-Kit/envkit-releases](https://github.com/Env-Kit/envkit-releases) | 42 | 14.0 | 3д | 0д назад | EnvKit — free local development environment for Wi... |
-| 4 | [gl0di/clawseccheck](https://github.com/gl0di/clawseccheck) | 6 | 1.2 | 5д | 0д назад | 🔍 Free, local, read-only security self-audit for y... |
-| 5 | [SantanderAI/genetic-algorithm](https://github.com/SantanderAI/genetic-algorithm) | 27 | 4.5 | 6д | 0д назад | A dependency-free Python genetic-algorithm engine ... |
+| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 45 | 22.5 | 2д | 0д назад | A single archive of public exploit PoCs and vulner... |
+| 2 | [Env-Kit/envkit-releases](https://github.com/Env-Kit/envkit-releases) | 139 | 34.75 | 4д | 0д назад | EnvKit — free local development environment for Wi... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260624_122433.md](links/free_trending_links_trending_20260624_122433.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260625_122806.md](links/free_trending_links_trending_20260625_122806.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -131,12 +128,12 @@ _Новых проектов за последние 7 дней не найде�
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
 | 1 | [LostPigeonWrath/Fortnite-Aim-NewEraAI-Assist](https://github.com/LostPigeonWrath/Fortnite-Aim-NewEraAI-Assist) | 5 | 5.0 | 1д | 0д назад | Advanced Computer Vision & Input Optimization Fram... |
-| 2 | [modelstat/modelstat](https://github.com/modelstat/modelstat) | 9 | 9.0 | 1д | 0д назад | Who let the tokens out!? |
-| 3 | [Mysticchiwharf98/Rust-Quantum-NextGen-Aim-Assist](https://github.com/Mysticchiwharf98/Rust-Quantum-NextGen-Aim-Assist) | 7 | 1.75 | 4д | 0д назад | Rust-Quantum-v2-Next-Gen-AI-Assistant — Advanced A... |
-| 4 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 1.5 | 4д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
-| 5 | [TealWeaponsmith/arc-raiders-fps-optimizer-Ai](https://github.com/TealWeaponsmith/arc-raiders-fps-optimizer-Ai) | 6 | 1.5 | 4д | 0д назад |  # ARCRaidersFPSBooster: Advanced Hardware Tuning ... |
+| 2 | [Mysticchiwharf98/Rust-Quantum-NextGen-Aim-Assist](https://github.com/Mysticchiwharf98/Rust-Quantum-NextGen-Aim-Assist) | 7 | 1.4 | 5д | 0д назад | Rust-Quantum-v2-Next-Gen-AI-Assistant — Advanced A... |
+| 3 | [TealWeaponsmith/arc-raiders-fps-optimizer-Ai](https://github.com/TealWeaponsmith/arc-raiders-fps-optimizer-Ai) | 6 | 1.2 | 5д | 0д назад |  # ARCRaidersFPSBooster: Advanced Hardware Tuning ... |
+| 4 | [humanfia/oh-my-humanize](https://github.com/humanfia/oh-my-humanize) | 27 | 5.4 | 5д | 0д назад | ⌥ AI Coding agent for the terminal — hash-anchored... |
+| 5 | [JJJJJacobbbbb/wenqu](https://github.com/JJJJJacobbbbb/wenqu) | 5 | 0.833 | 6д | 0д назад | 问渠 — 专为大学生设计的桌面学习助手。辅助阅读 PDF/Word 等文档，支持框选内容向 AI 提... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260624_122655.md](links/ai_trending_links_trending_20260624_122655.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260625_123005.md](links/ai_trending_links_trending_20260625_123005.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -146,9 +143,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [ezBuilder/omnigen-vault](https://github.com/ezBuilder/omnigen-vault) | 27 | 4.5 | 6д | 0д назад | Infinite text-free AI image generator + SQLite-ind... |
+| 1 | [ezBuilder/omnigen-vault](https://github.com/ezBuilder/omnigen-vault) | 28 | 4.0 | 7д | 0д назад | Infinite text-free AI image generator + SQLite-ind... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260624_122900.md](links/free_ai_trending_links_trending_20260624_122900.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260625_123150.md](links/free_ai_trending_links_trending_20260625_123150.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
