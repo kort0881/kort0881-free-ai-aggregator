@@ -2,6 +2,7 @@
 """
 Поиск репозиториев GitHub с AI-фильтрацией через Groq API.
 Добавлен поиск trending-репозиториев: молодых, быстро растущих и часто обновляемых.
+Добавлен автоматический перевод описаний на русский язык.
 """
 
 import requests
@@ -11,6 +12,7 @@ import time
 import re
 import subprocess
 import shutil
+import hashlib
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from groq import Groq
@@ -290,6 +292,83 @@ Trending-метрики:
 
     return heuristic_filter(repo_info, config)
 
+# ====================== ПЕРЕВОД ОПИСАНИЙ НА РУССКИЙ ======================
+_translation_cache = {}
+_cache_path = Path("translation_cache.json")
+
+def load_translation_cache():
+    global _translation_cache
+    if _cache_path.exists():
+        try:
+            with open(_cache_path, "r", encoding="utf-8") as f:
+                _translation_cache = json.load(f)
+            print(f"📚 Загружен кэш переводов: {len(_translation_cache)} записей")
+        except Exception as e:
+            print(f"⚠️ Ошибка загрузки кэша переводов: {e}")
+            _translation_cache = {}
+
+def save_translation_cache():
+    try:
+        with open(_cache_path, "w", encoding="utf-8") as f:
+            json.dump(_translation_cache, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"⚠️ Ошибка сохранения кэша переводов: {e}")
+
+def translate_to_russian(text: str, config: dict) -> str:
+    """Переводит текст описания на русский язык с кэшированием."""
+    if not text or not text.strip():
+        return ""
+    
+    # Хэш для кэширования
+    text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
+    if text_hash in _translation_cache:
+        return _translation_cache[text_hash]
+
+    # Попытка перевода через Groq
+    api_key = os.getenv("MODELS_ROUTER")
+    if not api_key:
+        print("⚠️ MODELS_ROUTER не задан — пропуск перевода.")
+        return text
+
+    ai_config = config.get("ai_filter", {})
+    models_to_try = [
+        ai_config.get("model", "llama-3.3-70b-versatile"),
+        "llama-4-scout-17b-16e-instruct",
+        "mixtral-8x7b-32768"
+    ]
+
+    prompt = f"""Переведи следующее описание репозитория GitHub на русский язык кратко и точно. 
+Не добавляй комментарии, только перевод.
+
+Оригинал: "{text}"
+
+Перевод:"""
+
+    for model in models_to_try:
+        try:
+            client = Groq(api_key=api_key)
+            chat_completion = client.chat.completions.create(
+                messages=[
+                    {"role": "system", "content": "Ты — профессиональный технический переводчик."},
+                    {"role": "user", "content": prompt},
+                ],
+                model=model,
+                temperature=0.1,
+                max_tokens=200,
+            )
+            translation = chat_completion.choices[0].message.content.strip()
+            # Очищаем лишние кавычки или форматирование
+            translation = re.sub(r'^[""""]+|[""""]+$', '', translation)
+            _translation_cache[text_hash] = translation
+            save_translation_cache()
+            return translation
+        except Exception as e:
+            print(f"⚠️ Ошибка перевода модели {model}: {e}")
+            continue
+
+    # Если все модели упали — возвращаем оригинал
+    return text
+
 # ====================== СОХРАНЕНИЕ ======================
 def save_json(trigger_name: str, repos: list, out_folder: str, analysis=None) -> str:
     os.makedirs(out_folder, exist_ok=True)
@@ -308,7 +387,7 @@ def save_json(trigger_name: str, repos: list, out_folder: str, analysis=None) ->
     return path
 
 def generate_markdown_links(trigger_name: str, repos: list, out_folder: str = "links",
-                             suffix: str = "filtered", trending_mode: bool = False) -> str | None:
+                             suffix: str = "filtered", trending_mode: bool = False, config: dict = None) -> str | None:
     if not repos:
         return None
     os.makedirs(out_folder, exist_ok=True)
@@ -325,7 +404,15 @@ def generate_markdown_links(trigger_name: str, repos: list, out_folder: str = "l
             m = repo.get("metrics", {})
             created = repo.get("created_at", "")[:10]
             updated = repo.get("updated_at", "")[:10]
-            desc = repo["description"][:100] if repo["description"] else ""
+            
+            # Переводим описание
+            raw_desc = repo["description"] or ""
+            if config:
+                translated_desc = translate_to_russian(raw_desc, config)
+            else:
+                translated_desc = raw_desc
+            desc = translated_desc[:100] if translated_desc else ""
+            
             f.write(f"| {idx} | [{repo['name']}]({repo['url']}) | {repo['stars']} | {created} | {updated} | {desc} |\n")
     print(f"🔗 Markdown: {path}")
     return path
@@ -359,7 +446,7 @@ def rotate_archives(links_folder: str = "links", keep_days: int = 7):
                 print(f"📦 Архив: {f.name} → archive/")
 
 def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md",
-                  trending_mode: bool = False, max_days_in_readme: int = 7):
+                  trending_mode: bool = False, max_days_in_readme: int = 7, config: dict = None):
     """
     Обновляет README, показывая только проекты младше max_days_in_readme дней.
     Добавляет нумерацию и русские заголовки.
@@ -389,7 +476,15 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
             for idx, repo in enumerate(fresh_repos[:15], start=1):
                 m = repo.get("metrics", {})
                 url, name = repo["url"], repo["name"]
-                desc = (repo["description"][:50] + "...") if len(repo["description"]) > 50 else repo["description"]
+                
+                # Переводим описание
+                raw_desc = repo["description"] or ""
+                if config:
+                    translated_desc = translate_to_russian(raw_desc, config)
+                else:
+                    translated_desc = raw_desc
+                desc = (translated_desc[:50] + "...") if len(translated_desc) > 50 else translated_desc
+                
                 table += (f"| {idx} | [{name}]({url}) | {repo['stars']} | {m.get('stars_per_day','?')} "
                           f"| {m.get('age_days','?')}д | {m.get('days_since_update','?')}д назад | {desc} |\n")
         else:
@@ -398,7 +493,15 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
             table += "|---|-------------|----------|----------|\n"
             for idx, repo in enumerate(fresh_repos[:15], start=1):
                 url, name = repo["url"], repo["name"]
-                desc = (repo["description"][:60] + "...") if len(repo["description"]) > 60 else repo["description"]
+                
+                # Переводим описание
+                raw_desc = repo["description"] or ""
+                if config:
+                    translated_desc = translate_to_russian(raw_desc, config)
+                else:
+                    translated_desc = raw_desc
+                desc = (translated_desc[:60] + "...") if len(translated_desc) > 60 else translated_desc
+                
                 table += f"| {idx} | [{name}]({url}) | {repo['stars']} | {desc} |\n"
 
         if len(fresh_repos) > 15:
@@ -480,10 +583,10 @@ def process_trigger(trigger: dict, config: dict):
         save_json(name, repos, out_folder, analysis_results)
         if filtered:
             save_json(f"{name}_filtered", filtered, filtered_folder)
-            generate_markdown_links(name, filtered, links_folder, suffix="filtered")
+            generate_markdown_links(name, filtered, links_folder, suffix="filtered", config=config)
             # Обновляем README с фильтром по дате
             max_days = config.get("readme", {}).get("max_days_to_show", 7)
-            update_readme(name, filtered, trending_mode=False, max_days_in_readme=max_days)
+            update_readme(name, filtered, trending_mode=False, max_days_in_readme=max_days, config=config)
         print(f"📊 Обычный итог: {len(filtered)} / {len(repos)}")
 
     # --- Trending поиск (молодые + быстро растущие) ---
@@ -509,12 +612,15 @@ def process_trigger(trigger: dict, config: dict):
         if trend_filtered:
             save_json(f"{trend_name}_filtered", trend_filtered, filtered_folder)
             generate_markdown_links(trend_name, trend_filtered, links_folder,
-                                    suffix="trending", trending_mode=True)
+                                    suffix="trending", trending_mode=True, config=config)
             max_days = config.get("readme", {}).get("max_days_to_show", 7)
-            update_readme(trend_name, trend_filtered, trending_mode=True, max_days_in_readme=max_days)
+            update_readme(trend_name, trend_filtered, trending_mode=True, max_days_in_readme=max_days, config=config)
         print(f"📊 Trending итог: {len(trend_filtered)} / {len(trending_repos)}")
 
 def main():
+    # Загружаем кэш переводов
+    load_translation_cache()
+    
     config = load_config()
     for trigger in config["triggers"]:
         process_trigger(trigger, config)
