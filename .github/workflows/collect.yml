@@ -49,7 +49,6 @@ jobs:
             echo "Первые 10 символов: ${MODELS_ROUTER:0:10}"
             echo "Последние 4 символа: ${MODELS_ROUTER: -4}"
             
-            # Проверяем формат ключа Groq
             if [[ "$MODELS_ROUTER" == gsk_* ]]; then
               echo "✅ Формат ключа правильный (начинается с gsk_)"
             else
@@ -81,4 +80,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Автообновление списков репозиториев [auto]"
-          file_pattern: "README.md links/*.md data/**/*.json"
+          file_pattern: "README.md links/*.md data/**/*.json translation_cache.json"
