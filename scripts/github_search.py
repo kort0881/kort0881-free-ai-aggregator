@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 Поиск репозиториев GitHub с AI-фильтрацией через Groq API.
-Добавлен поиск trending-репозиториев: молодых, быстро растущих и часто обновляемых.
-Добавлен автоматический перевод описаний на русский язык.
+Trending-репозитории + автоматический перевод описаний на русский (батчами для экономии токенов).
 """
 
 import requests
@@ -25,37 +24,22 @@ def load_config():
     with open(config_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
-# ====================== ВЫЧИСЛЕНИЕ TRENDING-МЕТРИК ======================
+# ====================== TRENDING-МЕТРИКИ ======================
 def compute_trending_metrics(repo: dict) -> dict:
-    """
-    Возвращает метрики роста для репозитория:
-    - age_days: возраст в днях
-    - stars_per_day: звёзд в день с момента создания
-    - stars_per_week: звёзд в неделю
-    - days_since_update: дней с последнего обновления
-    - trending_score: итоговый скор 0-100
-    """
     now = datetime.now(timezone.utc)
-
     created = datetime.fromisoformat(repo["created_at"].replace("Z", "+00:00"))
     updated = datetime.fromisoformat(repo["updated_at"].replace("Z", "+00:00"))
-
     age_days = max((now - created).days, 1)
     days_since_update = (now - updated).days
-
     stars = repo.get("stars", 0)
     forks = repo.get("forks", 0)
-
     stars_per_day = stars / age_days
     stars_per_week = stars_per_day * 7
-
     youth_bonus = max(0, 365 - age_days) / 365 * 30
     growth_score = min(stars_per_day * 10, 40)
     activity_score = max(0, 20 - days_since_update)
     fork_score = min(forks / max(stars, 1) * 10, 10)
-
     trending_score = youth_bonus + growth_score + activity_score + fork_score
-
     return {
         "age_days": age_days,
         "stars_per_day": round(stars_per_day, 3),
@@ -77,7 +61,6 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False) -
 
     gh_config = config["github"]
     trend_config = config.get("trending", {})
-
     min_stars = gh_config.get("min_stars", 0)
     filter_readme = gh_config.get("filter_has_readme", False)
     languages = gh_config.get("languages", [])
@@ -105,44 +88,33 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False) -
         print(f"🔥 Trending-режим: репо моложе {max_age_days} дней, min_stars={trending_min_stars}")
 
     full_query = " ".join(parts)
-    params = {
-        "q": full_query,
-        "sort": sort_by,
-        "order": order,
-        "per_page": min(gh_config.get("per_page", 30), 100),
-    }
+    params = {"q": full_query, "sort": sort_by, "order": order,
+              "per_page": min(gh_config.get("per_page", 30), 100)}
     print(f"🔍 Поиск: {full_query}")
 
     repos = []
     try:
-        response = requests.get(
-            "https://api.github.com/search/repositories",
-            headers=headers, params=params, timeout=30
-        )
+        response = requests.get("https://api.github.com/search/repositories",
+                                headers=headers, params=params, timeout=30)
         response.raise_for_status()
         data = response.json()
         print(f"ℹ️ Всего доступно: {data.get('total_count', 0)}")
         for item in data.get("items", []):
             repo = {
-                "name": item["full_name"],
-                "url": item["html_url"],
+                "name": item["full_name"], "url": item["html_url"],
                 "description": item.get("description") or "",
-                "stars": item["stargazers_count"],
-                "forks": item["forks_count"],
+                "stars": item["stargazers_count"], "forks": item["forks_count"],
                 "language": item.get("language") or "N/A",
                 "license": item["license"]["key"] if item.get("license") else "none",
-                "updated_at": item["updated_at"],
-                "created_at": item["created_at"],
+                "updated_at": item["updated_at"], "created_at": item["created_at"],
                 "open_issues": item.get("open_issues_count", 0),
                 "watchers": item.get("watchers_count", 0),
             }
             repo["metrics"] = compute_trending_metrics(repo)
             repos.append(repo)
-
         print(f"✅ Найдено: {len(repos)}")
     except Exception as e:
         print(f"❌ Ошибка поиска: {e}")
-
     return repos
 
 # ====================== РАНЖИРОВАНИЕ TRENDING ======================
@@ -157,7 +129,6 @@ def rank_trending(repos: list, config: dict) -> list:
     for repo in repos:
         m = repo.get("metrics", {})
         reasons_skip = []
-
         if m.get("age_days", 9999) > max_age_days:
             reasons_skip.append(f"слишком старый ({m['age_days']} дней)")
         if m.get("stars_per_day", 0) < min_stars_per_day:
@@ -166,7 +137,6 @@ def rank_trending(repos: list, config: dict) -> list:
             reasons_skip.append(f"давно не обновлялся ({m['days_since_update']} дней)")
         if m.get("trending_score", 0) < min_trending_score:
             reasons_skip.append(f"низкий trending_score ({m['trending_score']})")
-
         if reasons_skip:
             print(f"  ⏭ {repo['name']}: {'; '.join(reasons_skip)}")
         else:
@@ -180,32 +150,48 @@ def heuristic_filter(repo_info: dict, config: dict) -> dict:
     ai_config = config.get("ai_filter", {})
     spam_keywords = ai_config.get("spam_keywords", [])
     min_score = ai_config.get("min_quality_score", 6)
-
     desc_lower = repo_info["description"].lower()
     for kw in spam_keywords:
         if kw.lower() in desc_lower:
             return {"is_spam": True, "reason": f"Спам: {kw}", "quality_score": 0}
-
     updated = datetime.fromisoformat(repo_info["updated_at"].replace("Z", "+00:00"))
     days_old = (datetime.now(updated.tzinfo) - updated).days
     if days_old > 1095:
         return {"is_spam": True, "reason": f"Устарел: {days_old} дней", "quality_score": 2}
-
     reason_checks = []
     if repo_info["license"] == "none":
         reason_checks.append("нет лицензии")
-
     created = datetime.fromisoformat(repo_info["created_at"].replace("Z", "+00:00"))
     days_since = (datetime.now(created.tzinfo) - created).days
     stars_per_month = (repo_info["stars"] / days_since) * 30 if days_since > 0 else 0
     if stars_per_month < 1 and repo_info["stars"] < 100:
         reason_checks.append("низкая популярность")
-
     quality_score = max(0, 10 - len(reason_checks) * 2 - days_old // 365)
     if quality_score < min_score:
         return {"is_spam": True, "reason": f"Низкое качество: {', '.join(reason_checks)}", "quality_score": quality_score}
-
     return {"is_spam": False, "reason": "OK", "quality_score": quality_score}
+
+# ====================== КЭШ AI-ФИЛЬТРА ======================
+_ai_filter_cache = {}
+_ai_cache_path = Path("ai_filter_cache.json")
+
+def load_ai_filter_cache():
+    global _ai_filter_cache
+    if _ai_cache_path.exists():
+        try:
+            with open(_ai_cache_path, "r", encoding="utf-8") as f:
+                _ai_filter_cache = json.load(f)
+            print(f"🧠 Загружен кэш AI-фильтра: {len(_ai_filter_cache)} записей")
+        except Exception as e:
+            print(f"⚠️ Ошибка загрузки кэша AI-фильтра: {e}")
+            _ai_filter_cache = {}
+
+def save_ai_filter_cache():
+    try:
+        with open(_ai_cache_path, "w", encoding="utf-8") as f:
+            json.dump(_ai_filter_cache, f, ensure_ascii=False, indent=2)
+    except Exception as e:
+        print(f"⚠️ Ошибка сохранения кэша AI-фильтра: {e}")
 
 # ====================== AI ФИЛЬТР (GROQ) ======================
 def call_ai_filter(repo_info: dict, config: dict, trending_mode: bool = False) -> dict:
@@ -213,12 +199,19 @@ def call_ai_filter(repo_info: dict, config: dict, trending_mode: bool = False) -
     if not ai_config.get("enabled", False):
         return {"is_spam": False, "reason": "AI отключён", "quality_score": 10}
 
+    # Проверяем кэш по хэшу описания
+    cache_key = hashlib.md5(f"{repo_info['name']}|{repo_info['description']}".encode()).hexdigest()
+    if cache_key in _ai_filter_cache:
+        cached = _ai_filter_cache[cache_key]
+        print(f"🧠 AI-фильтр из кэша для {repo_info['name']}: spam={cached.get('is_spam')}")
+        return cached
+
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         print("⚠️ MODELS_ROUTER не задан, используется эвристика.")
         return heuristic_filter(repo_info, config)
 
-    time.sleep(ai_config.get("rate_limit_delay", 2.0))
+    time.sleep(ai_config.get("rate_limit_delay", 1.0))
 
     m = repo_info.get("metrics", {})
     trending_block = ""
@@ -227,69 +220,66 @@ def call_ai_filter(repo_info: dict, config: dict, trending_mode: bool = False) -
 Trending-метрики:
 - Возраст: {m.get('age_days', '?')} дней
 - Звёзд/день: {m.get('stars_per_day', '?')}
-- Звёзд/неделю: {m.get('stars_per_week', '?')}
 - Дней без обновления: {m.get('days_since_update', '?')}
 - Trending score: {m.get('trending_score', '?')}
-Дополнительный критерий: репозиторий молодой, но БЫСТРО РАСТЁТ. Это не спам, если он активно развивается и полезен сообществу.
+Критерий: репозиторий молодой, но БЫСТРО РАСТЁТ. Это не спам, если он активно развивается.
 """
 
-    prompt = f"""Ты эксперт по GitHub. Оцени репозиторий строго по критериям:
-Данные:
+    prompt = f"""Оцени репозиторий. Данные:
 - Название: {repo_info['name']}
 - Описание: {repo_info['description']}
-- Звёзды: {repo_info['stars']}
-- Форки: {repo_info['forks']}
-- Язык: {repo_info['language']}
-- Лицензия: {repo_info['license']}
-- Обновлён: {repo_info['updated_at']}
-- Создан: {repo_info['created_at']}
+- Звёзды: {repo_info['stars']}, Форки: {repo_info['forks']}
+- Язык: {repo_info['language']}, Лицензия: {repo_info['license']}
+- Обновлён: {repo_info['updated_at']}, Создан: {repo_info['created_at']}
 {trending_block}
-Критерии мусора: крипта/скам, пустые репо, устаревшие (>3 лет), накрутка звёзд, не по теме, adult-контент, только бинарники.
+Мусор: крипта/скам, пустые репо, устаревшие (>3 лет), накрутка, adult, только бинарники.
+Ответь ТОЛЬКО JSON: {{"is_spam": true/false, "reason": "кратко", "quality_score": 0-10}}"""
 
-Ответь ТОЛЬКО JSON: {{"is_spam": true/false, "reason": "краткая причина", "quality_score": число 0-10}}"""
-
-    models_to_try = [
-        "llama-3.3-70b-versatile",
-        "qwen/qwen3-32b",
-        "llama-3.1-8b-instant",
-        "meta-llama/llama-4-scout-17b-16e-instruct",
-    ]
+    # Используем САМУЮ ДЕШЁВУЮ модель — llama-3.1-8b-instant
+    # Она быстрее и дешевле, чем 70b
+    models_to_try = ["llama-3.1-8b-instant", "llama-3.3-70b-versatile"]
 
     for model in models_to_try:
         try:
             client = Groq(api_key=api_key)
             chat_completion = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "Ты строгий эксперт. Отвечай только JSON."},
+                    {"role": "system", "content": "Отвечай только JSON."},
                     {"role": "user", "content": prompt},
                 ],
                 model=model,
                 temperature=0.2,
-                max_tokens=500,
+                max_tokens=200,
             )
             raw = chat_completion.choices[0].message.content.strip().strip("`")
             if raw.startswith("json"):
                 raw = raw[4:].strip()
             analysis = json.loads(raw)
-            print(f"✅ AI-фильтр ({model}) для {repo_info['name']}: spam={analysis.get('is_spam')}")
-            return {
+            result = {
                 "is_spam": analysis.get("is_spam", False),
                 "reason": analysis.get("reason", "—"),
                 "quality_score": analysis.get("quality_score", 5),
             }
+            # Сохраняем в кэш
+            _ai_filter_cache[cache_key] = result
+            save_ai_filter_cache()
+            print(f"✅ AI-фильтр ({model}) для {repo_info['name']}: spam={result['is_spam']}")
+            return result
         except Exception as e:
             error_msg = str(e)
-            if "model_permission_blocked_project" in error_msg:
-                print(f"⚠️ Модель {model} заблокирована для {repo_info['name']}")
+            if "rate_limit_exceeded" in error_msg:
+                print(f"⚠️ Rate limit для {model}, пробуем следующую")
+            elif "model_permission_blocked_project" in error_msg:
+                print(f"⚠️ Модель {model} заблокирована")
             elif "model_not_found" in error_msg:
-                print(f"⚠️ Модель {model} не найдена для {repo_info['name']}")
+                print(f"⚠️ Модель {model} не найдена")
             else:
                 print(f"⚠️ Модель {model} — ошибка для {repo_info['name']}: {e}")
             continue
 
     return heuristic_filter(repo_info, config)
 
-# ====================== ПЕРЕВОД ОПИСАНИЙ НА РУССКИЙ ======================
+# ====================== ПЕРЕВОД ОПИСАНИЙ (БАТЧАМИ!) ======================
 _translation_cache = {}
 _cache_path = Path("translation_cache.json")
 
@@ -312,113 +302,188 @@ def save_translation_cache():
         print(f"⚠️ Ошибка сохранения кэша переводов: {e}")
 
 def _clean_translation(text: str) -> str:
-    """Очищает перевод от тегов  и прочего мусора."""
+    """Очищает перевод от  и мусора."""
     if not text:
         return ""
-    # Удаляем теги  со всем содержимым
+    # Удаляем  ... 
     text = re.sub(r'[\s\S]*?', '', text, flags=re.IGNORECASE)
-    # Удаляем теги  и 
+    # Удаляем  ... 
     text = re.sub(r'[\s\S]*?', '', text, flags=re.IGNORECASE)
     # Удаляем одиночные теги
     text = re.sub(r'</?think>', '', text, flags=re.IGNORECASE)
-    # Удаляем лишние кавычки по краям
-    text = re.sub(r'^[""""\s]+|[""""\s]+$', '', text)
-    # Удаляем префиксы типа "Перевод:", "Translation:" и т.д.
+    # Удаляем префиксы "Перевод:", "Translation:" и т.д.
     text = re.sub(r'^(перевод|translation|ответ|ответ:|перевод:)\s*[:\-]?\s*', '', text, flags=re.IGNORECASE)
+    # Удаляем кавычки по краям
+    text = re.sub(r'^[""""\s]+|[""""\s]+$', '', text)
     return text.strip()
 
-def translate_to_russian(text: str, config: dict) -> str:
-    """Переводит текст описания на русский язык с кэшированием."""
-    if not text or not text.strip():
-        return ""
-    
-    # Хэш для кэширования
-    text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
-    if text_hash in _translation_cache:
-        cached = _translation_cache[text_hash]
-        # Проверяем, что в кэше не сохранены рассуждения
-        if "" not in cached and "хорошо, мне нужно" not in cached.lower():
-            return cached
-    
+def _translate_batch(texts: list, config: dict) -> dict:
+    """Переводит батч текстов за ОДИН запрос. Возвращает dict {оригинал: перевод}."""
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
-        print("⚠️ MODELS_ROUTER не задан — пропуск перевода.")
-        return text
+        return {}
+
+    # Формируем нумерованный список для перевода
+    numbered_list = "\n".join([f"{i+1}. {t}" for i, t in enumerate(texts)])
     
-    # СНАЧАЛА Llama — она НЕ использует режим рассуждений
-    # Потом Qwen как запасной вариант (с очисткой)
+    prompt = f"""Переведи каждое описание ниже на русский язык.
+ПРАВИЛА:
+1. Верни ТОЛЬКО переводы, по одному на строку.
+2. Формат ответа: номер. перевод (например: "1. Платформа для...")
+3. НЕ добавляй рассуждения, комментарии, теги  или префиксы.
+4. Если описание уже на русском — оставь как есть.
+
+Описания для перевода:
+{numbered_list}
+
+Переводы (только результат):"""
+
+    # СНАЧАЛА llama-3.1-8b-instant — самая дешёвая и быстрая, БЕЗ 
+    # Потом llama-3.3-70b-versatile — если первая недоступна
+    # В конце Qwen — как крайний случай
     models_to_try = [
-        "llama-3.3-70b-versatile",
         "llama-3.1-8b-instant",
+        "llama-3.3-70b-versatile",
         "qwen/qwen3-32b",
-        "qwen/qwen3.6-27b",
-        "meta-llama/llama-4-scout-17b-16e-instruct",
     ]
-
-    prompt = f"""Переведи следующее описание репозитория GitHub на русский язык.
-
-ВАЖНЫЕ ПРАВИЛА:
-1. Верни ТОЛЬКО готовый перевод текста.
-2. НЕ добавляй никаких рассуждений, комментариев, объяснений.
-3. НЕ используй теги  или любые другие теги.
-4. НЕ пиши "Перевод:" или любые другие префиксы.
-5. Просто верни переведённый текст — ничего больше.
-
-Оригинал: "{text}"
-
-Перевод (только результат, без рассуждений):"""
 
     for model in models_to_try:
         try:
             client = Groq(api_key=api_key)
-            
-            # Пытаемся отключить режим рассуждений для Qwen
-            extra_kwargs = {}
-            if "qwen" in model.lower():
-                extra_kwargs["extra_body"] = {"enable_thinking": False}
-            
             chat_completion = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "Ты — профессиональный технический переводчик. Возвращай ТОЛЬКО переведённый текст. Никаких рассуждений, комментариев, тегов  или префиксов. Просто переведённый текст."},
+                    {"role": "system", "content": "Ты переводчик. Возвращай ТОЛЬКО переведённый текст. Никаких рассуждений, тегов  или комментариев."},
                     {"role": "user", "content": prompt},
                 ],
                 model=model,
                 temperature=0.1,
-                max_tokens=200,
-                **extra_kwargs,
+                max_tokens=500,
             )
-            translation = chat_completion.choices[0].message.content.strip()
+            raw_response = chat_completion.choices[0].message.content.strip()
             
-            # Очищаем от тегов  и прочего мусора
-            translation = _clean_translation(translation)
+            # Очищаем от 
+            raw_response = _clean_translation(raw_response)
             
-            # Проверяем, что после очистки остался осмысленный текст
-            if not translation or len(translation) < 3:
-                print(f"⚠️ Модель {model} вернула пустой перевод после очистки")
+            if not raw_response:
+                print(f"⚠️ Модель {model} вернула пустой ответ")
                 continue
             
-            # Проверяем, что это не рассуждения
-            lower_translation = translation.lower()
-            if "хорошо, мне нужно" in lower_translation or "давайте" in lower_translation and "перевести" in lower_translation:
-                print(f"⚠️ Модель {model} вернула рассуждения вместо перевода, пропускаем")
-                continue
+            # Парсим ответ: ищем строки вида "1. текст"
+            translations = {}
+            lines = raw_response.split("\n")
+            current_idx = 0
+            current_text = ""
             
-            _translation_cache[text_hash] = translation
-            save_translation_cache()
-            print(f"✅ Перевод успешен через {model}: {text[:40]}... → {translation[:40]}...")
-            return translation
+            for line in lines:
+                line = line.strip()
+                if not line:
+                    continue
+                # Проверяем, начинается ли с "число."
+                match = re.match(r'^(\d+)\.\s*(.*)$', line)
+                if match:
+                    # Сохраняем предыдущий текст
+                    if current_idx > 0 and current_text and current_idx <= len(texts):
+                        translations[texts[current_idx - 1]] = current_text.strip()
+                    current_idx = int(match.group(1))
+                    current_text = match.group(2)
+                else:
+                    # Продолжение предыдущего перевода
+                    if current_idx > 0:
+                        current_text += " " + line
+            
+            # Сохраняем последний
+            if current_idx > 0 and current_text and current_idx <= len(texts):
+                translations[texts[current_idx - 1]] = current_text.strip()
+            
+            # Проверяем, что все переведено
+            if len(translations) >= len(texts) * 0.8:  # 80% достаточно
+                print(f"✅ Батч-перевод успешен через {model}: {len(translations)}/{len(texts)} описаний")
+                return translations
+            else:
+                print(f"⚠️ Модель {model} перевела только {len(translations)}/{len(texts)}, пробуем следующую")
+                continue
+                
         except Exception as e:
             error_msg = str(e)
-            if "model_permission_blocked_project" in error_msg:
-                print(f"⚠️ Модель {model} заблокирована на уровне проекта")
+            if "rate_limit_exceeded" in error_msg:
+                print(f"⚠️ Rate limit для {model}, пробуем следующую")
+            elif "model_permission_blocked_project" in error_msg:
+                print(f"⚠️ Модель {model} заблокирована")
             elif "model_not_found" in error_msg:
                 print(f"⚠️ Модель {model} не найдена")
             else:
-                print(f"⚠️ Ошибка перевода модели {model}: {e}")
+                print(f"⚠️ Ошибка батч-перевода ({model}): {e}")
             continue
 
-    print("❌ Все модели перевода недоступны, возвращаем оригинал")
-    return text
+    return {}
+
+def translate_to_russian(text: str, config: dict) -> str:
+    """Переводит одно описание. Сначала проверяет кэш."""
+    if not text or not text.strip():
+        return ""
+    
+    text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
+    if text_hash in _translation_cache:
+        cached = _translation_cache[text_hash]
+        # Проверяем, что в кэше не рассуждения
+        if "" not in cached and "хорошо, мне нужно" not in cached.lower():
+            return cached
+    return text  # Вернём оригинал, если не в кэше — батч-перевод добавит позже
+
+def batch_translate_descriptions(repos: list, config: dict):
+    """Переводит описания всех репо батчами по 5 штук. Модифицирует repo['description_ru']."""
+    api_key = os.getenv("MODELS_ROUTER")
+    if not api_key:
+        print("⚠️ MODELS_ROUTER не задан — пропуск перевода.")
+        for repo in repos:
+            repo["description_ru"] = repo["description"]
+        return
+    
+    # Собираем тексты, которых нет в кэше
+    to_translate = []
+    for repo in repos:
+        text = repo.get("description", "") or ""
+        if not text.strip():
+            repo["description_ru"] = ""
+            continue
+        text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
+        if text_hash in _translation_cache:
+            cached = _translation_cache[text_hash]
+            if "" not in cached and "хорошо, мне нужно" not in cached.lower():
+                repo["description_ru"] = cached
+                continue
+        to_translate.append((repo, text))
+    
+    if not to_translate:
+        print(f"✅ Все {len(repos)} описаний уже в кэше")
+        return
+    
+    print(f"🌐 Нужно перевести {len(to_translate)} описаний батчами по 5...")
+    
+    # Переводим батчами по 5
+    batch_size = 5
+    for i in range(0, len(to_translate), batch_size):
+        batch = to_translate[i:i + batch_size]
+        texts = [t for _, t in batch]
+        
+        # Задержка между батчами для rate limit
+        if i > 0:
+            time.sleep(1.0)
+        
+        translations = _translate_batch(texts, config)
+        
+        # Сохраняем результаты
+        for repo, text in batch:
+            if text in translations:
+                translation = translations[text]
+                text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
+                _translation_cache[text_hash] = translation
+                repo["description_ru"] = translation
+            else:
+                repo["description_ru"] = text  # fallback на оригинал
+    
+    save_translation_cache()
+    print(f"✅ Переведено {len(to_translate)} описаний")
 
 # ====================== СОХРАНЕНИЕ ======================
 def save_json(trigger_name: str, repos: list, out_folder: str, analysis=None) -> str:
@@ -428,10 +493,8 @@ def save_json(trigger_name: str, repos: list, out_folder: str, analysis=None) ->
     path = f"{out_folder}/{safe}_{timestamp}.json"
     with open(path, "w", encoding="utf-8") as f:
         json.dump({
-            "trigger": trigger_name,
-            "collected_at": timestamp,
-            "total_repos": len(repos),
-            "repositories": repos,
+            "trigger": trigger_name, "collected_at": timestamp,
+            "total_repos": len(repos), "repositories": repos,
             "analysis": analysis or [],
         }, f, ensure_ascii=False, indent=2)
     print(f"💾 JSON: {path}")
@@ -454,35 +517,24 @@ def generate_markdown_links(trigger_name: str, repos: list, out_folder: str = "l
         for idx, repo in enumerate(repos, start=1):
             created = repo.get("created_at", "")[:10]
             updated = repo.get("updated_at", "")[:10]
-            
-            # Переводим описание
-            raw_desc = repo["description"] or ""
-            if config:
-                translated_desc = translate_to_russian(raw_desc, config)
-            else:
-                translated_desc = raw_desc
-            desc = translated_desc[:100] if translated_desc else ""
-            
+            # Берём русский перевод, если есть
+            desc = repo.get("description_ru") or repo.get("description", "") or ""
+            desc = desc[:100] if desc else ""
             f.write(f"| {idx} | [{repo['name']}]({repo['url']}) | {repo['stars']} | {created} | {updated} | {desc} |\n")
     print(f"🔗 Markdown: {path}")
     return path
 
-# ====================== ОБНОВЛЕНИЕ README И АРХИВИРОВАНИЕ ======================
+# ====================== README И АРХИВИРОВАНИЕ ======================
 def get_latest_archive_link(trigger_name: str, links_folder: str = "links") -> str | None:
     pattern = re.compile(rf"{re.escape(trigger_name)}.*\.md")
-    files = []
-    for f in Path(links_folder).glob("*.md"):
-        if pattern.match(f.name):
-            files.append(f)
+    files = [f for f in Path(links_folder).glob("*.md") if pattern.match(f.name)]
     if not files:
         return None
-    latest = max(files, key=lambda p: p.stat().st_mtime)
-    return str(latest)
+    return str(max(files, key=lambda p: p.stat().st_mtime))
 
 def rotate_archives(links_folder: str = "links", keep_days: int = 7):
     archive_dir = Path(links_folder) / "archive"
     archive_dir.mkdir(exist_ok=True)
-
     now = datetime.now(timezone.utc)
     for f in Path(links_folder).glob("*.md"):
         match = re.search(r'(\d{8})', f.name)
@@ -496,7 +548,6 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
                   trending_mode: bool = False, max_days_in_readme: int = 7, config: dict = None):
     if not repos:
         return
-
     now = datetime.now(timezone.utc)
     fresh_repos = []
     for repo in repos:
@@ -516,14 +567,8 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
             for idx, repo in enumerate(fresh_repos[:15], start=1):
                 m = repo.get("metrics", {})
                 url, name = repo["url"], repo["name"]
-                
-                raw_desc = repo["description"] or ""
-                if config:
-                    translated_desc = translate_to_russian(raw_desc, config)
-                else:
-                    translated_desc = raw_desc
-                desc = (translated_desc[:50] + "...") if len(translated_desc) > 50 else translated_desc
-                
+                desc = repo.get("description_ru") or repo.get("description", "") or ""
+                desc = (desc[:50] + "...") if len(desc) > 50 else desc
                 table += (f"| {idx} | [{name}]({url}) | {repo['stars']} | {m.get('stars_per_day','?')} "
                           f"| {m.get('age_days','?')}д | {m.get('days_since_update','?')}д назад | {desc} |\n")
         else:
@@ -532,23 +577,15 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
             table += "|---|-------------|----------|----------|\n"
             for idx, repo in enumerate(fresh_repos[:15], start=1):
                 url, name = repo["url"], repo["name"]
-                
-                raw_desc = repo["description"] or ""
-                if config:
-                    translated_desc = translate_to_russian(raw_desc, config)
-                else:
-                    translated_desc = raw_desc
-                desc = (translated_desc[:60] + "...") if len(translated_desc) > 60 else translated_desc
-                
+                desc = repo.get("description_ru") or repo.get("description", "") or ""
+                desc = (desc[:60] + "...") if len(desc) > 60 else desc
                 table += f"| {idx} | [{name}]({url}) | {repo['stars']} | {desc} |\n"
 
         if len(fresh_repos) > 15:
             table += f"\n*... и ещё {len(fresh_repos) - 15} новых проектов. Полный архив — см. ниже.*\n"
-
         archive_link = get_latest_archive_link(trigger_name)
         if archive_link:
             table += f"\n📦 **Архив всех проектов**: [{archive_link}]({archive_link})\n"
-
         block = header + table + "\n"
 
     marker_key = trigger_name.upper().replace(" ", "_")
@@ -616,6 +653,11 @@ def process_trigger(trigger: dict, config: dict):
             analysis_results.append({"repo": repo["name"], **analysis})
             if not analysis["is_spam"]:
                 filtered.append(repo)
+        
+        # БАТЧ-ПЕРЕВОД для отфильтрованных
+        if filtered:
+            batch_translate_descriptions(filtered, config)
+        
         save_json(name, repos, out_folder, analysis_results)
         if filtered:
             save_json(f"{name}_filtered", filtered, filtered_folder)
@@ -629,7 +671,6 @@ def process_trigger(trigger: dict, config: dict):
     if trend_config.get("enabled", False):
         print(f"\n{'='*60}\n🔥 {name} [trending]\n{'='*60}")
         trending_repos = search_github_repos(query, config, trending_mode=True)
-
         ranked = rank_trending(trending_repos, config)
         print(f"📈 После trending-фильтра: {len(ranked)} / {len(trending_repos)}")
 
@@ -639,6 +680,10 @@ def process_trigger(trigger: dict, config: dict):
             trend_analysis.append({"repo": repo["name"], **analysis})
             if not analysis["is_spam"]:
                 trend_filtered.append(repo)
+
+        # БАТЧ-ПЕРЕВОД для отфильтрованных
+        if trend_filtered:
+            batch_translate_descriptions(trend_filtered, config)
 
         trend_name = f"{name}_trending"
         save_json(trend_name, trending_repos, out_folder, trend_analysis)
@@ -652,6 +697,7 @@ def process_trigger(trigger: dict, config: dict):
 
 def main():
     load_translation_cache()
+    load_ai_filter_cache()
     
     config = load_config()
     for trigger in config["triggers"]:
@@ -660,7 +706,7 @@ def main():
     max_days = config.get("readme", {}).get("max_days_to_show", 7)
     rotate_archives(links_folder="links", keep_days=max_days)
 
-    commit_and_push(["README.md", "links/", "translation_cache.json"])
+    commit_and_push(["README.md", "links/", "translation_cache.json", "ai_filter_cache.json"])
     print("\n🎉 Готово!")
 
 if __name__ == "__main__":
