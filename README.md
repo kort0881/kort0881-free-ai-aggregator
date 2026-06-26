@@ -122,10 +122,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [MegonLabs/megon](https://github.com/MegonLabs/megon) | 5 | 1.667 | 3д | 0д назад | Megon is the open-source AI agent workspace for de... |
-| 2 | [moatazhamada/ai-omni-skills](https://github.com/moatazhamada/ai-omni-skills) | 10 | 2.0 | 5д | 0д назад | For AI enthusiasts who try every new tool and watc... |
+| 1 | [MegonLabs/megon](https://github.com/MegonLabs/megon) | 5 | 1.667 | 3д | 0д назад | <think>
+Хорошо, мне нужно перевести описание репоз... |
+| 2 | [ParendumOU/Nexora](https://github.com/ParendumOU/Nexora) | 14 | 2.333 | 6д | 0д назад | <think>
+Хорошо, мне нужно перевести описание репоз... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_163443.md](links/ai_trending_links_trending_20260626_163443.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_170248.md](links/ai_trending_links_trending_20260626_170248.md)
 
 
 <!-- END_AI_TRENDING -->
