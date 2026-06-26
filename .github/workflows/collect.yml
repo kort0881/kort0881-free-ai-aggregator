@@ -67,9 +67,13 @@ jobs:
       - name: List generated files
         run: |
           echo "📂 Сгенерированные файлы:"
-          ls -la output/ 2>/dev/null || echo "output/ не существует"
-          ls -la filtered/ 2>/dev/null || echo "filtered/ не существует"
+          echo "--- data/raw/ ---"
+          ls -la data/raw/*/ 2>/dev/null || echo "data/raw/ не существует"
+          echo "--- data/filtered/ ---"
+          ls -la data/filtered/*/ 2>/dev/null || echo "data/filtered/ не существует"
+          echo "--- links/ ---"
           ls -la links/ 2>/dev/null || echo "links/ не существует"
+          echo "--- translation_cache.json ---"
           ls -la translation_cache.json 2>/dev/null || echo "translation_cache.json не существует"
 
       - name: Check if files changed
@@ -88,4 +92,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Автообновление списков репозиториев [auto]"
-          file_pattern: "README.md output/*.json filtered/*.json links/*.md links/archive/*.md translation_cache.json"
+          file_pattern: "README.md data/raw/**/*.json data/filtered/**/*.json links/*.md links/archive/*.md translation_cache.json"
