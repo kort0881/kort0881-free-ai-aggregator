@@ -2,6 +2,10 @@ __pycache__/
 *.pyc
 .env
 venv/
-data/**/*
-!data/.gitkeep
 *.log
+
+# Папки с результатами — коммитим
+# output/
+# filtered/
+# links/
+# translation_cache.json
