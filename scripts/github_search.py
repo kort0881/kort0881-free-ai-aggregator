@@ -248,7 +248,6 @@ Trending-метрики:
 
 Ответь ТОЛЬКО JSON: {{"is_spam": true/false, "reason": "краткая причина", "quality_score": число 0-10}}"""
 
-    # Используем модели из вашего списка (включённые в проект Groq)
     models_to_try = [
         "llama-3.3-70b-versatile",
         "qwen/qwen3-32b",
@@ -312,6 +311,22 @@ def save_translation_cache():
     except Exception as e:
         print(f"⚠️ Ошибка сохранения кэша переводов: {e}")
 
+def _clean_translation(text: str) -> str:
+    """Очищает перевод от тегов  и прочего мусора."""
+    if not text:
+        return ""
+    # Удаляем теги  со всем содержимым
+    text = re.sub(r'[\s\S]*?', '', text, flags=re.IGNORECASE)
+    # Удаляем теги  и 
+    text = re.sub(r'[\s\S]*?', '', text, flags=re.IGNORECASE)
+    # Удаляем одиночные теги
+    text = re.sub(r'</?think>', '', text, flags=re.IGNORECASE)
+    # Удаляем лишние кавычки по краям
+    text = re.sub(r'^[""""\s]+|[""""\s]+$', '', text)
+    # Удаляем префиксы типа "Перевод:", "Translation:" и т.д.
+    text = re.sub(r'^(перевод|translation|ответ|ответ:|перевод:)\s*[:\-]?\s*', '', text, flags=re.IGNORECASE)
+    return text.strip()
+
 def translate_to_russian(text: str, config: dict) -> str:
     """Переводит текст описания на русский язык с кэшированием."""
     if not text or not text.strip():
@@ -320,44 +335,74 @@ def translate_to_russian(text: str, config: dict) -> str:
     # Хэш для кэширования
     text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
     if text_hash in _translation_cache:
-        return _translation_cache[text_hash]
-
+        cached = _translation_cache[text_hash]
+        # Проверяем, что в кэше не сохранены рассуждения
+        if "" not in cached and "хорошо, мне нужно" not in cached.lower():
+            return cached
+    
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         print("⚠️ MODELS_ROUTER не задан — пропуск перевода.")
         return text
     
-    # Используем модели из вашего списка (Qwen лучше всего для русского)
+    # СНАЧАЛА Llama — она НЕ использует режим рассуждений
+    # Потом Qwen как запасной вариант (с очисткой)
     models_to_try = [
-        "qwen/qwen3-32b",
-        "qwen/qwen3.6-27b",
         "llama-3.3-70b-versatile",
         "llama-3.1-8b-instant",
+        "qwen/qwen3-32b",
+        "qwen/qwen3.6-27b",
         "meta-llama/llama-4-scout-17b-16e-instruct",
     ]
 
-    prompt = f"""Переведи следующее описание репозитория GitHub на русский язык кратко и точно. 
-Не добавляй комментарии, только перевод.
+    prompt = f"""Переведи следующее описание репозитория GitHub на русский язык.
+
+ВАЖНЫЕ ПРАВИЛА:
+1. Верни ТОЛЬКО готовый перевод текста.
+2. НЕ добавляй никаких рассуждений, комментариев, объяснений.
+3. НЕ используй теги  или любые другие теги.
+4. НЕ пиши "Перевод:" или любые другие префиксы.
+5. Просто верни переведённый текст — ничего больше.
 
 Оригинал: "{text}"
 
-Перевод:"""
+Перевод (только результат, без рассуждений):"""
 
     for model in models_to_try:
         try:
             client = Groq(api_key=api_key)
+            
+            # Пытаемся отключить режим рассуждений для Qwen
+            extra_kwargs = {}
+            if "qwen" in model.lower():
+                extra_kwargs["extra_body"] = {"enable_thinking": False}
+            
             chat_completion = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "Ты — профессиональный технический переводчик."},
+                    {"role": "system", "content": "Ты — профессиональный технический переводчик. Возвращай ТОЛЬКО переведённый текст. Никаких рассуждений, комментариев, тегов  или префиксов. Просто переведённый текст."},
                     {"role": "user", "content": prompt},
                 ],
                 model=model,
                 temperature=0.1,
                 max_tokens=200,
+                **extra_kwargs,
             )
             translation = chat_completion.choices[0].message.content.strip()
-            # Очищаем лишние кавычки или форматирование
-            translation = re.sub(r'^[""""]+|[""""]+$', '', translation)
+            
+            # Очищаем от тегов  и прочего мусора
+            translation = _clean_translation(translation)
+            
+            # Проверяем, что после очистки остался осмысленный текст
+            if not translation or len(translation) < 3:
+                print(f"⚠️ Модель {model} вернула пустой перевод после очистки")
+                continue
+            
+            # Проверяем, что это не рассуждения
+            lower_translation = translation.lower()
+            if "хорошо, мне нужно" in lower_translation or "давайте" in lower_translation and "перевести" in lower_translation:
+                print(f"⚠️ Модель {model} вернула рассуждения вместо перевода, пропускаем")
+                continue
+            
             _translation_cache[text_hash] = translation
             save_translation_cache()
             print(f"✅ Перевод успешен через {model}: {text[:40]}... → {translation[:40]}...")
