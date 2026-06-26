@@ -33,9 +33,6 @@ def compute_trending_metrics(repo: dict) -> dict:
     - stars_per_day: звёзд в день с момента создания
     - stars_per_week: звёзд в неделю
     - days_since_update: дней с последнего обновления
-    - is_young: создан менее чем max_age_days назад (из конфига)
-    - is_fast_growing: stars_per_day выше порога
-    - is_active: обновлялся недавно
     - trending_score: итоговый скор 0-100
     """
     now = datetime.now(timezone.utc)
@@ -52,11 +49,10 @@ def compute_trending_metrics(repo: dict) -> dict:
     stars_per_day = stars / age_days
     stars_per_week = stars_per_day * 7
 
-    # Бустим молодые репо: чем моложе при тех же звёздах — тем выше скор
-    youth_bonus = max(0, 365 - age_days) / 365 * 30   # до +30 очков
-    growth_score = min(stars_per_day * 10, 40)          # до +40 очков
-    activity_score = max(0, 20 - days_since_update)     # до +20 очков
-    fork_score = min(forks / max(stars, 1) * 10, 10)    # до +10 очков
+    youth_bonus = max(0, 365 - age_days) / 365 * 30
+    growth_score = min(stars_per_day * 10, 40)
+    activity_score = max(0, 20 - days_since_update)
+    fork_score = min(forks / max(stars, 1) * 10, 10)
 
     trending_score = youth_bonus + growth_score + activity_score + fork_score
 
@@ -97,16 +93,12 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False) -
     sort_by = gh_config.get("sort_by", "stars")
     order = gh_config.get("order", "desc")
 
-    # --- TRENDING MODE: ищем молодые репо по дате создания ---
     if trending_mode:
         max_age_days = trend_config.get("max_age_days", 90)
         parts.append(_build_date_filter(max_age_days))
-        # Для молодых репо сортируем по обновлению, чтобы поймать активные
         sort_by = trend_config.get("sort_by", "updated")
         order = "desc"
-        # Снижаем порог звёзд для молодых репо
         trending_min_stars = trend_config.get("min_stars", 10)
-        # Убираем общий min_stars и ставим трендовый
         parts = [p for p in parts if not p.startswith("stars:")]
         if trending_min_stars > 0:
             parts.append(f"stars:>={trending_min_stars}")
@@ -144,7 +136,6 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False) -
                 "open_issues": item.get("open_issues_count", 0),
                 "watchers": item.get("watchers_count", 0),
             }
-            # Добавляем метрики роста для каждого репо
             repo["metrics"] = compute_trending_metrics(repo)
             repos.append(repo)
 
@@ -156,10 +147,6 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False) -
 
 # ====================== РАНЖИРОВАНИЕ TRENDING ======================
 def rank_trending(repos: list, config: dict) -> list:
-    """
-    Фильтрует и сортирует репозитории по trending_score.
-    Применяет пороги из конфига trending.
-    """
     trend_config = config.get("trending", {})
     min_trending_score = trend_config.get("min_trending_score", 15)
     max_age_days = trend_config.get("max_age_days", 90)
@@ -185,7 +172,6 @@ def rank_trending(repos: list, config: dict) -> list:
         else:
             filtered.append(repo)
 
-    # Сортируем по trending_score убыванию
     filtered.sort(key=lambda r: r["metrics"]["trending_score"], reverse=True)
     return filtered
 
@@ -262,8 +248,13 @@ Trending-метрики:
 
 Ответь ТОЛЬКО JSON: {{"is_spam": true/false, "reason": "краткая причина", "quality_score": число 0-10}}"""
 
-    main_model = ai_config.get("model", "llama-3.3-70b-versatile")
-    models_to_try = [main_model, "llama-4-scout-17b-16e-instruct", "llama-3.1-8b-instant"]
+    # Используем модели из вашего списка (включённые в проект Groq)
+    models_to_try = [
+        "llama-3.3-70b-versatile",
+        "qwen/qwen3-32b",
+        "llama-3.1-8b-instant",
+        "meta-llama/llama-4-scout-17b-16e-instruct",
+    ]
 
     for model in models_to_try:
         try:
@@ -281,13 +272,20 @@ Trending-метрики:
             if raw.startswith("json"):
                 raw = raw[4:].strip()
             analysis = json.loads(raw)
+            print(f"✅ AI-фильтр ({model}) для {repo_info['name']}: spam={analysis.get('is_spam')}")
             return {
                 "is_spam": analysis.get("is_spam", False),
                 "reason": analysis.get("reason", "—"),
                 "quality_score": analysis.get("quality_score", 5),
             }
         except Exception as e:
-            print(f"⚠️ Модель {model} — ошибка для {repo_info['name']}: {e}")
+            error_msg = str(e)
+            if "model_permission_blocked_project" in error_msg:
+                print(f"⚠️ Модель {model} заблокирована для {repo_info['name']}")
+            elif "model_not_found" in error_msg:
+                print(f"⚠️ Модель {model} не найдена для {repo_info['name']}")
+            else:
+                print(f"⚠️ Модель {model} — ошибка для {repo_info['name']}: {e}")
             continue
 
     return heuristic_filter(repo_info, config)
@@ -324,17 +322,18 @@ def translate_to_russian(text: str, config: dict) -> str:
     if text_hash in _translation_cache:
         return _translation_cache[text_hash]
 
-    # Попытка перевода через Groq
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         print("⚠️ MODELS_ROUTER не задан — пропуск перевода.")
         return text
-
-    ai_config = config.get("ai_filter", {})
+    
+    # Используем модели из вашего списка (Qwen лучше всего для русского)
     models_to_try = [
-        ai_config.get("model", "llama-3.3-70b-versatile"),
-        "llama-4-scout-17b-16e-instruct",
-        "mixtral-8x7b-32768"
+        "qwen/qwen3-32b",
+        "qwen/qwen3.6-27b",
+        "llama-3.3-70b-versatile",
+        "llama-3.1-8b-instant",
+        "meta-llama/llama-4-scout-17b-16e-instruct",
     ]
 
     prompt = f"""Переведи следующее описание репозитория GitHub на русский язык кратко и точно. 
@@ -361,12 +360,19 @@ def translate_to_russian(text: str, config: dict) -> str:
             translation = re.sub(r'^[""""]+|[""""]+$', '', translation)
             _translation_cache[text_hash] = translation
             save_translation_cache()
+            print(f"✅ Перевод успешен через {model}: {text[:40]}... → {translation[:40]}...")
             return translation
         except Exception as e:
-            print(f"⚠️ Ошибка перевода модели {model}: {e}")
+            error_msg = str(e)
+            if "model_permission_blocked_project" in error_msg:
+                print(f"⚠️ Модель {model} заблокирована на уровне проекта")
+            elif "model_not_found" in error_msg:
+                print(f"⚠️ Модель {model} не найдена")
+            else:
+                print(f"⚠️ Ошибка перевода модели {model}: {e}")
             continue
 
-    # Если все модели упали — возвращаем оригинал
+    print("❌ Все модели перевода недоступны, возвращаем оригинал")
     return text
 
 # ====================== СОХРАНЕНИЕ ======================
@@ -401,7 +407,6 @@ def generate_markdown_links(trigger_name: str, repos: list, out_folder: str = "l
         f.write("| # | Репозиторий | ⭐ Звёзд | 📅 Создан | 🔄 Обновлён | Описание |\n")
         f.write("|---|-------------|----------|-----------|------------|----------|\n")
         for idx, repo in enumerate(repos, start=1):
-            m = repo.get("metrics", {})
             created = repo.get("created_at", "")[:10]
             updated = repo.get("updated_at", "")[:10]
             
@@ -417,9 +422,8 @@ def generate_markdown_links(trigger_name: str, repos: list, out_folder: str = "l
     print(f"🔗 Markdown: {path}")
     return path
 
-# ====================== НОВЫЕ ФУНКЦИИ ДЛЯ ОБНОВЛЕНИЯ README И АРХИВИРОВАНИЯ ======================
+# ====================== ОБНОВЛЕНИЕ README И АРХИВИРОВАНИЕ ======================
 def get_latest_archive_link(trigger_name: str, links_folder: str = "links") -> str | None:
-    """Возвращает имя последнего архивного файла для данного триггера (по времени модификации)."""
     pattern = re.compile(rf"{re.escape(trigger_name)}.*\.md")
     files = []
     for f in Path(links_folder).glob("*.md"):
@@ -431,13 +435,11 @@ def get_latest_archive_link(trigger_name: str, links_folder: str = "links") -> s
     return str(latest)
 
 def rotate_archives(links_folder: str = "links", keep_days: int = 7):
-    """Перемещает файлы старше keep_days дней в подпапку archive/"""
     archive_dir = Path(links_folder) / "archive"
     archive_dir.mkdir(exist_ok=True)
 
     now = datetime.now(timezone.utc)
     for f in Path(links_folder).glob("*.md"):
-        # Из имени файла вытаскиваем дату (формат YYYYMMDD)
         match = re.search(r'(\d{8})', f.name)
         if match:
             file_date = datetime.strptime(match.group(1), "%Y%m%d").replace(tzinfo=timezone.utc)
@@ -447,25 +449,18 @@ def rotate_archives(links_folder: str = "links", keep_days: int = 7):
 
 def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md",
                   trending_mode: bool = False, max_days_in_readme: int = 7, config: dict = None):
-    """
-    Обновляет README, показывая только проекты младше max_days_in_readme дней.
-    Добавляет нумерацию и русские заголовки.
-    """
     if not repos:
         return
 
     now = datetime.now(timezone.utc)
-    # Фильтруем свежие проекты (по created_at)
     fresh_repos = []
     for repo in repos:
         created = datetime.fromisoformat(repo["created_at"].replace("Z", "+00:00"))
         age_days = (now - created).days
         if age_days <= max_days_in_readme:
             fresh_repos.append(repo)
-    # Сортируем от новых к старым
     fresh_repos.sort(key=lambda r: r["created_at"], reverse=True)
 
-    # Если новых нет – выводим сообщение
     if not fresh_repos:
         block = f"## 🚀 {trigger_name.upper()} – новые проекты\n\n_Новых проектов за последние {max_days_in_readme} дней не найдено._\n\n"
     else:
@@ -477,7 +472,6 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
                 m = repo.get("metrics", {})
                 url, name = repo["url"], repo["name"]
                 
-                # Переводим описание
                 raw_desc = repo["description"] or ""
                 if config:
                     translated_desc = translate_to_russian(raw_desc, config)
@@ -494,7 +488,6 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
             for idx, repo in enumerate(fresh_repos[:15], start=1):
                 url, name = repo["url"], repo["name"]
                 
-                # Переводим описание
                 raw_desc = repo["description"] or ""
                 if config:
                     translated_desc = translate_to_russian(raw_desc, config)
@@ -507,14 +500,12 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
         if len(fresh_repos) > 15:
             table += f"\n*... и ещё {len(fresh_repos) - 15} новых проектов. Полный архив — см. ниже.*\n"
 
-        # Добавляем ссылку на последний архивный файл (если есть)
         archive_link = get_latest_archive_link(trigger_name)
         if archive_link:
             table += f"\n📦 **Архив всех проектов**: [{archive_link}]({archive_link})\n"
 
         block = header + table + "\n"
 
-    # Вставка/замена между маркерами
     marker_key = trigger_name.upper().replace(" ", "_")
     start_marker = f"<!-- START_{marker_key} -->"
     end_marker = f"<!-- END_{marker_key} -->"
@@ -584,22 +575,19 @@ def process_trigger(trigger: dict, config: dict):
         if filtered:
             save_json(f"{name}_filtered", filtered, filtered_folder)
             generate_markdown_links(name, filtered, links_folder, suffix="filtered", config=config)
-            # Обновляем README с фильтром по дате
             max_days = config.get("readme", {}).get("max_days_to_show", 7)
             update_readme(name, filtered, trending_mode=False, max_days_in_readme=max_days, config=config)
         print(f"📊 Обычный итог: {len(filtered)} / {len(repos)}")
 
-    # --- Trending поиск (молодые + быстро растущие) ---
+    # --- Trending поиск ---
     trend_config = config.get("trending", {})
     if trend_config.get("enabled", False):
         print(f"\n{'='*60}\n🔥 {name} [trending]\n{'='*60}")
         trending_repos = search_github_repos(query, config, trending_mode=True)
 
-        # Предварительная фильтрация по метрикам роста
         ranked = rank_trending(trending_repos, config)
         print(f"📈 После trending-фильтра: {len(ranked)} / {len(trending_repos)}")
 
-        # AI-фильтрация
         trend_analysis, trend_filtered = [], []
         for repo in ranked:
             analysis = call_ai_filter(repo, config, trending_mode=True)
@@ -618,18 +606,16 @@ def process_trigger(trigger: dict, config: dict):
         print(f"📊 Trending итог: {len(trend_filtered)} / {len(trending_repos)}")
 
 def main():
-    # Загружаем кэш переводов
     load_translation_cache()
     
     config = load_config()
     for trigger in config["triggers"]:
         process_trigger(trigger, config)
 
-    # Ротация архивов: перемещаем старые файлы из links/ в links/archive/
     max_days = config.get("readme", {}).get("max_days_to_show", 7)
     rotate_archives(links_folder="links", keep_days=max_days)
 
-    commit_and_push(["README.md", "links/"])
+    commit_and_push(["README.md", "links/", "translation_cache.json"])
     print("\n🎉 Готово!")
 
 if __name__ == "__main__":
