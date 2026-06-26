@@ -110,9 +110,14 @@ _Новых проектов за последние 7 дней не найде�
 
 
 <!-- START_FREE_TRENDING -->
-## 🚀 FREE_TRENDING – новые проекты
+## 🔥 FREE_TRENDING – свежие Trending-проекты
 
-_Новых проектов за последние 7 дней не найдено._
+| # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
+|---|-------------|----------|-----------|-----------|------------|----------|
+| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 68 | 22.667 | 3д | 0д назад | A single archive of public exploit PoCs and vulner... |
+| 2 | [gl0di/clawseccheck](https://github.com/gl0di/clawseccheck) | 5 | 0.714 | 7д | 0д назад | 🔍 Free, local, read-only security self-audit for y... |
+
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260626_180133.md](links/free_trending_links_trending_20260626_180133.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -122,12 +127,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [MegonLabs/megon](https://github.com/MegonLabs/megon) | 5 | 1.667 | 3д | 0д назад | <think>
-Хорошо, мне нужно перевести описание репоз... |
-| 2 | [ParendumOU/Nexora](https://github.com/ParendumOU/Nexora) | 14 | 2.333 | 6д | 0д назад | <think>
-Хорошо, мне нужно перевести описание репоз... |
+| 1 | [abdulrbasit/job-hunter](https://github.com/abdulrbasit/job-hunter) | 13 | 4.333 | 3д | 0д назад | Automate your job search — find listings, score fi... |
+| 2 | [ParendumOU/Nexora](https://github.com/ParendumOU/Nexora) | 14 | 2.0 | 7д | 0д назад | Self-hosted, MIT-licensed AI-agent orchestration p... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_170248.md](links/ai_trending_links_trending_20260626_170248.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_180700.md](links/ai_trending_links_trending_20260626_180700.md)
 
 
 <!-- END_AI_TRENDING -->
