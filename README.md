@@ -110,16 +110,9 @@ _Новых проектов за последние 7 дней не найде�
 
 
 <!-- START_FREE_TRENDING -->
-## 🔥 FREE_TRENDING – свежие Trending-проекты
+## 🚀 FREE_TRENDING – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
-|---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 58 | 19.333 | 3д | 0д назад | A single archive of public exploit PoCs and vulner... |
-| 2 | [tsu-moe/tanstartercn](https://github.com/tsu-moe/tanstartercn) | 7 | 1.75 | 4д | 0д назад | A highly customizable shadcn registry template rep... |
-| 3 | [0xCUB3/Freedirect](https://github.com/0xCUB3/Freedirect) | 5 | 1.25 | 4д | 0д назад | Safari Web Extension redirector for privacy-friend... |
-| 4 | [gl0di/clawseccheck](https://github.com/gl0di/clawseccheck) | 5 | 0.714 | 7д | 0д назад | 🔍 Free, local, read-only security self-audit for y... |
-
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260626_121756.md](links/free_trending_links_trending_20260626_121756.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_FREE_TRENDING -->
@@ -129,10 +122,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 1.0 | 6д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
-| 2 | [ParendumOU/Nexora](https://github.com/ParendumOU/Nexora) | 14 | 2.333 | 6д | 0д назад | Self-hosted, MIT-licensed AI-agent orchestration p... |
+| 1 | [MegonLabs/megon](https://github.com/MegonLabs/megon) | 5 | 1.667 | 3д | 0д назад | Megon is the open-source AI agent workspace for de... |
+| 2 | [moatazhamada/ai-omni-skills](https://github.com/moatazhamada/ai-omni-skills) | 10 | 2.0 | 5д | 0д назад | For AI enthusiasts who try every new tool and watc... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_121953.md](links/ai_trending_links_trending_20260626_121953.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_163443.md](links/ai_trending_links_trending_20260626_163443.md)
 
 
 <!-- END_AI_TRENDING -->
