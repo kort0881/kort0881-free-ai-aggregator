@@ -114,10 +114,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 45 | 22.5 | 2д | 0д назад | A single archive of public exploit PoCs and vulner... |
-| 2 | [Env-Kit/envkit-releases](https://github.com/Env-Kit/envkit-releases) | 139 | 34.75 | 4д | 0д назад | EnvKit — free local development environment for Wi... |
+| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 58 | 19.333 | 3д | 0д назад | A single archive of public exploit PoCs and vulner... |
+| 2 | [tsu-moe/tanstartercn](https://github.com/tsu-moe/tanstartercn) | 7 | 1.75 | 4д | 0д назад | A highly customizable shadcn registry template rep... |
+| 3 | [0xCUB3/Freedirect](https://github.com/0xCUB3/Freedirect) | 5 | 1.25 | 4д | 0д назад | Safari Web Extension redirector for privacy-friend... |
+| 4 | [gl0di/clawseccheck](https://github.com/gl0di/clawseccheck) | 5 | 0.714 | 7д | 0д назад | 🔍 Free, local, read-only security self-audit for y... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260625_122806.md](links/free_trending_links_trending_20260625_122806.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260626_121756.md](links/free_trending_links_trending_20260626_121756.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -127,25 +129,18 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [LostPigeonWrath/Fortnite-Aim-NewEraAI-Assist](https://github.com/LostPigeonWrath/Fortnite-Aim-NewEraAI-Assist) | 5 | 5.0 | 1д | 0д назад | Advanced Computer Vision & Input Optimization Fram... |
-| 2 | [Mysticchiwharf98/Rust-Quantum-NextGen-Aim-Assist](https://github.com/Mysticchiwharf98/Rust-Quantum-NextGen-Aim-Assist) | 7 | 1.4 | 5д | 0д назад | Rust-Quantum-v2-Next-Gen-AI-Assistant — Advanced A... |
-| 3 | [TealWeaponsmith/arc-raiders-fps-optimizer-Ai](https://github.com/TealWeaponsmith/arc-raiders-fps-optimizer-Ai) | 6 | 1.2 | 5д | 0д назад |  # ARCRaidersFPSBooster: Advanced Hardware Tuning ... |
-| 4 | [humanfia/oh-my-humanize](https://github.com/humanfia/oh-my-humanize) | 27 | 5.4 | 5д | 0д назад | ⌥ AI Coding agent for the terminal — hash-anchored... |
-| 5 | [JJJJJacobbbbb/wenqu](https://github.com/JJJJJacobbbbb/wenqu) | 5 | 0.833 | 6д | 0д назад | 问渠 — 专为大学生设计的桌面学习助手。辅助阅读 PDF/Word 等文档，支持框选内容向 AI 提... |
+| 1 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 1.0 | 6д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
+| 2 | [ParendumOU/Nexora](https://github.com/ParendumOU/Nexora) | 14 | 2.333 | 6д | 0д назад | Self-hosted, MIT-licensed AI-agent orchestration p... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260625_123005.md](links/ai_trending_links_trending_20260625_123005.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_121953.md](links/ai_trending_links_trending_20260626_121953.md)
 
 
 <!-- END_AI_TRENDING -->
 
 <!-- START_FREE_AI_TRENDING -->
-## 🔥 FREE_AI_TRENDING – свежие Trending-проекты
+## 🚀 FREE_AI_TRENDING – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
-|---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [ezBuilder/omnigen-vault](https://github.com/ezBuilder/omnigen-vault) | 28 | 4.0 | 7д | 0д назад | Infinite text-free AI image generator + SQLite-ind... |
-
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260625_123150.md](links/free_ai_trending_links_trending_20260625_123150.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_FREE_AI_TRENDING -->
