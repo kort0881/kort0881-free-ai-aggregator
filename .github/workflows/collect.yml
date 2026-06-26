@@ -35,6 +35,30 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      - name: Debug - Check API keys
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MODELS_ROUTER: ${{ secrets.MODELS_ROUTER }}
+        run: |
+          echo "🔍 Проверка переменных окружения..."
+          echo "GITHUB_TOKEN установлен: $([ -n "$GITHUB_TOKEN" ] && echo 'ДА' || echo 'НЕТ')"
+          echo "MODELS_ROUTER установлен: $([ -n "$MODELS_ROUTER" ] && echo 'ДА' || echo 'НЕТ')"
+          
+          if [ -n "$MODELS_ROUTER" ]; then
+            echo "Длина MODELS_ROUTER: ${#MODELS_ROUTER}"
+            echo "Первые 10 символов: ${MODELS_ROUTER:0:10}"
+            echo "Последние 4 символа: ${MODELS_ROUTER: -4}"
+            
+            # Проверяем формат ключа Groq
+            if [[ "$MODELS_ROUTER" == gsk_* ]]; then
+              echo "✅ Формат ключа правильный (начинается с gsk_)"
+            else
+              echo "❌ ВНИМАНИЕ: Ключ не начинается с gsk_ - возможно, это неправильный ключ!"
+            fi
+          else
+            echo "❌ MODELS_ROUTER пустой или не установлен!"
+          fi
+
       - name: Run search script
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
