@@ -64,10 +64,18 @@ jobs:
           MODELS_ROUTER: ${{ secrets.MODELS_ROUTER }}
         run: python scripts/github_search.py
 
+      - name: List generated files
+        run: |
+          echo "📂 Сгенерированные файлы:"
+          ls -la output/ 2>/dev/null || echo "output/ не существует"
+          ls -la filtered/ 2>/dev/null || echo "filtered/ не существует"
+          ls -la links/ 2>/dev/null || echo "links/ не существует"
+          ls -la translation_cache.json 2>/dev/null || echo "translation_cache.json не существует"
+
       - name: Check if files changed
         id: changes
         run: |
-          if git diff --quiet; then
+          if git diff --quiet && git diff --cached --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
             echo "::notice::No changes detected, skipping commit"
           else
@@ -80,4 +88,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: "Автообновление списков репозиториев [auto]"
-          file_pattern: "README.md links/*.md data/**/*.json translation_cache.json"
+          file_pattern: "README.md output/*.json filtered/*.json links/*.md links/archive/*.md translation_cache.json"
