@@ -114,9 +114,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [maria-rcks/dinorip](https://github.com/maria-rcks/dinorip) | 213 | 106.5 | 2д | 0д назад | Free & Open Source Texture Ripper |
+| 1 | [maria-rcks/dinorip](https://github.com/maria-rcks/dinorip) | 217 | 108.5 | 2д | 0д назад | Free & Open Source Texture Ripper |
+| 2 | [SouthpawIN/turbofit](https://github.com/SouthpawIN/turbofit) | 9 | 1.8 | 5д | 0д назад | Hardware-fit checker + multi-launcher installer (l... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260627_093927.md](links/free_trending_links_trending_20260627_093927.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260627_114024.md](links/free_trending_links_trending_20260627_114024.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -126,10 +127,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [sambhavsaxena/frappe-ai](https://github.com/sambhavsaxena/frappe-ai) | 15 | 3.0 | 5д | 0д назад | A central command for managing all AI operations i... |
-| 2 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 0.857 | 7д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
+| 1 | [reneyuxi0402/claude-arcade](https://github.com/reneyuxi0402/claude-arcade) | 10 | 10.0 | 1д | 0д назад | Text-based arcade for AI — slots, blackjack, roule... |
+| 2 | [yo-WASSUP/Good-Badminton](https://github.com/yo-WASSUP/Good-Badminton) | 557 | 79.571 | 7д | 0д назад | 🏸  AI Badminton Hawk-Eye System |
+| 3 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 0.857 | 7д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
+| 4 | [ArthurMoorgan/drift](https://github.com/ArthurMoorgan/drift) | 5 | 0.714 | 7д | 0д назад | Drift — a calm, private, liquid-glass desktop web ... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260627_094159.md](links/ai_trending_links_trending_20260627_094159.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260627_114250.md](links/ai_trending_links_trending_20260627_114250.md)
 
 
 <!-- END_AI_TRENDING -->
