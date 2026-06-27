@@ -114,10 +114,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 68 | 22.667 | 3д | 0д назад | A single archive of public exploit PoCs and vulner... |
-| 2 | [gl0di/clawseccheck](https://github.com/gl0di/clawseccheck) | 5 | 0.714 | 7д | 0д назад | 🔍 Free, local, read-only security self-audit for y... |
+| 1 | [maria-rcks/dinorip](https://github.com/maria-rcks/dinorip) | 213 | 106.5 | 2д | 0д назад | Free & Open Source Texture Ripper |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260626_180133.md](links/free_trending_links_trending_20260626_180133.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260627_093927.md](links/free_trending_links_trending_20260627_093927.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -127,10 +126,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [abdulrbasit/job-hunter](https://github.com/abdulrbasit/job-hunter) | 13 | 4.333 | 3д | 0д назад | Automate your job search — find listings, score fi... |
-| 2 | [ParendumOU/Nexora](https://github.com/ParendumOU/Nexora) | 14 | 2.0 | 7д | 0д назад | Self-hosted, MIT-licensed AI-agent orchestration p... |
+| 1 | [sambhavsaxena/frappe-ai](https://github.com/sambhavsaxena/frappe-ai) | 15 | 3.0 | 5д | 0д назад | A central command for managing all AI operations i... |
+| 2 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 0.857 | 7д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260626_180700.md](links/ai_trending_links_trending_20260626_180700.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260627_094159.md](links/ai_trending_links_trending_20260627_094159.md)
 
 
 <!-- END_AI_TRENDING -->
