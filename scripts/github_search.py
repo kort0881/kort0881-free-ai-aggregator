@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Поиск репозиториев GitHub с AI-фильтрацией через Groq API.
-Trending-репозитории + автоматический перевод описаний на русский (батчами для экономии токенов).
+Trending-репозитории + автоматический перевод описаний на русский.
 """
 
 import requests
@@ -199,7 +199,6 @@ def call_ai_filter(repo_info: dict, config: dict, trending_mode: bool = False) -
     if not ai_config.get("enabled", False):
         return {"is_spam": False, "reason": "AI отключён", "quality_score": 10}
 
-    # Проверяем кэш по хэшу описания
     cache_key = hashlib.md5(f"{repo_info['name']}|{repo_info['description']}".encode()).hexdigest()
     if cache_key in _ai_filter_cache:
         cached = _ai_filter_cache[cache_key]
@@ -235,8 +234,6 @@ Trending-метрики:
 Мусор: крипта/скам, пустые репо, устаревшие (>3 лет), накрутка, adult, только бинарники.
 Ответь ТОЛЬКО JSON: {{"is_spam": true/false, "reason": "кратко", "quality_score": 0-10}}"""
 
-    # Используем САМУЮ ДЕШЁВУЮ модель — llama-3.1-8b-instant
-    # Она быстрее и дешевле, чем 70b
     models_to_try = ["llama-3.1-8b-instant", "llama-3.3-70b-versatile"]
 
     for model in models_to_try:
@@ -260,7 +257,6 @@ Trending-метрики:
                 "reason": analysis.get("reason", "—"),
                 "quality_score": analysis.get("quality_score", 5),
             }
-            # Сохраняем в кэш
             _ai_filter_cache[cache_key] = result
             save_ai_filter_cache()
             print(f"✅ AI-фильтр ({model}) для {repo_info['name']}: spam={result['is_spam']}")
@@ -279,7 +275,7 @@ Trending-метрики:
 
     return heuristic_filter(repo_info, config)
 
-# ====================== ПЕРЕВОД ОПИСАНИЙ (БАТЧАМИ!) ======================
+# ====================== ПЕРЕВОД ОПИСАНИЙ ======================
 _translation_cache = {}
 _cache_path = Path("translation_cache.json")
 
@@ -302,136 +298,75 @@ def save_translation_cache():
         print(f"⚠️ Ошибка сохранения кэша переводов: {e}")
 
 def _clean_translation(text: str) -> str:
-    """Очищает перевод от  и мусора."""
+    """Безопасно очищает ответ модели от мусора."""
     if not text:
         return ""
-    # Удаляем  ... 
-    text = re.sub(r'[\s\S]*?', '', text, flags=re.IGNORECASE)
-    # Удаляем  ... 
-    text = re.sub(r'[\s\S]*?', '', text, flags=re.IGNORECASE)
-    # Удаляем одиночные теги
-    text = re.sub(r'</?think>', '', text, flags=re.IGNORECASE)
-    # Удаляем префиксы "Перевод:", "Translation:" и т.д.
-    text = re.sub(r'^(перевод|translation|ответ|ответ:|перевод:)\s*[:\-]?\s*', '', text, flags=re.IGNORECASE)
-    # Удаляем кавычки по краям
-    text = re.sub(r'^[""""\s]+|[""""\s]+$', '', text)
+    # Удаляем блоки рассуждений <think>...</think>
+    text = re.sub(r'<think>.*?</think>', '', text, flags=re.IGNORECASE | re.DOTALL)
+    # Удаляем markdown блоки кода
+    text = re.sub(r'```[a-zA-Z]*\n?', '', text)
+    text = text.replace('```', '')
+    # Удаляем префиксы
+    text = re.sub(r'^(перевод|translation|ответ|result)[:\s]*', '', text, flags=re.IGNORECASE).strip()
     return text.strip()
 
 def _translate_batch(texts: list, config: dict) -> dict:
-    """Переводит батч текстов за ОДИН запрос. Возвращает dict {оригинал: перевод}."""
+    """Переводит батч текстов за ОДИН запрос через Groq."""
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         return {}
 
-    # Формируем нумерованный список для перевода
-    numbered_list = "\n".join([f"{i+1}. {t}" for i, t in enumerate(texts)])
-    
-    prompt = f"""Переведи каждое описание ниже на русский язык.
-ПРАВИЛА:
-1. Верни ТОЛЬКО переводы, по одному на строку.
-2. Формат ответа: номер. перевод (например: "1. Платформа для...")
-3. НЕ добавляй рассуждения, комментарии, теги  или префиксы.
-4. Если описание уже на русском — оставь как есть.
+    numbered = "\n".join(f"{i+1}. {t}" for i, t in enumerate(texts))
+    prompt = f"Translate these English descriptions to Russian. Return ONLY the numbered Russian translations.\n\n{numbered}\n\nTranslations:"
 
-Описания для перевода:
-{numbered_list}
-
-Переводы (только результат):"""
-
-    # СНАЧАЛА llama-3.1-8b-instant — самая дешёвая и быстрая, БЕЗ 
-    # Потом llama-3.3-70b-versatile — если первая недоступна
-    # В конце Qwen — как крайний случай
-    models_to_try = [
-        "llama-3.1-8b-instant",
-        "llama-3.3-70b-versatile",
-        "qwen/qwen3-32b",
-    ]
+    models_to_try = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"]
 
     for model in models_to_try:
         try:
             client = Groq(api_key=api_key)
-            chat_completion = client.chat.completions.create(
+            res = client.chat.completions.create(
                 messages=[
-                    {"role": "system", "content": "Ты переводчик. Возвращай ТОЛЬКО переведённый текст. Никаких рассуждений, тегов  или комментариев."},
-                    {"role": "user", "content": prompt},
+                    {"role": "system", "content": "You are a precise translator. Output only the numbered list. No explanations, no markdown."},
+                    {"role": "user", "content": prompt}
                 ],
                 model=model,
                 temperature=0.1,
-                max_tokens=500,
+                max_tokens=800
             )
-            raw_response = chat_completion.choices[0].message.content.strip()
-            
-            # Очищаем от 
-            raw_response = _clean_translation(raw_response)
-            
-            if not raw_response:
-                print(f"⚠️ Модель {model} вернула пустой ответ")
+            raw = res.choices[0].message.content.strip()
+            print(f"🔍 Сырой ответ ({model}): {raw[:100]}...")
+
+            cleaned = _clean_translation(raw)
+            if not cleaned:
                 continue
-            
-            # Парсим ответ: ищем строки вида "1. текст"
+
             translations = {}
-            lines = raw_response.split("\n")
-            current_idx = 0
-            current_text = ""
-            
-            for line in lines:
+            for line in cleaned.split("\n"):
                 line = line.strip()
-                if not line:
+                if not line: 
                     continue
-                # Проверяем, начинается ли с "число."
-                match = re.match(r'^(\d+)\.\s*(.*)$', line)
-                if match:
-                    # Сохраняем предыдущий текст
-                    if current_idx > 0 and current_text and current_idx <= len(texts):
-                        translations[texts[current_idx - 1]] = current_text.strip()
-                    current_idx = int(match.group(1))
-                    current_text = match.group(2)
-                else:
-                    # Продолжение предыдущего перевода
-                    if current_idx > 0:
-                        current_text += " " + line
-            
-            # Сохраняем последний
-            if current_idx > 0 and current_text and current_idx <= len(texts):
-                translations[texts[current_idx - 1]] = current_text.strip()
-            
-            # Проверяем, что все переведено
-            if len(translations) >= len(texts) * 0.8:  # 80% достаточно
-                print(f"✅ Батч-перевод успешен через {model}: {len(translations)}/{len(texts)} описаний")
+                # Ловим "1. текст", "1) текст", "1 текст"
+                m = re.match(r'^\d+[\.\)\s]+\s*(.*)$', line)
+                if m:
+                    idx = len(translations)
+                    if idx < len(texts):
+                        translations[texts[idx]] = m.group(1).strip()
+
+            if len(translations) >= len(texts) * 0.8:
+                print(f"✅ Батч-перевод успешен через {model}: {len(translations)}/{len(texts)}")
                 return translations
             else:
                 print(f"⚠️ Модель {model} перевела только {len(translations)}/{len(texts)}, пробуем следующую")
                 continue
                 
         except Exception as e:
-            error_msg = str(e)
-            if "rate_limit_exceeded" in error_msg:
-                print(f"⚠️ Rate limit для {model}, пробуем следующую")
-            elif "model_permission_blocked_project" in error_msg:
-                print(f"⚠️ Модель {model} заблокирована")
-            elif "model_not_found" in error_msg:
-                print(f"⚠️ Модель {model} не найдена")
-            else:
-                print(f"⚠️ Ошибка батч-перевода ({model}): {e}")
+            print(f"⚠️ Ошибка батч-перевода ({model}): {e}")
             continue
 
     return {}
 
-def translate_to_russian(text: str, config: dict) -> str:
-    """Переводит одно описание. Сначала проверяет кэш."""
-    if not text or not text.strip():
-        return ""
-    
-    text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
-    if text_hash in _translation_cache:
-        cached = _translation_cache[text_hash]
-        # Проверяем, что в кэше не рассуждения
-        if "" not in cached and "хорошо, мне нужно" not in cached.lower():
-            return cached
-    return text  # Вернём оригинал, если не в кэше — батч-перевод добавит позже
-
 def batch_translate_descriptions(repos: list, config: dict):
-    """Переводит описания всех репо батчами по 5 штук. Модифицирует repo['description_ru']."""
+    """Переводит описания всех репо батчами по 5 штук."""
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         print("⚠️ MODELS_ROUTER не задан — пропуск перевода.")
@@ -439,7 +374,6 @@ def batch_translate_descriptions(repos: list, config: dict):
             repo["description_ru"] = repo["description"]
         return
     
-    # Собираем тексты, которых нет в кэше
     to_translate = []
     for repo in repos:
         text = repo.get("description", "") or ""
@@ -449,7 +383,7 @@ def batch_translate_descriptions(repos: list, config: dict):
         text_hash = hashlib.md5(text.encode("utf-8")).hexdigest()
         if text_hash in _translation_cache:
             cached = _translation_cache[text_hash]
-            if "" not in cached and "хорошо, мне нужно" not in cached.lower():
+            if "<think>" not in cached and "хорошо, мне нужно" not in cached.lower():
                 repo["description_ru"] = cached
                 continue
         to_translate.append((repo, text))
@@ -460,19 +394,16 @@ def batch_translate_descriptions(repos: list, config: dict):
     
     print(f"🌐 Нужно перевести {len(to_translate)} описаний батчами по 5...")
     
-    # Переводим батчами по 5
     batch_size = 5
     for i in range(0, len(to_translate), batch_size):
         batch = to_translate[i:i + batch_size]
         texts = [t for _, t in batch]
         
-        # Задержка между батчами для rate limit
         if i > 0:
-            time.sleep(1.0)
+            time.sleep(1.5)
         
         translations = _translate_batch(texts, config)
         
-        # Сохраняем результаты
         for repo, text in batch:
             if text in translations:
                 translation = translations[text]
@@ -517,7 +448,6 @@ def generate_markdown_links(trigger_name: str, repos: list, out_folder: str = "l
         for idx, repo in enumerate(repos, start=1):
             created = repo.get("created_at", "")[:10]
             updated = repo.get("updated_at", "")[:10]
-            # Берём русский перевод, если есть
             desc = repo.get("description_ru") or repo.get("description", "") or ""
             desc = desc[:100] if desc else ""
             f.write(f"| {idx} | [{repo['name']}]({repo['url']}) | {repo['stars']} | {created} | {updated} | {desc} |\n")
@@ -612,7 +542,7 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
 
 def commit_and_push(files=None):
     if files is None:
-        files = ["README.md", "links/"]
+        files = ["README.md", "links/", "translation_cache.json", "ai_filter_cache.json"]
     if not os.getenv("CI"):
         print("⏩ Не CI-окружение, пропускаем автокоммит.")
         return
@@ -641,7 +571,6 @@ def process_trigger(trigger: dict, config: dict):
     filtered_folder = trigger.get("filtered_folder", "filtered")
     links_folder = trigger.get("links_folder", "links")
 
-    # --- Обычный поиск ---
     print(f"\n{'='*60}\n🎯 {name} [обычный]\n{'='*60}")
     repos = search_github_repos(query, config, trending_mode=False)
     if not repos:
@@ -654,7 +583,6 @@ def process_trigger(trigger: dict, config: dict):
             if not analysis["is_spam"]:
                 filtered.append(repo)
         
-        # БАТЧ-ПЕРЕВОД для отфильтрованных
         if filtered:
             batch_translate_descriptions(filtered, config)
         
@@ -666,7 +594,6 @@ def process_trigger(trigger: dict, config: dict):
             update_readme(name, filtered, trending_mode=False, max_days_in_readme=max_days, config=config)
         print(f"📊 Обычный итог: {len(filtered)} / {len(repos)}")
 
-    # --- Trending поиск ---
     trend_config = config.get("trending", {})
     if trend_config.get("enabled", False):
         print(f"\n{'='*60}\n🔥 {name} [trending]\n{'='*60}")
@@ -681,7 +608,6 @@ def process_trigger(trigger: dict, config: dict):
             if not analysis["is_spam"]:
                 trend_filtered.append(repo)
 
-        # БАТЧ-ПЕРЕВОД для отфильтрованных
         if trend_filtered:
             batch_translate_descriptions(trend_filtered, config)
 
