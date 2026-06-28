@@ -114,12 +114,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 0д назад | Free offline AI chat for Windows. Llama 3.2 3B mod... |
-| 2 | [nabinkhadka/FreeLLMAPI](https://github.com/nabinkhadka/FreeLLMAPI) | 7 | 7.0 | 1д | 0д назад | Lightweight Python router for free LLM APIs with a... |
-| 3 | [alfadur7/llm-wiki-newsroom](https://github.com/alfadur7/llm-wiki-newsroom) | 5 | 2.5 | 2д | 0д назад | An LLM-maintained knowledge wiki run by a multi-ag... |
-| 4 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 1617 | 323.4 | 5д | 0д назад | A single archive of public exploit PoCs and vulner... |
+| 1 | [nhocatofb/OpenGaussianSplatting](https://github.com/nhocatofb/OpenGaussianSplatting) | 9 | 9.0 | 1д | 0д назад | О модуле 🚀: модульная, бесплатная и коммерчески др... |
+| 2 | [r5rana/agentware](https://github.com/r5rana/agentware) | 14 | 3.5 | 4д | 0д назад | Фреймворк, который делает вашу большую языковую мо... |
+| 3 | [wwwcomcomcomcom/FreeGSM](https://github.com/wwwcomcomcomcom/FreeGSM) | 7 | 1.4 | 5д | 0д назад |  |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260628_115058.md](links/free_trending_links_trending_20260628_115058.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260628_153504.md](links/free_trending_links_trending_20260628_153504.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -129,11 +128,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [lions0814-sketch/Windows-AI-Agent](https://github.com/lions0814-sketch/Windows-AI-Agent) | 14 | 7.0 | 2д | 0д назад | This is an open-source AI system project I put tog... |
-| 2 | [Mfrostbutter/ageniusdesk-ce](https://github.com/Mfrostbutter/ageniusdesk-ce) | 10 | 2.0 | 5д | 0д назад | The command center for n8n automation operators: m... |
-| 3 | [Pupok462/open-geo](https://github.com/Pupok462/open-geo) | 7 | 1.167 | 6д | 0д назад | open-geo — GEO (Generative Engine Optimization) vi... |
+| 1 | [hikariming/github-roast](https://github.com/hikariming/github-roast) | 37 | 18.5 | 2д | 0д назад | Жесткий GitHub Roast · Оставьте имя пользователя, ... |
+| 2 | [diamondfsd/luna-ai-cut](https://github.com/diamondfsd/luna-ai-cut) | 12 | 4.0 | 3д | 0д назад | Luna AI Cut — это настольный медиа-менеджер для ка... |
+| 3 | [Mfrostbutter/ageniusdesk-ce](https://github.com/Mfrostbutter/ageniusdesk-ce) | 13 | 2.6 | 5д | 0д назад | Центр управления для операторов автоматизации n8n:... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260628_115328.md](links/ai_trending_links_trending_20260628_115328.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260628_153556.md](links/ai_trending_links_trending_20260628_153556.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -143,9 +142,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 0д назад | Free offline AI chat for Windows. Llama 3.2 3B mod... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 0д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260628_115422.md](links/free_ai_trending_links_trending_20260628_115422.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260628_153618.md](links/free_ai_trending_links_trending_20260628_153618.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
