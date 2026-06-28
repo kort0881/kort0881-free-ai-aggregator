@@ -114,10 +114,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [maria-rcks/dinorip](https://github.com/maria-rcks/dinorip) | 217 | 108.5 | 2д | 0д назад | Free & Open Source Texture Ripper |
-| 2 | [SouthpawIN/turbofit](https://github.com/SouthpawIN/turbofit) | 9 | 1.8 | 5д | 0д назад | Hardware-fit checker + multi-launcher installer (l... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 0д назад | Free offline AI chat for Windows. Llama 3.2 3B mod... |
+| 2 | [nabinkhadka/FreeLLMAPI](https://github.com/nabinkhadka/FreeLLMAPI) | 7 | 7.0 | 1д | 0д назад | Lightweight Python router for free LLM APIs with a... |
+| 3 | [alfadur7/llm-wiki-newsroom](https://github.com/alfadur7/llm-wiki-newsroom) | 5 | 2.5 | 2д | 0д назад | An LLM-maintained knowledge wiki run by a multi-ag... |
+| 4 | [bikini/exploitarium](https://github.com/bikini/exploitarium) | 1617 | 323.4 | 5д | 0д назад | A single archive of public exploit PoCs and vulner... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260627_114024.md](links/free_trending_links_trending_20260627_114024.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260628_115058.md](links/free_trending_links_trending_20260628_115058.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -127,20 +129,23 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [reneyuxi0402/claude-arcade](https://github.com/reneyuxi0402/claude-arcade) | 10 | 10.0 | 1д | 0д назад | Text-based arcade for AI — slots, blackjack, roule... |
-| 2 | [yo-WASSUP/Good-Badminton](https://github.com/yo-WASSUP/Good-Badminton) | 557 | 79.571 | 7д | 0д назад | 🏸  AI Badminton Hawk-Eye System |
-| 3 | [fredxyt/cyber-sakyamuni](https://github.com/fredxyt/cyber-sakyamuni) | 6 | 0.857 | 7д | 0д назад | 一个 24/7 自主修行的 AI 生命：读经、听世界真实的苦、反复参悟，把成长写进 git。每个 c... |
-| 4 | [ArthurMoorgan/drift](https://github.com/ArthurMoorgan/drift) | 5 | 0.714 | 7д | 0д назад | Drift — a calm, private, liquid-glass desktop web ... |
+| 1 | [lions0814-sketch/Windows-AI-Agent](https://github.com/lions0814-sketch/Windows-AI-Agent) | 14 | 7.0 | 2д | 0д назад | This is an open-source AI system project I put tog... |
+| 2 | [Mfrostbutter/ageniusdesk-ce](https://github.com/Mfrostbutter/ageniusdesk-ce) | 10 | 2.0 | 5д | 0д назад | The command center for n8n automation operators: m... |
+| 3 | [Pupok462/open-geo](https://github.com/Pupok462/open-geo) | 7 | 1.167 | 6д | 0д назад | open-geo — GEO (Generative Engine Optimization) vi... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260627_114250.md](links/ai_trending_links_trending_20260627_114250.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260628_115328.md](links/ai_trending_links_trending_20260628_115328.md)
 
 
 <!-- END_AI_TRENDING -->
 
 <!-- START_FREE_AI_TRENDING -->
-## 🚀 FREE_AI_TRENDING – новые проекты
+## 🔥 FREE_AI_TRENDING – свежие Trending-проекты
 
-_Новых проектов за последние 7 дней не найдено._
+| # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
+|---|-------------|----------|-----------|-----------|------------|----------|
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 0д назад | Free offline AI chat for Windows. Llama 3.2 3B mod... |
+
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260628_115422.md](links/free_ai_trending_links_trending_20260628_115422.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
