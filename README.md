@@ -114,11 +114,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [nhocatofb/OpenGaussianSplatting](https://github.com/nhocatofb/OpenGaussianSplatting) | 9 | 9.0 | 1д | 0д назад | О модуле 🚀: модульная, бесплатная и коммерчески др... |
-| 2 | [r5rana/agentware](https://github.com/r5rana/agentware) | 14 | 3.5 | 4д | 0д назад | Фреймворк, который делает вашу большую языковую мо... |
-| 3 | [wwwcomcomcomcom/FreeGSM](https://github.com/wwwcomcomcomcom/FreeGSM) | 7 | 1.4 | 5д | 0д назад |  |
+| 1 | [AkuchiS/Yap](https://github.com/AkuchiS/Yap) | 37 | 7.4 | 5д | 0д назад | Бесплатная офлайн-распознавание голоса для macOS, ... |
+| 2 | [ahkamboh/agent-caption](https://github.com/ahkamboh/agent-caption) | 9 | 1.8 | 5д | 0д назад | Добавьте подписи к любому видео или песне, на любо... |
+| 3 | [Johell1NS/browser-search](https://github.com/Johell1NS/browser-search) | 215 | 30.714 | 7д | 0д назад | Навык для агентов ИИ: поиск в интернете с помощью ... |
+| 4 | [0xCUB3/Freedirect](https://github.com/0xCUB3/Freedirect) | 5 | 0.714 | 7д | 0д назад | Перенаправлятор веб-расширения Safari для приватны... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260628_153504.md](links/free_trending_links_trending_20260628_153504.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260629_141336.md](links/free_trending_links_trending_20260629_141336.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -128,11 +129,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [hikariming/github-roast](https://github.com/hikariming/github-roast) | 37 | 18.5 | 2д | 0д назад | Жесткий GitHub Roast · Оставьте имя пользователя, ... |
-| 2 | [diamondfsd/luna-ai-cut](https://github.com/diamondfsd/luna-ai-cut) | 12 | 4.0 | 3д | 0д назад | Luna AI Cut — это настольный медиа-менеджер для ка... |
-| 3 | [Mfrostbutter/ageniusdesk-ce](https://github.com/Mfrostbutter/ageniusdesk-ce) | 13 | 2.6 | 5д | 0д назад | Центр управления для операторов автоматизации n8n:... |
+| 1 | [qataruts/monlite](https://github.com/qataruts/monlite) | 27 | 13.5 | 2д | 0д назад | Документы, векторы, кэш, очередь и планировщик в о... |
+| 2 | [ahkamboh/agent-caption](https://github.com/ahkamboh/agent-caption) | 9 | 1.8 | 5д | 0д назад | Добавьте подписи к любому видео или песне, на любо... |
+| 3 | [modelstat/modelstat](https://github.com/modelstat/modelstat) | 9 | 1.5 | 6д | 0д назад | Кто выпустил токены!? |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260628_153556.md](links/ai_trending_links_trending_20260628_153556.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260629_141419.md](links/ai_trending_links_trending_20260629_141419.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -142,9 +143,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 0д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 1д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260628_153618.md](links/free_ai_trending_links_trending_20260628_153618.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260629_141422.md](links/free_ai_trending_links_trending_20260629_141422.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
