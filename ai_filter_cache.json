@@ -1278,5 +1278,95 @@
     "is_spam": false,
     "reason": "Репозиторий молодой и активно развивается",
     "quality_score": 8
+  },
+  "c1aeea434e3cbada4f84d05c41266e55": {
+    "is_spam": false,
+    "reason": "активно развивается, но не мусор",
+    "quality_score": 8
+  },
+  "533a294aa0b2178bb95a3a3c15c0f25a": {
+    "is_spam": false,
+    "reason": "активно развивается, но не содержит признаков мусора",
+    "quality_score": 8
+  },
+  "811d4ab904f3ba9f6c5e3cb675f99a92": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "101d8cd5d04b0f25aea4e0b96da485e7": {
+    "is_spam": false,
+    "reason": "активно развивается, но без признаков мусора",
+    "quality_score": 8
+  },
+  "319d59a196ff78749a794597855c427d": {
+    "is_spam": false,
+    "reason": "активно развивается, но не содержит мусор",
+    "quality_score": 8
+  },
+  "d24b2a36f09c7d0845a1fe5ad037b3dc": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "4eab07eeafa133b7b8514c6a364fa49a": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "216e7369db1042a928dbdf1760f2111f": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "e626370f2e64fad2a7ea0584b6e52bd7": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "90e3e712dd444c60f804df8f6f456923": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "c1b25200a3945ae9da070c8d03e54e3f": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "e46bfb5d4313762fff737f87260b3cae": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "d017c4d23bd1d29c50c2de9883b90194": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "5da4bd1b9e4d008e4df4189f2fdcdb0c": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "6d7d77d141707371302bf9f34ef8dba8": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "395cacd1426a9c330f7ec57222eb7a4d": {
+    "is_spam": false,
+    "reason": "активно развивается, но не подозрительные признаки",
+    "quality_score": 8
+  },
+  "c26a62f216bf02d5b09414de2ac7540b": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "73cd0bccbfe1bea2bdf7468d08447476": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
   }
 }

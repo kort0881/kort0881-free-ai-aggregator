@@ -114,12 +114,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [AkuchiS/Yap](https://github.com/AkuchiS/Yap) | 37 | 7.4 | 5д | 0д назад | Бесплатная офлайн-распознавание голоса для macOS, ... |
-| 2 | [ahkamboh/agent-caption](https://github.com/ahkamboh/agent-caption) | 9 | 1.8 | 5д | 0д назад | Добавьте подписи к любому видео или песне, на любо... |
-| 3 | [Johell1NS/browser-search](https://github.com/Johell1NS/browser-search) | 215 | 30.714 | 7д | 0д назад | Навык для агентов ИИ: поиск в интернете с помощью ... |
-| 4 | [0xCUB3/Freedirect](https://github.com/0xCUB3/Freedirect) | 5 | 0.714 | 7д | 0д назад | Перенаправлятор веб-расширения Safari для приватны... |
+| 1 | [WidthEvokerKiln/Warzone-Vision](https://github.com/WidthEvokerKiln/Warzone-Vision) | 101 | 101.0 | 1д | 0д назад | 🛡️ Warzone-Vision – бесплатный инструмент для Call... |
+| 2 | [AkuchiS/Yap](https://github.com/AkuchiS/Yap) | 37 | 6.167 | 6д | 0д назад | Бесплатная офлайн-распознавание голоса для macOS, ... |
+| 3 | [Johell1NS/browser-search](https://github.com/Johell1NS/browser-search) | 240 | 34.286 | 7д | 0д назад | Навык для агентов ИИ: поиск в интернете с помощью ... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260629_141336.md](links/free_trending_links_trending_20260629_141336.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260630_121443.md](links/free_trending_links_trending_20260630_121443.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -129,11 +128,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [qataruts/monlite](https://github.com/qataruts/monlite) | 27 | 13.5 | 2д | 0д назад | Документы, векторы, кэш, очередь и планировщик в о... |
-| 2 | [ahkamboh/agent-caption](https://github.com/ahkamboh/agent-caption) | 9 | 1.8 | 5д | 0д назад | Добавьте подписи к любому видео или песне, на любо... |
-| 3 | [modelstat/modelstat](https://github.com/modelstat/modelstat) | 9 | 1.5 | 6д | 0д назад | Кто выпустил токены!? |
+| 1 | [mingchen666/Reviva](https://github.com/mingchen666/Reviva) | 19 | 19.0 | 1д | 0д назад | Местно-ориентированное рабочее пространство обучен... |
+| 2 | [FishCodeTech/muteki](https://github.com/FishCodeTech/muteki) | 146 | 29.2 | 5д | 0д назад | Проект Muteki (無敵): автономный много-модельный CTF... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260629_141419.md](links/ai_trending_links_trending_20260629_141419.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260630_121523.md](links/ai_trending_links_trending_20260630_121523.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -143,9 +141,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 50 | 50.0 | 1д | 1д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 20.0 | 2д | 0д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260629_141422.md](links/free_ai_trending_links_trending_20260629_141422.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260630_121525.md](links/free_ai_trending_links_trending_20260630_121525.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
