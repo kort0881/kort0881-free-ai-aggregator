@@ -114,11 +114,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [WidthEvokerKiln/Warzone-Vision](https://github.com/WidthEvokerKiln/Warzone-Vision) | 101 | 101.0 | 1д | 0д назад | 🛡️ Warzone-Vision – бесплатный инструмент для Call... |
-| 2 | [AkuchiS/Yap](https://github.com/AkuchiS/Yap) | 37 | 6.167 | 6д | 0д назад | Бесплатная офлайн-распознавание голоса для macOS, ... |
-| 3 | [Johell1NS/browser-search](https://github.com/Johell1NS/browser-search) | 240 | 34.286 | 7д | 0д назад | Навык для агентов ИИ: поиск в интернете с помощью ... |
+| 1 | [Moh4696/freecut](https://github.com/Moh4696/freecut) | 5 | 5.0 | 1д | 0д назад | Вилка браузерного/видео-использования с заменой пл... |
+| 2 | [jangles-byte/Pythia](https://github.com/jangles-byte/Pythia) | 10 | 2.5 | 4д | 0д назад | Один локальный вызов API дает вашему агенту полное... |
+| 3 | [marketcalls/openalgo-charts](https://github.com/marketcalls/openalgo-charts) | 10 | 2.5 | 4д | 0д назад | Движок диаграмм на основе HTML5 canvas, не зависящ... |
+| 4 | [AkuchiS/Yap](https://github.com/AkuchiS/Yap) | 40 | 5.714 | 7д | 0д назад | Бесплатная офлайн-распознавание голоса для macOS, ... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260630_121443.md](links/free_trending_links_trending_20260630_121443.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260701_123813.md](links/free_trending_links_trending_20260701_123813.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -128,10 +129,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [mingchen666/Reviva](https://github.com/mingchen666/Reviva) | 19 | 19.0 | 1д | 0д назад | Местно-ориентированное рабочее пространство обучен... |
-| 2 | [FishCodeTech/muteki](https://github.com/FishCodeTech/muteki) | 146 | 29.2 | 5д | 0д назад | Проект Muteki (無敵): автономный много-модельный CTF... |
+| 1 | [linzhi-524/linjian-nightwalk](https://github.com/linzhi-524/linjian-nightwalk) | 8 | 8.0 | 1д | 0д назад | Долгосрочная текстовая игра-приключение, предназна... |
+| 2 | [zmylol/MiniClaude](https://github.com/zmylol/MiniClaude) | 21 | 10.5 | 2д | 0д назад | MiniClaude - это легковесный терминальный помощник... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260630_121523.md](links/ai_trending_links_trending_20260630_121523.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260701_123850.md](links/ai_trending_links_trending_20260701_123850.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -141,9 +142,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 20.0 | 2д | 0д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 13.333 | 3д | 1д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260630_121525.md](links/free_ai_trending_links_trending_20260630_121525.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260701_123858.md](links/free_ai_trending_links_trending_20260701_123858.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
