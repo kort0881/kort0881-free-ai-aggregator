@@ -114,12 +114,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Moh4696/freecut](https://github.com/Moh4696/freecut) | 5 | 5.0 | 1д | 0д назад | Вилка браузерного/видео-использования с заменой пл... |
-| 2 | [jangles-byte/Pythia](https://github.com/jangles-byte/Pythia) | 10 | 2.5 | 4д | 0д назад | Один локальный вызов API дает вашему агенту полное... |
-| 3 | [marketcalls/openalgo-charts](https://github.com/marketcalls/openalgo-charts) | 10 | 2.5 | 4д | 0д назад | Движок диаграмм на основе HTML5 canvas, не зависящ... |
-| 4 | [AkuchiS/Yap](https://github.com/AkuchiS/Yap) | 40 | 5.714 | 7д | 0д назад | Бесплатная офлайн-распознавание голоса для macOS, ... |
+| 1 | [lylongfts/cad2cube](https://github.com/lylongfts/cad2cube) | 5 | 1.0 | 5д | 0д назад | Бесплатное дополнение к Blender для импорта файлов... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260701_123813.md](links/free_trending_links_trending_20260701_123813.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260702_121218.md](links/free_trending_links_trending_20260702_121218.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -129,10 +126,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [linzhi-524/linjian-nightwalk](https://github.com/linzhi-524/linjian-nightwalk) | 8 | 8.0 | 1д | 0д назад | Долгосрочная текстовая игра-приключение, предназна... |
-| 2 | [zmylol/MiniClaude](https://github.com/zmylol/MiniClaude) | 21 | 10.5 | 2д | 0д назад | MiniClaude - это легковесный терминальный помощник... |
+| 1 | [Chozzc/Lujie-Careerkit](https://github.com/Chozzc/Lujie-Careerkit) | 78 | 39.0 | 2д | 0д назад | Рабочее пространство карьеры на основе ИИ, от реда... |
+| 2 | [agent-kits/agentaz](https://github.com/agent-kits/agentaz) | 9 | 1.8 | 5д | 0д назад | AgentAz — открытый проект по созданию спецификаций... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260701_123850.md](links/ai_trending_links_trending_20260701_123850.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260702_121305.md](links/ai_trending_links_trending_20260702_121305.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -142,9 +139,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 13.333 | 3д | 1д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 10.0 | 4д | 2д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260701_123858.md](links/free_ai_trending_links_trending_20260701_123858.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260702_121308.md](links/free_ai_trending_links_trending_20260702_121308.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
