@@ -1573,5 +1573,100 @@
     "is_spam": false,
     "reason": "Репозиторий молодой, но активно развивается",
     "quality_score": 8
+  },
+  "7cb7d36b41e353f29b56575053f05980": {
+    "is_spam": false,
+    "reason": "активно развивается, но не мусор",
+    "quality_score": 8
+  },
+  "8f379d52f10c386e7ddadbe5ff0dd5fc": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "6e6a17aed7b70462bf42a708e183d343": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные данные, имеет большое количество звезд и форков, а также используется популярные технологии. Лицензия MIT, что является лицензией открытого кода.",
+    "quality_score": 8
+  },
+  "20af7a9deebc431f84b3be7989586fd4": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой и активно развивается",
+    "quality_score": 8
+  },
+  "16e292dacfb2b70d5eb93bc246bb316f": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "737a72080f9e162e50d90ea076d7831f": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "08c28301198138176f238a1e0c300ed4": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "5d8176c7714e0403b05d2c2b89902fb0": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "95f98888e02f33b1b35870f24d159c53": {
+    "is_spam": false,
+    "reason": "активно развивается, но не соответствует критериям мусора",
+    "quality_score": 8
+  },
+  "944d97da3a8724f0be6094686b1d2bf2": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "603fe46995dceccc4ea80c6a506896a5": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "87947f39e1892488f0305bc79bf47c6f": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "3ddd4fbbc834fec6c0e39707bc6889aa": {
+    "is_spam": false,
+    "reason": "активно развивается, но не подозрительно быстро",
+    "quality_score": 8
+  },
+  "131c1c09e85772c7bc5e930ffc8fa560": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "4128b9f8b0cbb258eabce6681424a382": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "97464d568b545e22a2561ecec506e487": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "d9abe3dbb33765a9a1e8195dd9db0f25": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "41835b2068e4e5d15deac880b3abeaef": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "62495ba229aa97f4797794893487058c": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
   }
 }

@@ -114,9 +114,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [lylongfts/cad2cube](https://github.com/lylongfts/cad2cube) | 5 | 1.0 | 5д | 0д назад | Бесплатное дополнение к Blender для импорта файлов... |
+| 1 | [servletcloud/fstache](https://github.com/servletcloud/fstache) | 7 | 2.333 | 3д | 0д назад | Быстрый рендерер Mustache, не зависящий от других ... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260702_121218.md](links/free_trending_links_trending_20260702_121218.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260703_121202.md](links/free_trending_links_trending_20260703_121202.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -126,10 +126,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Chozzc/Lujie-Careerkit](https://github.com/Chozzc/Lujie-Careerkit) | 78 | 39.0 | 2д | 0д назад | Рабочее пространство карьеры на основе ИИ, от реда... |
-| 2 | [agent-kits/agentaz](https://github.com/agent-kits/agentaz) | 9 | 1.8 | 5д | 0д назад | AgentAz — открытый проект по созданию спецификаций... |
+| 1 | [HKUDS/OpenOPC](https://github.com/HKUDS/OpenOPC) | 18 | 9.0 | 2д | 0д назад | OpenOPC: Ваша личная компания, родная для ИИ — сам... |
+| 2 | [kevintsai1202/deep-memory](https://github.com/kevintsai1202/deep-memory) | 12 | 6.0 | 2д | 0д назад | Самоэволюционирующая система накопления знаний и г... |
+| 3 | [caiyuxinkhu2002-debug/bridgecn-ai-workspace](https://github.com/caiyuxinkhu2002-debug/bridgecn-ai-workspace) | 5 | 1.667 | 3д | 0д назад |  |
+| 4 | [MageByte-Zero/spec-superflow](https://github.com/MageByte-Zero/spec-superflow) | 196 | 28.0 | 7д | 0д назад | Плагин для работы ИИ в области программирования, о... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260702_121305.md](links/ai_trending_links_trending_20260702_121305.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260703_121248.md](links/ai_trending_links_trending_20260703_121248.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -139,9 +141,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 10.0 | 4д | 2д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 8.0 | 5д | 3д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260702_121308.md](links/free_ai_trending_links_trending_20260702_121308.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260703_121253.md](links/free_ai_trending_links_trending_20260703_121253.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
