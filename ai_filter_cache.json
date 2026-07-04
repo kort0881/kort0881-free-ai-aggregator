@@ -1668,5 +1668,95 @@
     "is_spam": false,
     "reason": "Репозиторий молодой, но активно развивается",
     "quality_score": 8
+  },
+  "da8b8b8b27328065443971132a4f69a6": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "329492b2842e1fba8d0661a8ff14c574": {
+    "is_spam": false,
+    "reason": "активно развивается, но без явных признаков спама",
+    "quality_score": 8
+  },
+  "cb8f22354e5bc2d0dbbaae8b5a382fe8": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "dba58a90eace361597500da8b824123a": {
+    "is_spam": false,
+    "reason": "активно развивается, но не мусор",
+    "quality_score": 8
+  },
+  "7b85eb6569719ace995ec575a04994bb": {
+    "is_spam": false,
+    "reason": "Активно развивающийся репозиторий с высокими трендами",
+    "quality_score": 8
+  },
+  "eb7c4ca8f41d7b1725cc631631f14b5e": {
+    "is_spam": false,
+    "reason": "активно развивается, но не соответствует критериям мусора",
+    "quality_score": 8
+  },
+  "d51cffd49a49093ef6b21b6d8b027e66": {
+    "is_spam": false,
+    "reason": "активно развивается, но не имеет признаков мусора",
+    "quality_score": 8
+  },
+  "20ffb9f946de2e37d1c44c6592b37f7a": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "a6542095050f0c44db3adb7f516e1c0e": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальный и полезный код с большим количеством звезд и форков. Описание репозитория четкое и понятно.",
+    "quality_score": 9
+  },
+  "aca982f4e0eeda894aca84d5210fddd7": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "742c38e08b8fb018e73664869c5ac29e": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "01998aa656f7b3e23273e133ab956bdf": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "fc029a50d56bc9c6080638874e65d05a": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "33dc6f2c17a33c329783e18f2e4d2918": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "37f2c536148c6abdc34bcbb7035777cc": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "60aa1e5c6d86928d2bf28690664c9360": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "5769e252c7144f76a7f167df22f13de7": {
+    "is_spam": false,
+    "reason": "активно развивается, но не соответствует критерию \"молодой\"",
+    "quality_score": 8
+  },
+  "a2a86b1f9b6fedd4a235d94f0beecd03": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
   }
 }

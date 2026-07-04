@@ -114,9 +114,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [servletcloud/fstache](https://github.com/servletcloud/fstache) | 7 | 2.333 | 3д | 0д назад | Быстрый рендерер Mustache, не зависящий от других ... |
+| 1 | [lxh77721/k12-reg](https://github.com/lxh77721/k12-reg) | 70 | 70.0 | 1д | 0д назад | Много поточный полно автоматический регистратор бе... |
+| 2 | [mocasus/Auto-FreeCF](https://github.com/mocasus/Auto-FreeCF) | 33 | 33.0 | 1д | 0д назад | Сборщик ID и токена аккаунта Cloudflare Workers AI... |
+| 3 | [Chintanpatel24/my-free-claudecode](https://github.com/Chintanpatel24/my-free-claudecode) | 6 | 6.0 | 1д | 0д назад | используйте claudecode бесплатно навсегда !! |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260703_121202.md](links/free_trending_links_trending_20260703_121202.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260704_113800.md](links/free_trending_links_trending_20260704_113800.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -126,12 +128,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [HKUDS/OpenOPC](https://github.com/HKUDS/OpenOPC) | 18 | 9.0 | 2д | 0д назад | OpenOPC: Ваша личная компания, родная для ИИ — сам... |
-| 2 | [kevintsai1202/deep-memory](https://github.com/kevintsai1202/deep-memory) | 12 | 6.0 | 2д | 0д назад | Самоэволюционирующая система накопления знаний и г... |
-| 3 | [caiyuxinkhu2002-debug/bridgecn-ai-workspace](https://github.com/caiyuxinkhu2002-debug/bridgecn-ai-workspace) | 5 | 1.667 | 3д | 0д назад |  |
-| 4 | [MageByte-Zero/spec-superflow](https://github.com/MageByte-Zero/spec-superflow) | 196 | 28.0 | 7д | 0д назад | Плагин для работы ИИ в области программирования, о... |
+| 1 | [mocasus/Auto-FreeCF](https://github.com/mocasus/Auto-FreeCF) | 33 | 33.0 | 1д | 0д назад | Сборщик ID и токена аккаунта Cloudflare Workers AI... |
+| 2 | [joygqz/sageport](https://github.com/joygqz/sageport) | 25 | 6.25 | 4д | 0д назад | Рабочий стол SSH с интегрированным SFTP, управлени... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260703_121248.md](links/ai_trending_links_trending_20260703_121248.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260704_113830.md](links/ai_trending_links_trending_20260704_113830.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -141,9 +141,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 8.0 | 5д | 3д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 6.667 | 6д | 4д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260703_121253.md](links/free_ai_trending_links_trending_20260703_121253.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260704_113831.md](links/free_ai_trending_links_trending_20260704_113831.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
