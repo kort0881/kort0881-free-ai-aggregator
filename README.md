@@ -114,11 +114,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [lxh77721/k12-reg](https://github.com/lxh77721/k12-reg) | 70 | 70.0 | 1д | 0д назад | Много поточный полно автоматический регистратор бе... |
-| 2 | [mocasus/Auto-FreeCF](https://github.com/mocasus/Auto-FreeCF) | 33 | 33.0 | 1д | 0д назад | Сборщик ID и токена аккаунта Cloudflare Workers AI... |
-| 3 | [Chintanpatel24/my-free-claudecode](https://github.com/Chintanpatel24/my-free-claudecode) | 6 | 6.0 | 1д | 0д назад | используйте claudecode бесплатно навсегда !! |
+| 1 | [Chintanpatel24/my-free-agents](https://github.com/Chintanpatel24/my-free-agents) | 10 | 5.0 | 2д | 0д назад | используйте claudecode бесплатно навсегда !! |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260704_113800.md](links/free_trending_links_trending_20260704_113800.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260705_113827.md](links/free_trending_links_trending_20260705_113827.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -128,10 +126,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [mocasus/Auto-FreeCF](https://github.com/mocasus/Auto-FreeCF) | 33 | 33.0 | 1д | 0д назад | Сборщик ID и токена аккаунта Cloudflare Workers AI... |
-| 2 | [joygqz/sageport](https://github.com/joygqz/sageport) | 25 | 6.25 | 4д | 0д назад | Рабочий стол SSH с интегрированным SFTP, управлени... |
+| 1 | [synthetic-sciences/openscience](https://github.com/synthetic-sciences/openscience) | 15 | 15.0 | 1д | 0д назад | Открытый ИИ-инструментарий для научных исследовани... |
+| 2 | [joygqz/sageport](https://github.com/joygqz/sageport) | 34 | 6.8 | 5д | 0д назад | Рабочий стол SSH с интегрированным SFTP, управлени... |
+| 3 | [Anuj-er/leet2hub](https://github.com/Anuj-er/leet2hub) | 11 | 1.571 | 7д | 0д назад | Мощное расширение Chrome, которое без проблем синх... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260704_113830.md](links/ai_trending_links_trending_20260704_113830.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260705_113912.md](links/ai_trending_links_trending_20260705_113912.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -141,9 +140,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 6.667 | 6д | 4д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 9 | 4.5 | 2д | 0д назад | Легковесная панель управления и инструмент отчетно... |
+| 2 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 5.714 | 7д | 5д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260704_113831.md](links/free_ai_trending_links_trending_20260704_113831.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260705_113918.md](links/free_ai_trending_links_trending_20260705_113918.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
