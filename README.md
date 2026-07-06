@@ -114,9 +114,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Chintanpatel24/my-free-agents](https://github.com/Chintanpatel24/my-free-agents) | 10 | 5.0 | 2д | 0д назад | используйте claudecode бесплатно навсегда !! |
+| 1 | [adityaarsharma/wordpress-malware-removal](https://github.com/adityaarsharma/wordpress-malware-removal) | 11 | 2.75 | 4д | 0д назад | Аудит, очистка и укрепление сайта WordPress от нач... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260705_113827.md](links/free_trending_links_trending_20260705_113827.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260706_135158.md](links/free_trending_links_trending_20260706_135158.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -126,11 +126,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [synthetic-sciences/openscience](https://github.com/synthetic-sciences/openscience) | 15 | 15.0 | 1д | 0д назад | Открытый ИИ-инструментарий для научных исследовани... |
-| 2 | [joygqz/sageport](https://github.com/joygqz/sageport) | 34 | 6.8 | 5д | 0д назад | Рабочий стол SSH с интегрированным SFTP, управлени... |
-| 3 | [Anuj-er/leet2hub](https://github.com/Anuj-er/leet2hub) | 11 | 1.571 | 7д | 0д назад | Мощное расширение Chrome, которое без проблем синх... |
+| 1 | [nnrj/threejson](https://github.com/nnrj/threejson) | 22 | 22.0 | 1д | 0д назад | ThreeJSON — это JSON-ориентированная декларативная... |
+| 2 | [brcampidelli/chimera-agent](https://github.com/brcampidelli/chimera-agent) | 5 | 0.833 | 6д | 0д назад | Открытый агент ИИ, который рассуждает, сочетая мно... |
+| 3 | [techtony2018/memory-stargraph](https://github.com/techtony2018/memory-stargraph) | 11 | 1.571 | 7д | 0д назад | Ваши знания, представленные в виде живой звездной ... |
+| 4 | [CorrectRoadH/NiceEval](https://github.com/CorrectRoadH/NiceEval) | 12 | 1.714 | 7д | 0д назад | Постройте оценку для вашего агента за 10 минут |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260705_113912.md](links/ai_trending_links_trending_20260705_113912.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260706_135232.md](links/ai_trending_links_trending_20260706_135232.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -140,10 +141,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 9 | 4.5 | 2д | 0д назад | Легковесная панель управления и инструмент отчетно... |
-| 2 | [Hunteryawatch/FreeAI-Desktop](https://github.com/Hunteryawatch/FreeAI-Desktop) | 40 | 5.714 | 7д | 5д назад | Бесплатный офлайн-чат с ИИ для Windows. Модель Lla... |
+| 1 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 12 | 4.0 | 3д | 0д назад | Легковесная панель управления и инструмент отчетно... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260705_113918.md](links/free_ai_trending_links_trending_20260705_113918.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260706_135237.md](links/free_ai_trending_links_trending_20260706_135237.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
