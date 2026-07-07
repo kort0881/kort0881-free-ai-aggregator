@@ -114,9 +114,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [adityaarsharma/wordpress-malware-removal](https://github.com/adityaarsharma/wordpress-malware-removal) | 11 | 2.75 | 4д | 0д назад | Аудит, очистка и укрепление сайта WordPress от нач... |
+| 1 | [iqbalmh18/brave-api](https://github.com/iqbalmh18/brave-api) | 19 | 9.5 | 2д | 0д назад | API Brave совершенно бесплатен. Нет логина. Нет кл... |
+| 2 | [servletcloud/fstache](https://github.com/servletcloud/fstache) | 8 | 1.143 | 7д | 0д назад | Быстрый рендерер Mustache, не зависящий от других ... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260706_135158.md](links/free_trending_links_trending_20260706_135158.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260707_123027.md](links/free_trending_links_trending_20260707_123027.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -126,12 +127,11 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [nnrj/threejson](https://github.com/nnrj/threejson) | 22 | 22.0 | 1д | 0д назад | ThreeJSON — это JSON-ориентированная декларативная... |
-| 2 | [brcampidelli/chimera-agent](https://github.com/brcampidelli/chimera-agent) | 5 | 0.833 | 6д | 0д назад | Открытый агент ИИ, который рассуждает, сочетая мно... |
-| 3 | [techtony2018/memory-stargraph](https://github.com/techtony2018/memory-stargraph) | 11 | 1.571 | 7д | 0д назад | Ваши знания, представленные в виде живой звездной ... |
-| 4 | [CorrectRoadH/NiceEval](https://github.com/CorrectRoadH/NiceEval) | 12 | 1.714 | 7д | 0д назад | Постройте оценку для вашего агента за 10 минут |
+| 1 | [Bike4Mind/bike4mind](https://github.com/Bike4Mind/bike4mind) | 41 | 41.0 | 1д | 0д назад | Открытая платформа для работы с ИИ — блокноты, аге... |
+| 2 | [william0wang/zcode-acp](https://github.com/william0wang/zcode-acp) | 5 | 2.5 | 2д | 0д назад | Адаптер ACP для ZCode |
+| 3 | [agentdraw/agentdraw](https://github.com/agentdraw/agentdraw) | 6 | 2.0 | 3д | 0д назад | Местный редактируемый белый доска для агентов ИИ. ... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260706_135232.md](links/ai_trending_links_trending_20260706_135232.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260707_123125.md](links/ai_trending_links_trending_20260707_123125.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -141,9 +141,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 12 | 4.0 | 3д | 0д назад | Легковесная панель управления и инструмент отчетно... |
+| 1 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 14 | 3.5 | 4д | 0д назад | Легковесная панель управления и инструмент отчетно... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260706_135237.md](links/free_ai_trending_links_trending_20260706_135237.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260707_123131.md](links/free_ai_trending_links_trending_20260707_123131.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
