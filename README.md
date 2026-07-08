@@ -114,10 +114,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [iqbalmh18/brave-api](https://github.com/iqbalmh18/brave-api) | 19 | 9.5 | 2д | 0д назад | API Brave совершенно бесплатен. Нет логина. Нет кл... |
-| 2 | [servletcloud/fstache](https://github.com/servletcloud/fstache) | 8 | 1.143 | 7д | 0д назад | Быстрый рендерер Mustache, не зависящий от других ... |
+| 1 | [nagisanzenin/engram](https://github.com/nagisanzenin/engram) | 399 | 133.0 | 3д | 0д назад | Инженерия обучения на основе доказательств для Cla... |
 
-📦 **Архив всех проектов**: [links/free_trending_links_trending_20260707_123027.md](links/free_trending_links_trending_20260707_123027.md)
+📦 **Архив всех проектов**: [links/free_trending_links_trending_20260708_114955.md](links/free_trending_links_trending_20260708_114955.md)
 
 
 <!-- END_FREE_TRENDING -->
@@ -127,11 +126,12 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [Bike4Mind/bike4mind](https://github.com/Bike4Mind/bike4mind) | 41 | 41.0 | 1д | 0д назад | Открытая платформа для работы с ИИ — блокноты, аге... |
-| 2 | [william0wang/zcode-acp](https://github.com/william0wang/zcode-acp) | 5 | 2.5 | 2д | 0д назад | Адаптер ACP для ZCode |
-| 3 | [agentdraw/agentdraw](https://github.com/agentdraw/agentdraw) | 6 | 2.0 | 3д | 0д назад | Местный редактируемый белый доска для агентов ИИ. ... |
+| 1 | [srelens/srelens](https://github.com/srelens/srelens) | 17 | 17.0 | 1д | 0д назад | Быстрый, легкий IDE для Kubernetes, построенный с ... |
+| 2 | [ahwanulm/AMRouter](https://github.com/ahwanulm/AMRouter) | 75 | 15.0 | 5д | 0д назад | Самостоятельный шлюз ИИ — одна конечная точка, мно... |
+| 3 | [thecolab-ai/the-for-good-project](https://github.com/thecolab-ai/the-for-good-project) | 9 | 1.5 | 6д | 0д назад | Открытая исследовательская площадка, где люди и аг... |
+| 4 | [yonidavidson/agentcomm](https://github.com/yonidavidson/agentcomm) | 6 | 0.857 | 7д | 0д назад | Маленький почтовый ящик для агентов ИИ - один CLI,... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260707_123125.md](links/ai_trending_links_trending_20260707_123125.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260708_115028.md](links/ai_trending_links_trending_20260708_115028.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -141,9 +141,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 14 | 3.5 | 4д | 0д назад | Легковесная панель управления и инструмент отчетно... |
+| 1 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 18 | 3.6 | 5д | 0д назад | Легковесная панель управления и инструмент отчетно... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260707_123131.md](links/free_ai_trending_links_trending_20260707_123131.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260708_115030.md](links/free_ai_trending_links_trending_20260708_115030.md)
 
 
 <!-- END_FREE_AI_TRENDING -->
