@@ -1,57 +1,69 @@
 {
   "github": {
-    "min_stars": 2,
-    "languages": ["python", "javascript", "typescript"],
-    "sort_by": "stars",
-    "order": "desc",
+    "min_stars": 1,
+    "languages": [],
     "per_page": 30,
-    "filter_has_readme": true
+    "filter_has_readme": false
   },
-
   "trending": {
     "enabled": true,
-    "max_age_days": 90,
-    "min_stars": 5,
+    "max_age_days": 30,
+    "min_stars": 3,
+    "min_trending_score": 5,
     "min_stars_per_day": 0.3,
-    "max_days_since_update": 14,
-    "min_trending_score": 12,
-    "sort_by": "updated"
+    "max_days_since_update": 21
   },
-
+  "ai_filter": {
+    "enabled": true,
+    "min_quality_score": 5,
+    "spam_keywords": ["crypto", "bitcoin", "ethereum", "token", "airdrop", "porn", "adult", "casino"],
+    "rate_limit_delay": 0.5
+  },
   "readme": {
     "max_days_to_show": 7
   },
-
   "triggers": [
     {
       "name": "free",
-      "query": "free",
-      "output_folder": "data/raw/free",
-      "filtered_folder": "data/filtered/free",
-      "links_folder": "links"
+      "queries": [
+        "free -tutorial -example -demo",
+        "free -guide -sample",
+        "free -starter -boilerplate"
+      ]
     },
     {
       "name": "ai",
-      "query": "ai",
-      "output_folder": "data/raw/ai",
-      "filtered_folder": "data/filtered/ai",
-      "links_folder": "links"
+      "queries": [
+        "ai -tutorial -example -demo",
+        "machine learning -tutorial -example",
+        "deep learning -tutorial -example",
+        "artificial intelligence -tutorial -demo"
+      ]
     },
     {
       "name": "free_ai",
-      "query": "\"free ai\"",
-      "output_folder": "data/raw/free-ai",
-      "filtered_folder": "data/filtered/free-ai",
-      "links_folder": "links"
+      "queries": [
+        "free ai -tutorial -example",
+        "free artificial intelligence -demo",
+        "free machine learning -tutorial"
+      ]
+    },
+    {
+      "name": "web",
+      "queries": [
+        "react -tutorial -example",
+        "vue -tutorial -example",
+        "svelte -tutorial -example",
+        "angular -tutorial -example"
+      ]
+    },
+    {
+      "name": "devops",
+      "queries": [
+        "kubernetes -tutorial -example",
+        "docker -tutorial -example",
+        "terraform -tutorial -example"
+      ]
     }
-  ],
-
-  "ai_filter": {
-    "enabled": true,
-    "api_type": "groq",
-    "model": "llama-3.3-70b-versatile",
-    "rate_limit_delay": 2.0,
-    "min_quality_score": 6,
-    "spam_keywords": ["crypto", "bitcoin", "onlyfans", "porn", "adult"]
-  }
+  ]
 }
