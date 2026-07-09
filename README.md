@@ -22,9 +22,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | Описание |
 |---|-------------|----------|----------|
-| 1 | [fendouai/humanize-text-skill](https://github.com/fendouai/humanize-text-skill) | 194 | Бесплатный инструмент Humanizer для ИИ: оживление текста ИИ ... |
+| 1 | [fendouai/humanize-text-skill](https://github.com/fendouai/humanize-text-skill) | 203 | Бесплатный инструмент Humanizer для ИИ: оживление текста ИИ ... |
 
-📦 **Архив всех проектов**: [links/free_ai_links_filtered_20260709_124018.md](links/free_ai_links_filtered_20260709_124018.md)
+📦 **Архив всех проектов**: [links/free_ai_links_filtered_20260709_153125.md](links/free_ai_links_filtered_20260709_153125.md)
 
 
 <!-- END_FREE_AI -->
@@ -122,9 +122,14 @@ _Новых проектов за последние 7 дней не найде�
 <!-- END_FREE_TRENDING -->
 
 <!-- START_AI_TRENDING -->
-## 🚀 AI_TRENDING – новые проекты
+## 🔥 AI_TRENDING – свежие Trending-проекты
 
-_Новых проектов за последние 7 дней не найдено._
+| # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
+|---|-------------|----------|-----------|-----------|------------|----------|
+| 1 | [riktar/memledger](https://github.com/riktar/memledger) | 5 | 5.0 | 1д | 0д назад | Память агента ИИ, которой можно доверять |
+| 2 | [OmarH-creator/Autonomous-Forge](https://github.com/OmarH-creator/Autonomous-Forge) | 225 | 112.5 | 2д | 0д назад | Этот репозиторий автоматизирован и представляет со... |
+
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260709_153124.md](links/ai_trending_links_trending_20260709_153124.md)
 
 
 <!-- END_AI_TRENDING -->
@@ -134,10 +139,10 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [fendouai/humanize-text-skill](https://github.com/fendouai/humanize-text-skill) | 194 | 38.8 | 5д | 0д назад | Бесплатный инструмент Humanizer для ИИ: оживление ... |
+| 1 | [fendouai/humanize-text-skill](https://github.com/fendouai/humanize-text-skill) | 203 | 40.6 | 5д | 0д назад | Бесплатный инструмент Humanizer для ИИ: оживление ... |
 | 2 | [47thtechcorner/RayCodes_OmniRoute-Explorer](https://github.com/47thtechcorner/RayCodes_OmniRoute-Explorer) | 20 | 3.333 | 6д | 0д назад | Легковесная панель управления и инструмент отчетно... |
 
-📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260709_124019.md](links/free_ai_trending_links_trending_20260709_124019.md)
+📦 **Архив всех проектов**: [links/free_ai_trending_links_trending_20260709_153126.md](links/free_ai_trending_links_trending_20260709_153126.md)
 
 
 <!-- END_FREE_AI_TRENDING -->

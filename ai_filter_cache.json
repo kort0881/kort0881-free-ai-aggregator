@@ -2223,5 +2223,85 @@
     "is_spam": false,
     "reason": "Репозиторий активен и имеет хорошие метрики",
     "quality_score": 9
+  },
+  "4c7b47cb83a4d87eabb588d2c5efe0a4": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "f6ac6a27ffa486cc3f697efa95162594": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "dc807aeaa2fcba399d8541270ecf6991": {
+    "is_spam": false,
+    "reason": "Молодой, но активно развивающийся репозиторий с большим количеством звезд и форков",
+    "quality_score": 8
+  },
+  "47fc035e1e1132c85a8b06ac4f2e8ff5": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "b230f76e428211d3b10bcd5063f90b7e": {
+    "is_spam": false,
+    "reason": "активно развивается, но не содержит мусор",
+    "quality_score": 8
+  },
+  "ecef351305bb953e0263e9442238f807": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "ac771df32ebfb87f9401569d0dd31cf4": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "b489e754523306208f4b5ba6135825cd": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "810cde580f95278bd0ae25ca4510cad9": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "c0070f6c5238b8f83ce168915ae565ec": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "daee95bbfb713ddebf0e2d96b39cd4a3": {
+    "is_spam": false,
+    "reason": "активно развивается, но не содержит мусор",
+    "quality_score": 8
+  },
+  "0db41616c002c1680e8bc4373b547561": {
+    "is_spam": false,
+    "reason": "активно развивается, молодой репозиторий",
+    "quality_score": 8
+  },
+  "1f1822e995d0f0f9388eee24a9eb5c4d": {
+    "is_spam": false,
+    "reason": "активно развивается, но не соответствует критериям мусора",
+    "quality_score": 8
+  },
+  "925e54682942fa905696daeefd8b8e7e": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "d3aa62f0088cf3c9525f50ccacd52130": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "00227ab5b5bb136526f961b717d19190": {
+    "is_spam": false,
+    "reason": "активно развивается, но не соответствует критериям мусора",
+    "quality_score": 8
   }
 }
