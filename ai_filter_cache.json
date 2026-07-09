@@ -2303,5 +2303,330 @@
     "is_spam": false,
     "reason": "активно развивается, но не соответствует критериям мусора",
     "quality_score": 8
+  },
+  "67970d2f9a7c119d93565c94885f8a69": {
+    "is_spam": false,
+    "reason": "активный репозиторий с полезным контентом",
+    "quality_score": 8
+  },
+  "a5465ca73652a07a1449f4d14669385c": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит демонстрации функциональности AiiDA, что является полезной информацией для разработчиков.",
+    "quality_score": 8
+  },
+  "0764f6aef432d6ce0dce5687741ff016": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и демонстрирует интересную задачу по распознаванию рук",
+    "quality_score": 8
+  },
+  "876855f34c181daedbbd239703487e07": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию и не соответствует критериям мусора",
+    "quality_score": 8
+  },
+  "65a41265c9d4ed77e00aef4fadc4946a": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию по установке и настройке Anaconda для использования Python в исследованиях.",
+    "quality_score": 8
+  },
+  "4b438ef194048990e6a852589784e412": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит актуальную информацию",
+    "quality_score": 8
+  },
+  "63b255a94a2bf1e498df8931dc8e19fb": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и имеет активное обновление.",
+    "quality_score": 8
+  },
+  "e2adcf57bd83b6e115ba0699c7847e0d": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "f9a249f7bb2f320f5c6ff142c0605468": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "b32fea73c418eee8fceae357f33f7efe": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и имеет звезды, но без лицензии",
+    "quality_score": 6
+  },
+  "a2779f604f614d25608b8fde580219d0": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "b70ce8be5f1d93573a125da1d8dd1890": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию для начинающих веб-разработчиков",
+    "quality_score": 8
+  },
+  "58d407e04e27d6b4024d3d2ed9668aec": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и демонстрирует использование React и Redux для создания социальной сети. Описание репозитория четкое и содержит ссылку на дополнительную информацию.",
+    "quality_score": 8
+  },
+  "263d2f91813513508d348cc531c7f6ff": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "6734bdd9932810d00d7e6e95241863f0": {
+    "is_spam": false,
+    "reason": "Репозиторий с активной разработкой и низкой накруткой",
+    "quality_score": 8
+  },
+  "6653f8fe193bd83ed0785ef3172b41e3": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные и полезные материалы по AI, но без явных признаков накрутки или мусора.",
+    "quality_score": 8
+  },
+  "5a302a8406fcb2aac619dfd42d9bb9b4": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "258aa98f55b9ba8ee743656991b7c0fa": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные и полезные материалы по React",
+    "quality_score": 8
+  },
+  "d31a36812974a8dc52e62dd9228d52e4": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "2a54fa26b62fda48cab46727431265b6": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "6be004518087abbeb2dc0bd12463920b": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "6b5824ed6faa224834f8d574a0068462": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "b8316b9556ec1a68d9101e4a9de1999d": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "ee7b54419b6bafaa16f180fdd64b54fa": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "17ce92c096f87a3ecb7d3f44420eba7f": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и пример использования библиотеки Nivo для создания интерактивных графиков.",
+    "quality_score": 8
+  },
+  "adcf4f864414c46934e5dadabdc74766": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "bcbddce1cbc12ebba702be8d18ed6817": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с актуальной информацией и средней активностью",
+    "quality_score": 8
+  },
+  "26903ed0ba46754ea7ac99075f3c98e3": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "287068e7b872c0d62af5cf9c0a5c21f2": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "6b997d67fdbd3850ed5e27148b2fefdf": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "6e8c4a931e2bfadfc9820d5fe318b760": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "1db139f1433819933eae5e90d4ac4a57": {
+    "is_spam": false,
+    "reason": "Репозиторий демонстрирует активность и актуальность, имеет четкое описание и используется популярным фреймворком.",
+    "quality_score": 8
+  },
+  "c565159d0ea17e0af3da1fa37632b709": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "4cf07724749b706e7eb86ffec2be0d20": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "fec6a0cd5b629a2b7b04c33051e6b429": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные данные и демонстрирует понимание React JS. Описание репозитория четкое и соответствует содержимому.",
+    "quality_score": 8
+  },
+  "bdf046abb9bca7fe336ddc3be9849ed2": {
+    "is_spam": false,
+    "reason": "репозиторий активен и содержит примеры Kubernetes",
+    "quality_score": 8
+  },
+  "d953ae6817d0b92e46b3e15377162e98": {
+    "is_spam": false,
+    "reason": "репозиторий содержит актуальные данные и не подходит под никакие критерии мусора",
+    "quality_score": 8
+  },
+  "a3b0ffe2b9fb04c9b1d4ffaf87f73ea0": {
+    "is_spam": false,
+    "reason": "репозиторий содержит актуальную информацию и имеет активную деятельность",
+    "quality_score": 8
+  },
+  "1a37d4cafdcada66f546686fdf5a91ae": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные и полезные примеры Terraform без использования Public cloud провайдеров.",
+    "quality_score": 8
+  },
+  "85244bbba2462b124f3ca2c377464560": {
+    "is_spam": false,
+    "reason": "репозиторий содержит helm Chart examples и tutorial resources, активен",
+    "quality_score": 8
+  },
+  "ba510f4af0a673f7d7ee261838ab8bac": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит исходный код",
+    "quality_score": 8
+  },
+  "7cd808637ffb9e395adaa866df52cfb6": {
+    "is_spam": false,
+    "reason": "репозиторий активен и содержит код на Python",
+    "quality_score": 8
+  },
+  "b6519b4a6b04a6daf488e0a38081f8e6": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные данные и не подходит под любые из указанных категорий мусора.",
+    "quality_score": 8
+  },
+  "7fdb3c4e1287edbbef3f57b412c05e6a": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит код",
+    "quality_score": 8
+  },
+  "9308bcbaa9bcbb118629351aec4a138f": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "e7c56c4ce46020b2ed093b630ee3ddfc": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию о Keycloak",
+    "quality_score": 8
+  },
+  "77496fa76fc50593a1feadacb6702045": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию по Kubernetes и имеет неплохие метрики (звезды и форки)",
+    "quality_score": 8
+  },
+  "e2ca857f6880829ecd991cefd3291b9d": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные примеры Terraform для развертывания Kubernetes кластеров для обучения по Vault.",
+    "quality_score": 8
+  },
+  "ba268626851fa549cfe6c903c797a08d": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "31d3e75f2346bf094a55644ce17a34cb": {
+    "is_spam": false,
+    "reason": "репозиторий активен и содержит обучающие примеры",
+    "quality_score": 8
+  },
+  "862cc3400668c374024b7bb5cead033b": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию по настройке Kubernetes на Raspberry Pi и имеет актуальные кодовые примеры.",
+    "quality_score": 8
+  },
+  "967902e5192886caa9af4da332f0ca77": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и имеет активное обновление в 2025 году.",
+    "quality_score": 8
+  },
+  "a283ed49dd1e52360efc5a872def19e1": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 6
+  },
+  "3b7d2851a92fb7fbd98ed148f39678e3": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит код",
+    "quality_score": 8
+  },
+  "6540791809fabc033b3be9677638edaf": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию и имеет активность за последние 3 года.",
+    "quality_score": 8
+  },
+  "18a1c3346f4d85841c814f9af84c3327": {
+    "is_spam": false,
+    "reason": "репозиторий актуальный и содержит код",
+    "quality_score": 8
+  },
+  "21546ce56cdc8555eb1734445b88d88c": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию по DevOps и имеет актуальную активность.",
+    "quality_score": 8
+  },
+  "abe3538e1584cb25828030fdea3ff3bd": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию по GitOps и имеет хорошие метрики (4 звезды, 1 фонд).",
+    "quality_score": 8
+  },
+  "dc74a5559aca4f7a7bc743638e5081bc": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "01f400a2fc5f623c95e0ef221522d7ba": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "87267fe7c1c9df4c4d74720a7e67df69": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит исходный код на Go с лицензией apache-2.0.",
+    "quality_score": 8
+  },
+  "fe3ac636c5cf2816cdb243015eddfabc": {
+    "is_spam": false,
+    "reason": "репозиторий актуальный и содержит исходный код",
+    "quality_score": 8
+  },
+  "c33c8b4fb461222603de49b9c3086ac2": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию по DevOps и имеет актуальные данные.",
+    "quality_score": 8
+  },
+  "681fa2488a2d03ee0058423918924220": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и не соответствует критериям мусора",
+    "quality_score": 8
+  },
+  "c39ebb14dd79e6746a06fe50a8ff1ea3": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит исходный код",
+    "quality_score": 8
   }
 }
