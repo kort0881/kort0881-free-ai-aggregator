@@ -71,7 +71,6 @@ def build_exclude_clause(seen: set, max_exclude: int = 20) -> str:
     """Строит часть запроса для исключения до max_exclude репозиториев."""
     if not seen:
         return ""
-    # Берём последние (самые свежие) до лимита, чтобы исключать недавно просмотренные
     exclude_list = list(seen)[-max_exclude:]
     return " ".join(f"-repo:{repo}" for repo in exclude_list)
 
@@ -615,7 +614,6 @@ def commit_and_push(files=None):
 # ====================== ОСНОВНАЯ ФУНКЦИЯ ======================
 def process_trigger(trigger: dict, config: dict, rotation: dict, seen: set):
     name = trigger["name"]
-    # Получаем следующий запрос для этого триггера
     try:
         query = get_next_query(name, trigger, rotation)
     except ValueError as e:
@@ -637,7 +635,7 @@ def process_trigger(trigger: dict, config: dict, rotation: dict, seen: set):
             analysis_results.append({"repo": repo["name"], **analysis})
             if not analysis["is_spam"]:
                 filtered.append(repo)
-                seen.add(repo["name"])  # запоминаем даже отфильтрованные, чтобы не повторялись
+                seen.add(repo["name"])
 
         if filtered:
             batch_translate_descriptions(filtered, config)
@@ -678,7 +676,6 @@ def process_trigger(trigger: dict, config: dict, rotation: dict, seen: set):
             update_readme(trend_name, trend_filtered, trending_mode=True, max_days_in_readme=max_days, config=config)
         print(f"📊 Trending итог: {len(trend_filtered)} / {len(trending_repos)}")
 
-    # Сохраняем seen после обработки триггера
     save_seen(seen)
 
 def main():
