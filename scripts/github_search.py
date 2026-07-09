@@ -2,6 +2,7 @@
 """
 Поиск репозиториев GitHub с AI-фильтрацией через Groq API.
 Trending-репозитории + автоматический перевод описаний на русский.
+Добавлено: ротация запросов, исключение просмотренных, случайная сортировка.
 """
 
 import requests
@@ -12,6 +13,7 @@ import re
 import subprocess
 import shutil
 import hashlib
+import random
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from groq import Groq
@@ -23,6 +25,55 @@ def load_config():
         raise SystemExit("❌ config.json не найден.")
     with open(config_path, "r", encoding="utf-8") as f:
         return json.load(f)
+
+# ====================== РОТАЦИЯ ЗАПРОСОВ ======================
+ROTATION_FILE = Path("query_rotation.json")
+
+def load_rotation():
+    if ROTATION_FILE.exists():
+        with open(ROTATION_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    return {}
+
+def save_rotation(rotation):
+    with open(ROTATION_FILE, "w", encoding="utf-8") as f:
+        json.dump(rotation, f, indent=2)
+
+def get_next_query(trigger_name: str, trigger: dict, rotation: dict) -> str:
+    """Возвращает следующий запрос для триггера (циклически)."""
+    if "queries" in trigger and isinstance(trigger["queries"], list) and trigger["queries"]:
+        queries = trigger["queries"]
+    elif "query" in trigger:
+        queries = [trigger["query"]]
+    else:
+        raise ValueError(f"Триггер {trigger_name} не содержит query или queries")
+
+    idx = rotation.get(trigger_name, 0)
+    query = queries[idx % len(queries)]
+    rotation[trigger_name] = (idx + 1) % len(queries)
+    save_rotation(rotation)
+    return query
+
+# ====================== ИСКЛЮЧЕНИЕ ПРОСМОТРЕННЫХ ======================
+SEEN_FILE = Path("seen_repos.json")
+
+def load_seen():
+    if SEEN_FILE.exists():
+        with open(SEEN_FILE, "r", encoding="utf-8") as f:
+            return set(json.load(f))
+    return set()
+
+def save_seen(seen):
+    with open(SEEN_FILE, "w", encoding="utf-8") as f:
+        json.dump(list(seen), f, indent=2)
+
+def build_exclude_clause(seen: set, max_exclude: int = 20) -> str:
+    """Строит часть запроса для исключения до max_exclude репозиториев."""
+    if not seen:
+        return ""
+    # Берём последние (самые свежие) до лимита, чтобы исключать недавно просмотренные
+    exclude_list = list(seen)[-max_exclude:]
+    return " ".join(f"-repo:{repo}" for repo in exclude_list)
 
 # ====================== TRENDING-МЕТРИКИ ======================
 def compute_trending_metrics(repo: dict) -> dict:
@@ -53,7 +104,7 @@ def _build_date_filter(max_age_days: int) -> str:
     cutoff = (datetime.now(timezone.utc) - timedelta(days=max_age_days)).strftime("%Y-%m-%d")
     return f"created:>{cutoff}"
 
-def search_github_repos(query: str, config: dict, trending_mode: bool = False) -> list:
+def search_github_repos(query: str, config: dict, trending_mode: bool = False, seen: set = None) -> list:
     github_token = os.getenv("GITHUB_TOKEN")
     headers = {"Accept": "application/vnd.github.v3+json"}
     if github_token:
@@ -73,7 +124,16 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False) -
     if languages:
         parts.append(" ".join(f"language:{lang}" for lang in languages))
 
-    sort_by = gh_config.get("sort_by", "stars")
+    # Исключение уже виденных
+    if seen:
+        exclude = build_exclude_clause(seen)
+        if exclude:
+            parts.append(exclude)
+
+    # Случайная сортировка, если не задана в конфиге
+    sort_by = gh_config.get("sort_by")
+    if not sort_by:
+        sort_by = random.choice(["stars", "updated", "forks"])
     order = gh_config.get("order", "desc")
 
     if trending_mode:
@@ -90,7 +150,7 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False) -
     full_query = " ".join(parts)
     params = {"q": full_query, "sort": sort_by, "order": order,
               "per_page": min(gh_config.get("per_page", 30), 100)}
-    print(f"🔍 Поиск: {full_query}")
+    print(f"🔍 Поиск: {full_query} (сортировка: {sort_by})")
 
     repos = []
     try:
@@ -298,20 +358,15 @@ def save_translation_cache():
         print(f"⚠️ Ошибка сохранения кэша переводов: {e}")
 
 def _clean_translation(text: str) -> str:
-    """Безопасно очищает ответ модели от мусора."""
     if not text:
         return ""
-    # Удаляем блоки рассуждений <think>...</think>
     text = re.sub(r'<think>.*?</think>', '', text, flags=re.IGNORECASE | re.DOTALL)
-    # Удаляем markdown блоки кода
     text = re.sub(r'```[a-zA-Z]*\n?', '', text)
     text = text.replace('```', '')
-    # Удаляем префиксы
     text = re.sub(r'^(перевод|translation|ответ|result)[:\s]*', '', text, flags=re.IGNORECASE).strip()
     return text.strip()
 
 def _translate_batch(texts: list, config: dict) -> dict:
-    """Переводит батч текстов за ОДИН запрос через Groq."""
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         return {}
@@ -343,9 +398,8 @@ def _translate_batch(texts: list, config: dict) -> dict:
             translations = {}
             for line in cleaned.split("\n"):
                 line = line.strip()
-                if not line: 
+                if not line:
                     continue
-                # Ловим "1. текст", "1) текст", "1 текст"
                 m = re.match(r'^\d+[\.\)\s]+\s*(.*)$', line)
                 if m:
                     idx = len(translations)
@@ -358,7 +412,6 @@ def _translate_batch(texts: list, config: dict) -> dict:
             else:
                 print(f"⚠️ Модель {model} перевела только {len(translations)}/{len(texts)}, пробуем следующую")
                 continue
-                
         except Exception as e:
             print(f"⚠️ Ошибка батч-перевода ({model}): {e}")
             continue
@@ -366,14 +419,13 @@ def _translate_batch(texts: list, config: dict) -> dict:
     return {}
 
 def batch_translate_descriptions(repos: list, config: dict):
-    """Переводит описания всех репо батчами по 5 штук."""
     api_key = os.getenv("MODELS_ROUTER")
     if not api_key:
         print("⚠️ MODELS_ROUTER не задан — пропуск перевода.")
         for repo in repos:
             repo["description_ru"] = repo["description"]
         return
-    
+
     to_translate = []
     for repo in repos:
         text = repo.get("description", "") or ""
@@ -387,23 +439,23 @@ def batch_translate_descriptions(repos: list, config: dict):
                 repo["description_ru"] = cached
                 continue
         to_translate.append((repo, text))
-    
+
     if not to_translate:
         print(f"✅ Все {len(repos)} описаний уже в кэше")
         return
-    
+
     print(f"🌐 Нужно перевести {len(to_translate)} описаний батчами по 5...")
-    
+
     batch_size = 5
     for i in range(0, len(to_translate), batch_size):
         batch = to_translate[i:i + batch_size]
         texts = [t for _, t in batch]
-        
+
         if i > 0:
             time.sleep(1.5)
-        
+
         translations = _translate_batch(texts, config)
-        
+
         for repo, text in batch:
             if text in translations:
                 translation = translations[text]
@@ -411,8 +463,8 @@ def batch_translate_descriptions(repos: list, config: dict):
                 _translation_cache[text_hash] = translation
                 repo["description_ru"] = translation
             else:
-                repo["description_ru"] = text  # fallback на оригинал
-    
+                repo["description_ru"] = text
+
     save_translation_cache()
     print(f"✅ Переведено {len(to_translate)} описаний")
 
@@ -542,7 +594,7 @@ def update_readme(trigger_name: str, repos: list, readme_path: str = "README.md"
 
 def commit_and_push(files=None):
     if files is None:
-        files = ["README.md", "links/", "translation_cache.json", "ai_filter_cache.json"]
+        files = ["README.md", "links/", "translation_cache.json", "ai_filter_cache.json", "seen_repos.json", "query_rotation.json"]
     if not os.getenv("CI"):
         print("⏩ Не CI-окружение, пропускаем автокоммит.")
         return
@@ -554,25 +606,28 @@ def commit_and_push(files=None):
         if not status.stdout.strip():
             print("✅ Нет изменений для коммита.")
             return
-        subprocess.run(["git", "commit", "-m", "Автообновление + trending [skip ci]"], check=True)
+        subprocess.run(["git", "commit", "-m", "Автообновление + разнообразие [skip ci]"], check=True)
         subprocess.run(["git", "push"], check=True)
         print("✅ Запушено.")
     except Exception as e:
         print(f"⚠️ Ошибка коммита: {e}")
 
 # ====================== ОСНОВНАЯ ФУНКЦИЯ ======================
-def process_trigger(trigger: dict, config: dict):
+def process_trigger(trigger: dict, config: dict, rotation: dict, seen: set):
     name = trigger["name"]
-    query = trigger.get("query")
-    if not query:
+    # Получаем следующий запрос для этого триггера
+    try:
+        query = get_next_query(name, trigger, rotation)
+    except ValueError as e:
+        print(f"❌ {e}")
         return
 
     out_folder = trigger.get("output_folder", "output")
     filtered_folder = trigger.get("filtered_folder", "filtered")
     links_folder = trigger.get("links_folder", "links")
 
-    print(f"\n{'='*60}\n🎯 {name} [обычный]\n{'='*60}")
-    repos = search_github_repos(query, config, trending_mode=False)
+    print(f"\n{'='*60}\n🎯 {name} [обычный] — запрос: {query}\n{'='*60}")
+    repos = search_github_repos(query, config, trending_mode=False, seen=seen)
     if not repos:
         save_json(name, [], out_folder)
     else:
@@ -582,10 +637,11 @@ def process_trigger(trigger: dict, config: dict):
             analysis_results.append({"repo": repo["name"], **analysis})
             if not analysis["is_spam"]:
                 filtered.append(repo)
-        
+                seen.add(repo["name"])  # запоминаем даже отфильтрованные, чтобы не повторялись
+
         if filtered:
             batch_translate_descriptions(filtered, config)
-        
+
         save_json(name, repos, out_folder, analysis_results)
         if filtered:
             save_json(f"{name}_filtered", filtered, filtered_folder)
@@ -596,8 +652,8 @@ def process_trigger(trigger: dict, config: dict):
 
     trend_config = config.get("trending", {})
     if trend_config.get("enabled", False):
-        print(f"\n{'='*60}\n🔥 {name} [trending]\n{'='*60}")
-        trending_repos = search_github_repos(query, config, trending_mode=True)
+        print(f"\n{'='*60}\n🔥 {name} [trending] — запрос: {query}\n{'='*60}")
+        trending_repos = search_github_repos(query, config, trending_mode=True, seen=seen)
         ranked = rank_trending(trending_repos, config)
         print(f"📈 После trending-фильтра: {len(ranked)} / {len(trending_repos)}")
 
@@ -607,6 +663,7 @@ def process_trigger(trigger: dict, config: dict):
             trend_analysis.append({"repo": repo["name"], **analysis})
             if not analysis["is_spam"]:
                 trend_filtered.append(repo)
+                seen.add(repo["name"])
 
         if trend_filtered:
             batch_translate_descriptions(trend_filtered, config)
@@ -621,18 +678,24 @@ def process_trigger(trigger: dict, config: dict):
             update_readme(trend_name, trend_filtered, trending_mode=True, max_days_in_readme=max_days, config=config)
         print(f"📊 Trending итог: {len(trend_filtered)} / {len(trending_repos)}")
 
+    # Сохраняем seen после обработки триггера
+    save_seen(seen)
+
 def main():
     load_translation_cache()
     load_ai_filter_cache()
-    
+
     config = load_config()
+    rotation = load_rotation()
+    seen = load_seen()
+
     for trigger in config["triggers"]:
-        process_trigger(trigger, config)
+        process_trigger(trigger, config, rotation, seen)
 
     max_days = config.get("readme", {}).get("max_days_to_show", 7)
     rotate_archives(links_folder="links", keep_days=max_days)
 
-    commit_and_push(["README.md", "links/", "translation_cache.json", "ai_filter_cache.json"])
+    commit_and_push(["README.md", "links/", "translation_cache.json", "ai_filter_cache.json", "seen_repos.json", "query_rotation.json"])
     print("\n🎉 Готово!")
 
 if __name__ == "__main__":
