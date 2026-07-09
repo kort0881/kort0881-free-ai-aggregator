@@ -2148,5 +2148,80 @@
     "is_spam": false,
     "reason": "Репозиторий молодой, но активно развивается",
     "quality_score": 8
+  },
+  "0fc70ee262bb061a866027d42cfe0e69": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой и активно развивается",
+    "quality_score": 8
+  },
+  "4734ada7753f5c0f686663a6d99b63d3": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "631b5ff88dc4ffa9b82d380f5c96601a": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "dd1215cd9101287562d3f3e8f3b960a9": {
+    "is_spam": false,
+    "reason": "активно развивается, но не соответствует критерию мусора",
+    "quality_score": 8
+  },
+  "fe42cc3fea3400e774a72bd1d2903fd7": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "c9d3bae0c85bf6ddd26397c6ab879a3d": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "331739eff360db409d10a465929148dd": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "ee1c8095084f3922e6b55023aed0d3c2": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "74ecba5c02856ba4fd60ff853a1938c8": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой и активно развивается",
+    "quality_score": 8
+  },
+  "4adceb0b6aafe564cf1a4e3a09b75253": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "f562cff6659d797c655f4fe556f9a292": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "cf16272b13ad6e2a79aebb8b68efcb57": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "d77e0e8af4c80da58ac835e061cbbc59": {
+    "is_spam": false,
+    "reason": "активно развивается",
+    "quality_score": 8
+  },
+  "9fc0b14de0dbf91ceeaf3d64bcf624d1": {
+    "is_spam": false,
+    "reason": "Репозиторий молодой, но активно развивается",
+    "quality_score": 8
+  },
+  "d0424427cf96a39db3e199a526191593": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и имеет хорошие метрики",
+    "quality_score": 9
   }
 }
