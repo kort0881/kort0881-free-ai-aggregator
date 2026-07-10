@@ -1,0 +1,36 @@
+# 📦 Архив проектов: WEB
+
+📅 Дата архивации: 10.07.2026 12:37
+
+| # | Репозиторий | ⭐ Звёзд | 📅 Создан | 🔄 Обновлён | Описание |
+|---|-------------|----------|-----------|------------|----------|
+| 1 | [cornflourblue/vue-vuex-registration-login-example](https://github.com/cornflourblue/vue-vuex-registration-login-example) | 392 | 2018-07-13 | 2026-04-01 | Vue + Vuex - Уроки регистрации и входа пользователя и пример |
+| 2 | [cornflourblue/vue-vuex-jwt-authentication-example](https://github.com/cornflourblue/vue-vuex-jwt-authentication-example) | 260 | 2018-07-02 | 2026-04-01 | Vue + Vuex - Уроки аутентификации JWT и пример |
+| 3 | [cornflourblue/vue-3-pinia-registration-login-example](https://github.com/cornflourblue/vue-3-pinia-registration-login-example) | 151 | 2022-07-03 | 2026-04-24 | Vue 3 + Pinia - Пример и урок регистрации и входа пользователя |
+| 4 | [cornflourblue/vue-3-pinia-jwt-authentication-example](https://github.com/cornflourblue/vue-3-pinia-jwt-authentication-example) | 154 | 2022-05-25 | 2026-06-25 | Vue 3 + Pinia - Уроки аутентификации JWT и пример |
+| 5 | [snipcart/vue-seo-prerender](https://github.com/snipcart/vue-seo-prerender) | 144 | 2017-03-30 | 2026-04-04 | Урок Vue.js: Пример с предварительной отрисовкой, дружественный для SEO |
+| 6 | [cornflourblue/vue-role-based-authorization-example](https://github.com/cornflourblue/vue-role-based-authorization-example) | 100 | 2019-02-21 | 2026-06-16 | Vue - Урок по авторизации на основе ролей и пример |
+| 7 | [KrunalLathiya/VueLaravelCrudSPA](https://github.com/KrunalLathiya/VueLaravelCrudSPA) | 46 | 2018-11-17 | 2026-05-05 | Урок по примеру CRUD Vue Laravel с нуля - это сегодняшняя основная тема. Laravel - это самый быстрор |
+| 8 | [cornflourblue/vue-basic-authentication-example](https://github.com/cornflourblue/vue-basic-authentication-example) | 42 | 2018-08-31 | 2024-04-10 | Vue.js - Урок по базовой аутентификации HTTP и пример |
+| 9 | [KrunalLathiya/MEVNCRUDExample](https://github.com/KrunalLathiya/MEVNCRUDExample) | 29 | 2018-11-21 | 2025-06-27 | Урок по стеку MEVN с примером с нуля - это тема, которую мы будем обсуждать сегодня. Мы создадим пол |
+| 10 | [hootlex/vuejs-form-validation-example](https://github.com/hootlex/vuejs-form-validation-example) | 80 | 2016-08-30 | 2026-05-31 | Исходный код урока по валидации форм Vue.js |
+| 11 | [qirolab/learn-vuex-with-basic-ecommerce-example](https://github.com/qirolab/learn-vuex-with-basic-ecommerce-example) | 47 | 2020-01-09 | 2024-05-14 | Смотрите уроки по управлению состоянием Vuex здесь. |
+| 12 | [KrunalLathiya/VueNodeTutorial](https://github.com/KrunalLathiya/VueNodeTutorial) | 45 | 2017-08-04 | 2026-04-21 | Урок VueJS Nodejs проходит через создание приложения Node.js, MongoDB, Express и фронтенд-фреймворка |
+| 13 | [rlafranchi/vuejs-rails-example](https://github.com/rlafranchi/vuejs-rails-example) | 95 | 2016-03-09 | 2026-04-21 | Урок по использованию Vue.js в приложении Rails |
+| 14 | [KrunalLathiya/VueFirebaseTutorial](https://github.com/KrunalLathiya/VueFirebaseTutorial) | 19 | 2018-04-23 | 2024-04-30 | Пример CRUD Vue Firebase - это основная тема сегодня. Если вы новичок и в Vue, и в Firebase, то може |
+| 15 | [didinj/ionic-5-vue-3-oauth2-login](https://github.com/didinj/ionic-5-vue-3-oauth2-login) | 22 | 2020-11-28 | 2025-04-28 | Урок Ionic 5: пример входа через OAuth2 (Vue) |
+| 16 | [oktadev/okta-node-sql-server-example](https://github.com/oktadev/okta-node-sql-server-example) | 33 | 2019-02-22 | 2024-06-28 | Build a Node.js App with SQL Server Tutorial |
+| 17 | [sanusanth/javascript-basic-program](https://github.com/sanusanth/javascript-basic-program) | 64 | 2021-01-03 | 2026-05-28 | What is JavaScript and what does it do?   Before you start learning something new, it’s important to |
+| 18 | [KrunalLathiya/VueLaravelChart](https://github.com/KrunalLathiya/VueLaravelChart) | 5 | 2018-02-23 | 2025-07-23 | Creating charts with Laravel and Vue js Chart js Tutorial Example is today’s topic. For this topic,  |
+| 19 | [cornflourblue/vue-3-pinia-jwt-refresh-tokens](https://github.com/cornflourblue/vue-3-pinia-jwt-refresh-tokens) | 23 | 2023-01-31 | 2026-02-26 | Vue 3 + Pinia - JWT Authentication with Refresh Tokens Example & Tutorial |
+| 20 | [KrunalLathiya/LaravelVueTwitterApp](https://github.com/KrunalLathiya/LaravelVueTwitterApp) | 28 | 2018-06-12 | 2025-02-22 | In this Laravel and Vue Example, we will build a twitter type web application. For this tutorial, I  |
+| 21 | [cornflourblue/vue-pagination-example](https://github.com/cornflourblue/vue-pagination-example) | 35 | 2019-08-20 | 2025-02-06 | Учебник и пример постраничной навигации Vue.js |
+| 22 | [didinj/vue-firebase-chat-example](https://github.com/didinj/vue-firebase-chat-example) | 9 | 2019-08-26 | 2025-09-05 | Учебник Vue.js: Создание чата веб-приложения с базой данных Firebase Realtime |
+| 23 | [sunil-sandhu/vue-cart-emit-example](https://github.com/sunil-sandhu/vue-cart-emit-example) | 15 | 2018-08-29 | 2026-02-03 | Пример корзины покупок, построенной на Vue, чтобы продемонстрировать, как правильно передавать слуша |
+| 24 | [joezimjs/Vue-Tutorial-Search-Example](https://github.com/joezimjs/Vue-Tutorial-Search-Example) | 15 | 2017-05-17 | 2022-11-21 | Пример веб-приложения, построенного с помощью Vue для некоторых учебников, написанных для AppendTo.c |
+| 25 | [cornflourblue/vue-3-pinia-basic-authentication-example](https://github.com/cornflourblue/vue-3-pinia-basic-authentication-example) | 7 | 2022-06-29 | 2025-12-15 | Vue 3 + Pinia - Базовый учебник и пример аутентификации по HTTP |
+| 26 | [Code-Plank/laravel-inertia-vue3](https://github.com/Code-Plank/laravel-inertia-vue3) | 5 | 2023-11-28 | 2026-04-13 | Laravel 10 Inertia Vue 3 учебник CRUD с полным примером |
+| 27 | [qirolab/vuex-tutorial-todos-example](https://github.com/qirolab/vuex-tutorial-todos-example) | 14 | 2019-10-18 | 2023-01-10 | Узнайте Vuex за 30 минут | учебник по управлению состоянием Vuex |
+| 28 | [oktadev/okta-aspnet-webapi-vue-example](https://github.com/oktadev/okta-aspnet-webapi-vue-example) | 3 | 2018-08-30 | 2022-06-26 | Учебник по созданию приложения CRUD с помощью ASP.NET Web API 2 и Vue.js |
+| 29 | [rpalo/vue-django-example](https://github.com/rpalo/vue-django-example) | 9 | 2017-07-17 | 2025-04-01 | Пример кода для учебника Vue Django |
+| 30 | [KrunalLathiya/vuexcounter](https://github.com/KrunalLathiya/vuexcounter) | 5 | 2017-08-10 | 2020-05-19 | Vuex является одной из реализаций модели Vue js, или мы можем сказать, что это состояние представлен |
