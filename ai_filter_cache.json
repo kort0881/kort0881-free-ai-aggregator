@@ -3558,5 +3558,175 @@
     "is_spam": false,
     "reason": "Репозиторий содержит актуальную и полезную информацию по секретному управлению в различных технологиях.",
     "quality_score": 8
+  },
+  "31634b4ac67ee753f526393987b5299d": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит учебные материалы и демонстрации по вредному использованию AI, что не является мусором.",
+    "quality_score": 6
+  },
+  "998d589cb4892d800b6c51f818dee99e": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по MEAN-стеку",
+    "quality_score": 8
+  },
+  "fa3e50295f9851d0584b7ec656e594e9": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит рабочий пример приложения с подробным описанием.",
+    "quality_score": 9
+  },
+  "fc6068bb06dc8a2132ea71284bfa3c50": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной активностью и полезным содержимым",
+    "quality_score": 8
+  },
+  "1bd7c8a6a4965bdf052527bf33ceefdf": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит полезную информацию по Java.",
+    "quality_score": 8
+  },
+  "06f820da941c24f6d39c97be7318b35c": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "2662e396faab5d775ea337fe0cd21d72": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по теме Angular форм и валидации.",
+    "quality_score": 8
+  },
+  "7fafce6179c378f054a14597b33dd954": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с актуальной активностью и полезной информацией",
+    "quality_score": 8
+  },
+  "0f53581c9f9775b48b043f551d046485": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит полезную информацию по Angular и Node.js",
+    "quality_score": 8
+  },
+  "bbcb683cdab163e43a9ef5bb3fb4f72d": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по авторизации в Angular 8.",
+    "quality_score": 8
+  },
+  "b6be939d5d23acfd3a67495871f92963": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной активностью и полезным содержимым",
+    "quality_score": 8
+  },
+  "f1e37e42e88cb33ca62df876c8bf91cc": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по Angular 7",
+    "quality_score": 8
+  },
+  "ea6817359a72489fafebb3e71f2e677f": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с актуальной активностью и полезным содержимым",
+    "quality_score": 8
+  },
+  "5f0fd94989bb12ba09dbf3854de705fa": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с актуальной информацией и полезным содержимым",
+    "quality_score": 8
+  },
+  "8ccba9bddf546642a8b8103d6f8eca29": {
+    "is_spam": false,
+    "reason": "репозиторий активен и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "742a5f9ac82e775ab72d7207871ccb33": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "444dd27a9273195076ee8235d9c01163": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит полезную информацию по Ionic 4 и Angular 7.",
+    "quality_score": 8
+  },
+  "4c247ae93fedd5652594edfdcd5cc8d2": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит код на актуальных технологиях",
+    "quality_score": 8
+  },
+  "252970817fb113d7d54ba7ab5114ccfe": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "d571fae890db7fea91fd30e0bf2204e3": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит пример проекта по созданию веб-приложения с использованием Angular и Express.",
+    "quality_score": 8
+  },
+  "56b973aa94130f8a9562cb3a6f7f03fb": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной деятельностью и высокими оценками",
+    "quality_score": 8
+  },
+  "4e6ee61f39072ef4a5c3b387e5787167": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и используется в реальных проектах.",
+    "quality_score": 8
+  },
+  "7d7a53a362a196830415d2eddd92471a": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "d8de4d18e83350fbb64101cfbf8ebf25": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и имеет хорошие метрики",
+    "quality_score": 8
+  },
+  "a7b3f4525404594de7a4f93b0e2639f1": {
+    "is_spam": false,
+    "reason": "Репозиторий актуальный и содержит исходный код приложения на TypeScript с лицензией MIT.",
+    "quality_score": 8
+  },
+  "25bf76023db15e0c72bc7e7577a88c18": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "4da289b9b28ef342f30e5eccbd7b7422": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по Angular 6",
+    "quality_score": 8
+  },
+  "3be4251cf4cc4428fab8ff1633e1c2e8": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "aad2b61327c3519024fcf2549207387b": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален, содержит описание и пример использования библиотеки NgRx Store",
+    "quality_score": 8
+  },
+  "9b789d9ebcfbe808659cc49072a93958": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "5b6892ef28a8cbd441a6983daae67150": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной деятельностью и полезной информацией",
+    "quality_score": 8
+  },
+  "2f1f9d94e0553fb9fa8421804105b589": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит практические примеры и лабораторные работы по Kubernetes, что является полезной информацией.",
+    "quality_score": 8
+  },
+  "29ca210f7806f98100930d49b839cfc8": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "d81403a89fc3d28707b2ed071253dad0": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
   }
 }
