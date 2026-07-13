@@ -3728,5 +3728,140 @@
     "is_spam": false,
     "reason": "Нет явных признаков спама",
     "quality_score": 8
+  },
+  "d37a3d9d85a3f81bbe8d10306d153b8e": {
+    "is_spam": false,
+    "reason": "репозиторий активен и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "7506d4b14ef8f9ba1bbb456b8a92afbe": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и имеет большое количество звезд, что говорит о его популярности и актуальности.",
+    "quality_score": 8
+  },
+  "eb87f120362b27d945da52010fb60013": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по теме React и Redux.",
+    "quality_score": 8
+  },
+  "3ceac46226392dca43933947bed7d68a": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные примеры React Native и Expo, создан в 2020 году, обновлен недавно.",
+    "quality_score": 8
+  },
+  "ed13d4a812c86d4e25fe7bd5c8c4e9a3": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной активностью и высокими оценками",
+    "quality_score": 9
+  },
+  "c07d67329369ffe1d9d3f60db913b2fb": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные примеры и уроки по React Native, создан в 2018 году, но обновлен в 2026 году.",
+    "quality_score": 8
+  },
+  "8a468f5b1d671db7256cc06068b9cb6a": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит рабочий пример использования OpenCV с React Native, что является полезной информацией для разработчиков.",
+    "quality_score": 8
+  },
+  "9fec94f1268f0db8d6706a9eb6301d74": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной деятельностью и полезным содержимым",
+    "quality_score": 8
+  },
+  "2e59ae650e0c7fa8480f425232aa928e": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной деятельностью и высокими оценками",
+    "quality_score": 8
+  },
+  "51d03af0516a957e239a489352021993": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и имеет хорошие метрики (203 звезды, 115 форков)",
+    "quality_score": 8
+  },
+  "a4050a6cd15911efabac27541d794f2f": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию по JavaScript",
+    "quality_score": 8
+  },
+  "b59c071e74df79d61a4c0f8ab9e54659": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и имеет неплохие метрики (звезды, форки)",
+    "quality_score": 8
+  },
+  "3603d28afe34c3dbdedac161e2a6736d": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по теме ASP.NET Core и React.",
+    "quality_score": 8
+  },
+  "1e117cc55d645ee877cbdaa9174603b8": {
+    "is_spam": false,
+    "reason": "Репозиторий актуальный и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "962446ae077c0dce8f7c834f16f69c6c": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию по React и предоставляет пример HTTP-авторизации.",
+    "quality_score": 8
+  },
+  "34206481c13231f548f2d463b21fcba8": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и имеет хорошие метрики (93 звезды, 16 форков)",
+    "quality_score": 8
+  },
+  "8444a97757213aaf634e071c6fa9591c": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и имеет активность в последние 2 года.",
+    "quality_score": 8
+  },
+  "d76e089f2ed4c06a413d792baab7aeb5": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с описанием и активностью",
+    "quality_score": 8
+  },
+  "03789014b5492ecda7bde03c4e2a5073": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и имеет среднюю активность",
+    "quality_score": 8
+  },
+  "2b98ce6f149df45b9d3d4719527a4ad0": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с актуальной информацией и понятным описанием",
+    "quality_score": 8
+  },
+  "62e8b8df48243ca4aee45e9cc98a4408": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные примеры использования Framer Motion для переходов между страницами.",
+    "quality_score": 8
+  },
+  "af92dbb1c3d95258e5baa774dd997893": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит код",
+    "quality_score": 8
+  },
+  "3ccb80ace9224292ae8f42fd15854065": {
+    "is_spam": false,
+    "reason": "репозиторий не является мусором, но устарел",
+    "quality_score": 6
+  },
+  "18bbeabc811906fd621d0d2e4b5b5176": {
+    "is_spam": false,
+    "reason": "репозиторий активен и содержит исходный код",
+    "quality_score": 8
+  },
+  "288eb8a0096dbf94120a594a66b28a31": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию по AI4EU Experiments и имеет активную деятельность",
+    "quality_score": 8
+  },
+  "495269e0e8d80bcc43f6e4eda0019d56": {
+    "is_spam": false,
+    "reason": "репозиторий актуальный и содержит исходный код",
+    "quality_score": 8
+  },
+  "cfc14cf85e023b428a8422e8cfac604f": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию по обучению облачной вычисли",
+    "quality_score": 8
   }
 }
