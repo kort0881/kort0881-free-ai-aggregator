@@ -3863,5 +3863,25 @@
     "is_spam": false,
     "reason": "Репозиторий содержит актуальную информацию по обучению облачной вычисли",
     "quality_score": 8
+  },
+  "f4025f102f3e9d8fd8787858a140c062": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с демонстрацией mocking Vuex в Vue unit tests",
+    "quality_score": 8
+  },
+  "80f094dea79913031de5d7efe5fbbaa9": {
+    "is_spam": false,
+    "reason": "репозиторий содержит актуальную информацию и имеет активное обновление",
+    "quality_score": 8
+  },
+  "506fd42cdf8e404e86fe22f18d307010": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по Vue Pagination с Laravel backend.",
+    "quality_score": 8
+  },
+  "17f51ad02dd11ac3a4d990f79a32a412": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные и полезные материалы по VueJs",
+    "quality_score": 8
   }
 }
