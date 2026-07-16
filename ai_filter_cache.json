@@ -3988,5 +3988,15 @@
     "is_spam": false,
     "reason": "Нет явных признаков мусора",
     "quality_score": 6
+  },
+  "4cdbbb1af712a40573e6c92cf1c67d28": {
+    "is_spam": false,
+    "reason": "Репозиторий активен и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "7847e2a84c047aeb7560b1a2fca7a847": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по созданию чата на основе Firebase и Angular.",
+    "quality_score": 8
   }
 }
