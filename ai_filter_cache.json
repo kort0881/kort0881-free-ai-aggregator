@@ -4103,5 +4103,145 @@
     "is_spam": false,
     "reason": "Репозиторий содержит актуальную информацию о реализации RESTful веб-сервиса с использованием Node.js и Docker. Описание репозитория подробно описывает задачу и предоставляет ссылки на полезные ресурсы.",
     "quality_score": 8
+  },
+  "d3613efc5714bf85695fa2b017beb738": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "79cae8b2600414c7d17a394490c42d75": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "e99ed9ae07d17010fa928554ba436536": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "d9bacc16856da73ce61184bb892f7e61": {
+    "is_spam": false,
+    "reason": "Нормальный репозиторий с активной активностью и полезным содержимым",
+    "quality_score": 8
+  },
+  "1385270d1e66247151410af99d4e6d76": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и имеет активность",
+    "quality_score": 8
+  },
+  "13658f43cf4004bdf709a7f7f62198a3": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по Angular и Firebase.",
+    "quality_score": 8
+  },
+  "a5b4445885fb9151402045193abc05e2": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 6
+  },
+  "1dd1703ec9f1ac9d09992bd6849a5068": {
+    "is_spam": false,
+    "reason": "Репозиторий актуальный и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "7585585aeeb6f8d216afad38435aab22": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "c5b61c330abeea5a0689c708ff8139e4": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальные и полезные материалы по Angular",
+    "quality_score": 8
+  },
+  "311da201fbc7a943659a2f3755052606": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "c19ddf4d697c2cf64b6f1dc61278adbd": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "22c0ab95be535cff0861e510ee27c9c7": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "0c39ad6d8dfd34a6760e5f39da5778b9": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "d59a9d0f1bab4e55385f03603a0afe97": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "bd03a1783fceab9c4c08247bd0bbe703": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит полезную информацию",
+    "quality_score": 8
+  },
+  "218fe870f7304eb261d9b73ff9c55000": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "f2493fdb21e435095945060785ba616d": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "08a55bb370f6d04cfca5f0f9cc86c2d5": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "82f22108a5a2f84fe0b8499b4683c942": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию по Angular 17 и Firebase, имеет неплохие метрики (8 звезд, 4 форка)",
+    "quality_score": 8
+  },
+  "d788485fd4843126592e4215c3ea3891": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "b127962e1d1ecaa3aaa403297042d6ae": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "2ecaf3f0bfc1f36b37f63fb6c3ce601c": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "1fe0d3aa86cd4a574e56e514ca8ba61f": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "f10c7ed70f6c0b88840a4abcf01a3dd6": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "2d75af4fc2d1632522de3a8cf17a6659": {
+    "is_spam": false,
+    "reason": "Репозиторий актуальный и содержит исходный код с описанием",
+    "quality_score": 8
+  },
+  "cd2365184e7938cae5cc846113f6aa94": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и не подходит под любые из указанных критериев мусора.",
+    "quality_score": 8
+  },
+  "7f2812d3f0f5b068b206279b49508252": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
   }
 }
