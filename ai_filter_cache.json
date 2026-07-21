@@ -4243,5 +4243,35 @@
     "is_spam": false,
     "reason": "Нет явных признаков спама",
     "quality_score": 8
+  },
+  "6207e32c36b0f917952c06400749e30e": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и примеры использования Datrix DSL и платформы кодогенерации.",
+    "quality_score": 8
+  },
+  "31f774f9132e0aed85254d3db55ebfaf": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "5233622b738ec43808c7b88e5307b728": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит полезную информацию по Kubernetes и имеет актуальные данные обновления.",
+    "quality_score": 8
+  },
+  "536b25bf9bcd976eee956f08559e5445": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "b0137f72fc9994caf26a4cea9d1a4928": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "58011a930edd6f328139ba3d18f2834f": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
   }
 }
