@@ -2,13 +2,9 @@
 
 
 <!-- START_FREE -->
-## 🚀 FREE – свежие проекты
+## 🚀 FREE – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [nalrnalar-star/express-typescript-prisma7-neon-boilerplate](https://github.com/nalrnalar-star/express-typescript-prisma7-neon-boilerplate) | 1 | ⚡ Express + TypeScript + Prisma 7 + Neon Serverless Postgres... |
-
-📦 **Архив всех проектов**: [links/free_links_filtered_20260726_112300.md](links/free_links_filtered_20260726_112300.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_FREE -->
@@ -92,13 +88,9 @@ text
 
 1. **Бейджи** – настроены под типовой репозиторий. При желании вы можете заменить ссылки на свои или убрать.
 2. **Маркеры `<!-- START_FREE -->
-## 🚀 FREE – свежие проекты
+## 🚀 FREE – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [nalrnalar-star/express-typescript-prisma7-neon-boilerplate](https://github.com/nalrnalar-star/express-typescript-prisma7-neon-boilerplate) | 1 | ⚡ Express + TypeScript + Prisma 7 + Neon Serverless Postgres... |
-
-📦 **Архив всех проектов**: [links/free_links_filtered_20260726_112300.md](links/free_links_filtered_20260726_112300.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_FREE -->`** – именно их будет искать и заменять скрипт. В исходном шаблоне они пустые, после первого запуска внутри появятся таблицы.
