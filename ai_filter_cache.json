@@ -4438,5 +4438,10 @@
     "is_spam": false,
     "reason": "Нет признаков мусора",
     "quality_score": 8
+  },
+  "5c7b8e58386640e50543a38a18bea4ed": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
   }
 }
