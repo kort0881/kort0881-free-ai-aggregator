@@ -4508,5 +4508,80 @@
     "is_spam": false,
     "reason": "Репозиторий содержит полезную информацию по глубокому обучению, но имеет низкую активность (2 звезды и 0 форков).",
     "quality_score": 6
+  },
+  "84cbddc3756a5a518a48147e61707518": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и пример реализации full-stack архитектуры с использованием популярных технологий.",
+    "quality_score": 8
+  },
+  "4b883886d4c61b2779cacb3b73214acf": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "673fc1b2559ee148d1de7cbad8312785": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "e9d85e92515324c18a22a7ba66ac4916": {
+    "is_spam": false,
+    "reason": "Нет признаков мусора",
+    "quality_score": 8
+  },
+  "f1ac327ffd45588a9993445a3c07b29a": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит актуальную информацию и пример кода на актуальной версии технологий.",
+    "quality_score": 8
+  },
+  "16949672d365747d27a9c3516204b945": {
+    "is_spam": false,
+    "reason": "репозиторий актуален и содержит код",
+    "quality_score": 8
+  },
+  "5c861d1e0d10066b558e02728bd308ac": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по Vue.js",
+    "quality_score": 8
+  },
+  "99992c079f886336900a79c902f970aa": {
+    "is_spam": false,
+    "reason": "Репозиторий актуальный и содержит код, но язык и лицензия не указаны",
+    "quality_score": 6
+  },
+  "57d7564a8bab8e369fa00e469531bd6e": {
+    "is_spam": false,
+    "reason": "Репозиторий актуальный, содержит код и описание, но звезд и форков немного",
+    "quality_score": 8
+  },
+  "b5a35968dc25522999e63adc6d515658": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "f07209abcf056727352f5b238960add7": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "f3b039fd84c7f3065a57ec411331d787": {
+    "is_spam": false,
+    "reason": "Репозиторий актуален и содержит полезную информацию по созданию CRUD-приложения с помощью Laravel и Vue.js.",
+    "quality_score": 8
+  },
+  "61dcda50ecf3e73ebfd378c2bee00787": {
+    "is_spam": false,
+    "reason": "репозиторий содержит актуальную информацию по Java и JAX-RS",
+    "quality_score": 8
+  },
+  "24c9a06d37aeb55af95f4efb23d3a4aa": {
+    "is_spam": false,
+    "reason": "Нет явных признаков мусора",
+    "quality_score": 8
+  },
+  "54fca9c844124fff81aaf7841dc10cc7": {
+    "is_spam": false,
+    "reason": "Низкая оценка, но репозиторий актуален и содержит полезную информацию",
+    "quality_score": 4
   }
 }
