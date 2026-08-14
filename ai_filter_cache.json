@@ -4583,5 +4583,20 @@
     "is_spam": false,
     "reason": "Низкая оценка, но репозиторий актуален и содержит полезную информацию",
     "quality_score": 4
+  },
+  "04287f73f12016c805d8e07bcfb77149": {
+    "is_spam": false,
+    "reason": "Репозиторий содержит рабочий пример использования TestCafe и axe accessibility checks",
+    "quality_score": 8
+  },
+  "d2befbdae97feed180ca09b32bcc7b8c": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
+  },
+  "3896acfa3cb54526b14023d6a5e26d26": {
+    "is_spam": false,
+    "reason": "Нет явных признаков спама",
+    "quality_score": 8
   }
 }
