@@ -144,14 +144,9 @@ _Новых проектов за последние 7 дней не найде�
 <!-- END_FREE_AI_TRENDING -->
 
 <!-- START_WEB -->
-## 🚀 WEB – свежие проекты
+## 🚀 WEB – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [elanthus/testcafe-tutorial](https://github.com/elanthus/testcafe-tutorial) | 1 | Шаблоны page-object TestCafe, селекторы React и проверки дос... |
-| 2 | [dev-naresh608/reactjs-chai-aur-code](https://github.com/dev-naresh608/reactjs-chai-aur-code) | 1 | Тематическая коллекция концепций React.js, примеров и практи... |
-
-📦 **Архив всех проектов**: [links/web_links_filtered_20260814_110048.md](links/web_links_filtered_20260814_110048.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_WEB -->

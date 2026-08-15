@@ -1,0 +1,36 @@
+# 📦 Архив проектов: AI
+
+📅 Дата архивации: 15.08.2026 10:27
+
+| # | Репозиторий | ⭐ Звёзд | 📅 Создан | 🔄 Обновлён | Описание |
+|---|-------------|----------|-----------|------------|----------|
+| 1 | [ARTS-Laboratory/Physics-informed-machine-learning-examples](https://github.com/ARTS-Laboratory/Physics-informed-machine-learning-examples) | 1 | 2024-07-24 | 2026-08-14 | Кодовые уроки, демонстрирующие разнообразные методы PIML. |
+| 2 | [SavvasRaptis/helio-data-methods](https://github.com/SavvasRaptis/helio-data-methods) | 2 | 2026-08-07 | 2026-08-09 | Уроки и воспроизводимые примеры статистического моделирования и машинного обучения в гелиофизике |
+| 3 | [adarshpatel39/Machine-Learning](https://github.com/adarshpatel39/Machine-Learning) | 1 | 2025-11-04 | 2026-07-27 | Это хранилище содержит коллекцию проектов машинного обучения, экспериментов и образцов кода. Оно пре |
+| 4 | [Arm-Examples/ML-examples](https://github.com/Arm-Examples/ML-examples) | 490 | 2018-01-08 | 2026-08-13 | Уроки и примеры машинного обучения Arm |
+| 5 | [SAP-archive/data-attribute-recommendation-postman-tutorial](https://github.com/SAP-archive/data-attribute-recommendation-postman-tutorial) | 7 | 2019-12-03 | 2026-07-01 | Пример кода и набора данных для всех, кто хочет попробовать сервис рекомендаций атрибутов данных на  |
+| 6 | [lokeshpuma/Machine_Learning](https://github.com/lokeshpuma/Machine_Learning) | 1 | 2026-02-03 | 2026-05-29 | Полная коллекция учебников по машинному обучению с 20+ ноутбуками Jupyter, охватывающими регрессию,  |
+| 7 | [CodingAsCreating/The-AI-Lab](https://github.com/CodingAsCreating/The-AI-Lab) | 1 | 2025-04-05 | 2026-05-25 | Лаборатория ИИ, целью которой является создание свежего, практического пространства для обучения и э |
+| 8 | [GuiCamargoX/optcrbm](https://github.com/GuiCamargoX/optcrbm) | 1 | 2020-06-21 | 2026-05-11 | Проект-урок для изучения свёрточных ограниченных بولевых машин с генетическим алгоритмом, генетическ |
+| 9 | [lazyprogrammer/machine_learning_examples](https://github.com/lazyprogrammer/machine_learning_examples) | 8908 | 2014-07-31 | 2026-08-15 | Собрание примеров и уроков машинного обучения. |
+| 10 | [Mukeshburdak/Data-Science](https://github.com/Mukeshburdak/Data-Science) | 1 | 2025-09-20 | 2026-04-15 | "Репозиторий Data Science для начинающих, в котором представлены пошаговые учебники, ноутбуки Python |
+| 11 | [STMicroelectronics/st-mems-machine-learning-core](https://github.com/STMicroelectronics/st-mems-machine-learning-core) | 29 | 2025-07-09 | 2026-07-22 | Примеры, руководства и инструменты для MLC, специализированного ядра для обработки машинного обучени |
+| 12 | [dhrumilrana25/Python-Libraries-Tutorial](https://github.com/dhrumilrana25/Python-Libraries-Tutorial) | 3 | 2023-08-02 | 2026-06-17 | Всесторонние учебники по популярным библиотекам Python: NumPy, Pandas, Matplotlib, Seaborn, Keras, T |
+| 13 | [Naviden/Sentiment-Analysis-in-Python](https://github.com/Naviden/Sentiment-Analysis-in-Python) | 3 | 2024-03-22 | 2026-03-18 | Хранилище для изучения анализа настроений с помощью Python, сочетающее теорию и код. Оно знакомит с  |
+| 14 | [MortadhaMannai/Advanced-Predictive-AI-Industrial-Machine-Learning-Program-Data_Cleaning_Preprocessing-ASS2](https://github.com/MortadhaMannai/Advanced-Predictive-AI-Industrial-Machine-Learning-Program-Data_Cleaning_Preprocessing-ASS2) | 7 | 2026-02-19 | 2026-03-05 | Очистка и предварительная обработка данных являются важными шагами в любом проекте анализа данных ил |
+| 15 | [Alicanayhn/Miuul_Machine_Learning_Bootcamp](https://github.com/Alicanayhn/Miuul_Machine_Learning_Bootcamp) | 1 | 2023-07-15 | 2026-01-23 | Это хранилище было создано для буткэмпа Miuul по машинному обучению и здесь будут включены примеры и |
+| 16 | [rohillamanas06-commits/Python-Learning](https://github.com/rohillamanas06-commits/Python-Learning) | 2 | 2025-12-23 | 2026-04-21 | Всесторонняя коллекция примеров кода на Python, учебных пособий и проектов, охватывающих базовые и п |
+| 17 | [haroontrailblazer/Machine_Learning](https://github.com/haroontrailblazer/Machine_Learning) | 9 | 2025-03-18 | 2026-02-22 | О этом репозитории Кураторский ресурсный хаб для изучения машинного обучения, в котором представлены |
+| 18 | [Mahdi-hasan-shuvo/ML-opensource-project](https://github.com/Mahdi-hasan-shuvo/ML-opensource-project) | 12 | 2025-06-17 | 2026-06-09 | является открытым репозиторием, ориентированным на предоставление практических и образовательных рес |
+| 19 | [NicKuo-ResearchStuff/Health_Gym_AI](https://github.com/NicKuo-ResearchStuff/Health_Gym_AI) | 7 | 2025-09-12 | 2026-01-28 | Открытая платформа для синтетических данных о здоровье и учебных пособий. Включает в себя наборы дан |
+| 20 | [anisabidd88-pro/Tutorial-Mchine-Learning](https://github.com/anisabidd88-pro/Tutorial-Mchine-Learning) | 1 | 2025-10-27 | 2026-06-22 | Полное, хорошо документированное руководство по машинному обучению, охватывающее каждый основной пар |
+| 21 | [ksupasate/Accelerate-ML-with-Ray](https://github.com/ksupasate/Accelerate-ML-with-Ray) | 4 | 2023-12-16 | 2026-02-12 | Этот проект предоставляет практические примеры и учебные пособия по использованию Ray для более быст |
+| 22 | [nishapandey9098/Python_Pandas_Data_Science_Tutorial](https://github.com/nishapandey9098/Python_Pandas_Data_Science_Tutorial) | 2 | 2025-09-17 | 2025-12-15 | Этот репозиторий содержит примеры для начинающих по использованию Pandas для анализа данных. Узнайте |
+| 23 | [samira-yousefzadeh/Python](https://github.com/samira-yousefzadeh/Python) | 1 | 2024-06-24 | 2025-08-25 | Этот репозиторий предлагает всестороннее учебное пособие, чтобы помочь учащимся понять основы машинн |
+| 24 | [Mashimo/datascience](https://github.com/Mashimo/datascience) | 40 | 2015-02-22 | 2026-06-24 | Машинное обучение с нуля на Python - примеры и уроки |
+| 25 | [STMicroelectronics/STMems_Machine_Learning_Core](https://github.com/STMicroelectronics/STMems_Machine_Learning_Core) | 209 | 2019-06-19 | 2026-08-06 | ПРЕКРАЩЕН (июль 2025): техническое обслуживание этого репозитория прекращено. Пожалуйста, обратитесь |
+| 26 | [Reet-Kamlay/Python-and-Machine-Learning-tutorials](https://github.com/Reet-Kamlay/Python-and-Machine-Learning-tutorials) | 1 | 2024-08-16 | 2025-07-19 | Python-Practice-and-Machine-Learning - это коллекция скриптов и ноутбуков Python, охватывающих базов |
+| 27 | [svarner9/NequIP-Workshop](https://github.com/svarner9/NequIP-Workshop) | 1 | 2023-08-22 | 2025-06-13 | Уроки с примерами того, как обучать и использовать машинное обучение Allegro (NequIP) силовое поле. |
+| 28 | [Tobyyoung1/Machine-Learning-Example](https://github.com/Tobyyoung1/Machine-Learning-Example) | 1 | 2025-05-30 | 2025-06-04 | Мой первый проект познакомил меня с машинным обучением, я следовал видеоуроку от Data Professor (Пос |
+| 29 | [rohanmistry231/Deep-Learning-Projects](https://github.com/rohanmistry231/Deep-Learning-Projects) | 48 | 2025-02-09 | 2026-07-27 | Коллекция проектов глубокого обучения, реализованных на Python, фокусирующихся на нейронных сетях, к |
+| 30 | [NCI900-Training-Organisation/intro-to-pytorch](https://github.com/NCI900-Training-Organisation/intro-to-pytorch) | 4 | 2024-08-20 | 2025-05-13 | Этот репозиторий предназначен как комплексная отправная точка для тех, кто новичок в PyTorch и глубо |
