@@ -1,0 +1,36 @@
+# 📦 Архив проектов: AI
+
+📅 Дата архивации: 24.08.2026 10:41
+
+| # | Репозиторий | ⭐ Звёзд | 📅 Создан | 🔄 Обновлён | Описание |
+|---|-------------|----------|-----------|------------|----------|
+| 1 | [dr-mushtaq/Computer-Vision](https://github.com/dr-mushtaq/Computer-Vision) | 19 | 2022-06-22 | 2026-08-22 | Образовательный репозиторий для изучения компьютерного зрения с помощью Python, OpenCV и глубокого о |
+| 2 | [jarif87/tensorflow-keras-tutorials](https://github.com/jarif87/tensorflow-keras-tutorials) | 8 | 2025-02-20 | 2026-08-20 | Кураторский набор проектов глубокого обучения, использующих TensorFlow/Keras, охватывающий видение,  |
+| 3 | [pranavv1210/deep-learning](https://github.com/pranavv1210/deep-learning) | 2 | 2026-07-23 | 2026-07-29 | Репозиторий учебника по глубокому обучению для начинающих с пошаговыми ноутбуками, примерами, упражн |
+| 4 | [VisionLab-IIT/research-project-example](https://github.com/VisionLab-IIT/research-project-example) | 1 | 2025-10-08 | 2026-07-06 | Пример репозитория для демонстрации современных подходов к проектам глубокого обучения на Python с э |
+| 5 | [CodingAsCreating/The-AI-Lab](https://github.com/CodingAsCreating/The-AI-Lab) | 1 | 2025-04-05 | 2026-05-25 | Лаборатория ИИ, целью которой является создание свежего, практического пространства для обучения и э |
+| 6 | [dgloves/DSS-Gymnasium](https://github.com/dgloves/DSS-Gymnasium) | 31 | 2024-09-10 | 2026-07-17 | Фреймворк для разработки сред глубокого обучения с подкреплением с использованием OpenDSS и Gymnasiu |
+| 7 | [tonderaikawere/python-learning](https://github.com/tonderaikawere/python-learning) | 23 | 2026-03-10 | 2026-08-05 | Это современное приложение для обучения на рабочем столе только на Python, построенное с помощью tki |
+| 8 | [ghosnkarl/TorchVisionLab](https://github.com/ghosnkarl/TorchVisionLab) | 1 | 2025-12-31 | 2026-01-27 | TorchVisionLab - это всесторонняя коллекция уроков и ноутбуков Jupyter для PyTorch, охватывающая ком |
+| 9 | [myt-mthn/ROS2-Tutorials](https://github.com/myt-mthn/ROS2-Tutorials) | 1 | 2025-11-18 | 2025-12-14 | Серия практических уроков для ROS 2 (Роботическая операционная система 2), предназначенная специальн |
+| 10 | [SEUZSH/TheAnnotatedTransformer](https://github.com/SEUZSH/TheAnnotatedTransformer) | 1 | 2025-11-09 | 2025-11-16 | Реализация Educational Transformer на основе учебника Гарварда. Полный код PyTorch с китайскими комм |
+| 11 | [sharikalog7/Deep-Learning-Meets-Data-Privacy-Pittsburgh-TechFest-2025-](https://github.com/sharikalog7/Deep-Learning-Meets-Data-Privacy-Pittsburgh-TechFest-2025-) | 1 | 2025-10-04 | 2025-10-30 | Всесторонний репозиторий GitHub для дифференциальной приватности должен включать лучшие открытые биб |
+| 12 | [anisabidd88-pro/Tutorial-Mchine-Learning](https://github.com/anisabidd88-pro/Tutorial-Mchine-Learning) | 1 | 2025-10-27 | 2026-06-22 | Полное, хорошо документированное руководство по машинному обучению, охватывающее каждый основной пар |
+| 13 | [rahul5r/PyTorch_Tutorial](https://github.com/rahul5r/PyTorch_Tutorial) | 1 | 2025-06-15 | 2025-06-27 | Этот репозиторий предоставляет всестороннюю коллекцию учебников, примеров и практических проектов, п |
+| 14 | [robaita/gen_ai_tutorials](https://github.com/robaita/gen_ai_tutorials) | 2 | 2025-05-14 | 2025-11-19 | Этот репозиторий дополняет мой курс по Генеративному ИИ, предлагая основные концепции, примеры кода  |
+| 15 | [rohanmistry231/PyTorch-Mastery-Hub](https://github.com/rohanmistry231/PyTorch-Mastery-Hub) | 25 | 2025-03-09 | 2026-08-11 | Всесторонний репозиторий учебников, проектов и примеров PyTorch для освоения концепций глубокого обу |
+| 16 | [rohanmistry231/Deep-Learning-Projects](https://github.com/rohanmistry231/Deep-Learning-Projects) | 48 | 2025-02-09 | 2026-07-27 | Коллекция проектов глубокого обучения, реализованных на Python, фокусирующихся на нейронных сетях, к |
+| 17 | [NCI900-Training-Organisation/intro-to-pytorch](https://github.com/NCI900-Training-Organisation/intro-to-pytorch) | 4 | 2024-08-20 | 2025-05-13 | Этот репозиторий предназначен как комплексная отправная точка для тех, кто новичок в PyTorch и глубо |
+| 18 | [Coohrentiin/Adversarial_Examples_Tutorials](https://github.com/Coohrentiin/Adversarial_Examples_Tutorials) | 2 | 2025-04-28 | 2026-04-28 | Этот репозиторий содержит учебник по созданию противоречивых примеров для обмана классификаторов изо |
+| 19 | [dineshpiyasamara/deep_learning_tutorial](https://github.com/dineshpiyasamara/deep_learning_tutorial) | 3 | 2023-06-24 | 2025-04-23 | Идеально подходит для учащихся, стремящихся углубить свои навыки глубокого обучения, этот проект пре |
+| 20 | [aniketmaurya/deep-learning-examples](https://github.com/aniketmaurya/deep-learning-examples) | 7 | 2023-03-13 | 2026-01-02 | Коллекция примеров кода и уроков для PyTorch, глубокого обучения, распределенной тренировки и больши |
+| 21 | [rashwinr/Tutorials-on-MONAI](https://github.com/rashwinr/Tutorials-on-MONAI) | 2 | 2024-10-05 | 2026-07-08 | Этот репозиторий содержит коллекцию учебников MONAI, демонстрирующих, как использовать эту мощную ст |
+| 22 | [hackgay/DeepLearning-TensorFlow-Tutorial](https://github.com/hackgay/DeepLearning-TensorFlow-Tutorial) | 1 | 2023-11-14 | 2024-06-03 | Учебник по глубокому обучению с помощью TensorFlow с использованием Jupyter Notebook. Репозиторий пр |
+| 23 | [akshayrakate/Deep-Learning-Basic](https://github.com/akshayrakate/Deep-Learning-Basic) | 1 | 2023-05-29 | 2023-06-11 | Этот репозиторий является всесторонней коллекцией базовых примеров кода и учебников по глубокому обу |
+| 24 | [zobiabilal4/NLP-Deep-Learning-Fundamentals](https://github.com/zobiabilal4/NLP-Deep-Learning-Fundamentals) | 1 | 2023-02-07 | 2023-03-02 | "NLP-Deep-Learning-Fundamentals" - это репозиторий, который предоставляет всесторонние уроки, пример |
+| 25 | [TirendazAcademy/ChatGPT-with-Examples](https://github.com/TirendazAcademy/ChatGPT-with-Examples) | 51 | 2022-12-21 | 2026-06-06 | Этот репозиторий содержит учебные материалы по ChatGPT о науке о данных, машинном обучении, глубоком |
+| 26 | [erkara/Intro2-Deep-Learning-with-Pytorch](https://github.com/erkara/Intro2-Deep-Learning-with-Pytorch) | 2 | 2022-12-22 | 2023-03-18 | Этот репозиторий содержит ресурсы из моего курса "Введение в глубокое обучение с помощью Python", ко |
+| 27 | [hakeemta/Deep-Learning-Projects](https://github.com/hakeemta/Deep-Learning-Projects) | 1 | 2023-03-11 | 2023-07-29 | Собрание ресурсов, включая образцы кода и связанные файлы, уроки, задания и примеры, которые помогут |
+| 28 | [ehtisham-sadiq/NLP-Deep-Learning-Fundamentals](https://github.com/ehtisham-sadiq/NLP-Deep-Learning-Fundamentals) | 2 | 2023-01-24 | 2025-06-15 | "NLP-Deep-Learning-Fundamentals" - это репозиторий, который предоставляет всесторонние уроки, пример |
+| 29 | [deepnetts/How-to-Get-Started-With-Deep-Learning-in-Java](https://github.com/deepnetts/How-to-Get-Started-With-Deep-Learning-in-Java) | 2 | 2021-11-10 | 2024-04-01 | Полный пример исходного кода для учебника Как начать работать с глубоким обучением на Java |
+| 30 | [french-paragon/BayesianNeuralNetwork-Tutorial-Metarepos](https://github.com/french-paragon/BayesianNeuralNetwork-Tutorial-Metarepos) | 149 | 2021-11-10 | 2026-07-07 | Метарепозиторий, указывающий на другие репозитории, где реализованы дополнительные примеры для нашег |
