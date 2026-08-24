@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
 Поиск репозиториев GitHub с AI-фильтрацией через Groq API.
+Используются актуальные модели: openai/gpt-oss-120b, openai/gpt-oss-20b, groq/compound.
 Trending-репозитории + автоматический перевод описаний на русский.
 Добавлено: ротация запросов, исключение просмотренных, случайная сортировка.
 """
@@ -123,13 +124,11 @@ def search_github_repos(query: str, config: dict, trending_mode: bool = False, s
     if languages:
         parts.append(" ".join(f"language:{lang}" for lang in languages))
 
-    # Исключение уже виденных
     if seen:
         exclude = build_exclude_clause(seen)
         if exclude:
             parts.append(exclude)
 
-    # Случайная сортировка, если не задана в конфиге
     sort_by = gh_config.get("sort_by")
     if not sort_by:
         sort_by = random.choice(["stars", "updated", "forks"])
@@ -252,7 +251,14 @@ def save_ai_filter_cache():
     except Exception as e:
         print(f"⚠️ Ошибка сохранения кэша AI-фильтра: {e}")
 
-# ====================== AI ФИЛЬТР (GROQ) ======================
+# ====================== AI ФИЛЬТР (GROQ) с новыми моделями ======================
+# СПИСОК АКТУАЛЬНЫХ МОДЕЛЕЙ (с резервом)
+GROQ_MODELS = [
+    "openai/gpt-oss-120b",
+    "openai/gpt-oss-20b",
+    "groq/compound",
+]
+
 def call_ai_filter(repo_info: dict, config: dict, trending_mode: bool = False) -> dict:
     ai_config = config.get("ai_filter", {})
     if not ai_config.get("enabled", False):
@@ -293,11 +299,10 @@ Trending-метрики:
 Мусор: крипта/скам, пустые репо, устаревшие (>3 лет), накрутка, adult, только бинарники.
 Ответь ТОЛЬКО JSON: {{"is_spam": true/false, "reason": "кратко", "quality_score": 0-10}}"""
 
-    models_to_try = ["llama-3.1-8b-instant", "llama-3.3-70b-versatile"]
+    client = Groq(api_key=api_key)
 
-    for model in models_to_try:
+    for model in GROQ_MODELS:
         try:
-            client = Groq(api_key=api_key)
             chat_completion = client.chat.completions.create(
                 messages=[
                     {"role": "system", "content": "Отвечай только JSON."},
@@ -334,7 +339,7 @@ Trending-метрики:
 
     return heuristic_filter(repo_info, config)
 
-# ====================== ПЕРЕВОД ОПИСАНИЙ ======================
+# ====================== ПЕРЕВОД ОПИСАНИЙ (с новыми моделями) ======================
 _translation_cache = {}
 _cache_path = Path("translation_cache.json")
 
@@ -373,11 +378,10 @@ def _translate_batch(texts: list, config: dict) -> dict:
     numbered = "\n".join(f"{i+1}. {t}" for i, t in enumerate(texts))
     prompt = f"Translate these English descriptions to Russian. Return ONLY the numbered Russian translations.\n\n{numbered}\n\nTranslations:"
 
-    models_to_try = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant"]
+    client = Groq(api_key=api_key)
 
-    for model in models_to_try:
+    for model in GROQ_MODELS:
         try:
-            client = Groq(api_key=api_key)
             res = client.chat.completions.create(
                 messages=[
                     {"role": "system", "content": "You are a precise translator. Output only the numbered list. No explanations, no markdown."},
