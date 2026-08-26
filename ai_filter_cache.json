@@ -4608,5 +4608,15 @@
     "is_spam": false,
     "reason": "не относится к мусору",
     "quality_score": 5
+  },
+  "b864e16ec81f6f212a97df700c0976f4": {
+    "is_spam": false,
+    "reason": "Valid documentation repository for Sora 2 AI video generator",
+    "quality_score": 6
+  },
+  "9b7a8678749d370f67f6df133307c6cb": {
+    "is_spam": false,
+    "reason": "Valid tutorial repository, actively maintained, no spam indicators",
+    "quality_score": 8
   }
 }
