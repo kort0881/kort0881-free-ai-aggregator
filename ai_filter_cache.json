@@ -4618,5 +4618,15 @@
     "is_spam": false,
     "reason": "Valid tutorial repository, actively maintained, no spam indicators",
     "quality_score": 8
+  },
+  "99dd9ed300a34ec7ae0be0d927aad0dc": {
+    "is_spam": false,
+    "reason": "Legitimate purpose, recent activity, no clear spam indicators",
+    "quality_score": 5
+  },
+  "40289b3bbe88902fbec491ca7264b2ca": {
+    "is_spam": false,
+    "reason": "Legitimate repository with relevant content, no spam indicators.",
+    "quality_score": 7
   }
 }
