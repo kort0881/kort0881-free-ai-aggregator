@@ -152,13 +152,9 @@ _Новых проектов за последние 7 дней не найде�
 <!-- END_WEB -->
 
 <!-- START_DEVOPS -->
-## 🚀 DEVOPS – свежие проекты
+## 🚀 DEVOPS – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [sdaluga/claude-cowork-playbook](https://github.com/sdaluga/claude-cowork-playbook) | 2 | Everything you need to use Claude Cowork and ship Claude age... |
-
-📦 **Архив всех проектов**: [links/devops_links_filtered_20260827_201500.md](links/devops_links_filtered_20260827_201500.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_DEVOPS -->
