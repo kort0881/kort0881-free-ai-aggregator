@@ -4628,5 +4628,10 @@
     "is_spam": false,
     "reason": "Legitimate repository with relevant content, no spam indicators.",
     "quality_score": 7
+  },
+  "2d0de7c93d69cc50be8782885043df6c": {
+    "is_spam": false,
+    "reason": "Не относится к перечисленным типам спама, актуален, содержит учебный контент",
+    "quality_score": 4
   }
 }
