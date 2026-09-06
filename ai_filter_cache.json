@@ -4633,5 +4633,10 @@
     "is_spam": false,
     "reason": "Не относится к перечисленным типам спама, актуален, содержит учебный контент",
     "quality_score": 4
+  },
+  "d1e3ab0b74bef2592b71c881f494b4a8": {
+    "is_spam": false,
+    "reason": "Valid open-source SaaS starter kit, recent activity, no spam indicators",
+    "quality_score": 7
   }
 }
