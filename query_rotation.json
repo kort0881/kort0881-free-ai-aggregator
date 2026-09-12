@@ -1,7 +1,7 @@
 {
-  "free": 2,
-  "ai": 1,
-  "free_ai": 2,
-  "web": 1,
-  "devops": 2
+  "free": 0,
+  "ai": 2,
+  "free_ai": 0,
+  "web": 2,
+  "devops": 0
 }
