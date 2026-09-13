@@ -4643,5 +4643,10 @@
     "is_spam": false,
     "reason": "Не относится к перечисленным типам мусора, актуальное обновление, содержит учебный код",
     "quality_score": 4
+  },
+  "28f312c0c99890442719e4571d834352": {
+    "is_spam": false,
+    "reason": "Valid tutorial repository with recent activity and proper licensing",
+    "quality_score": 7
   }
 }
