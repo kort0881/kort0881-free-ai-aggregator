@@ -4648,5 +4648,20 @@
     "is_spam": false,
     "reason": "Valid tutorial repository with recent activity and proper licensing",
     "quality_score": 7
+  },
+  "5bc1e1239c9c75a41b3c435deaf8bfc4": {
+    "is_spam": false,
+    "reason": "legitimate research repository, recent, relevant description, not empty or malicious",
+    "quality_score": 6
+  },
+  "c8d422432a1c737503090ae6023df8ac": {
+    "is_spam": false,
+    "reason": "Valid educational Docker tutorial, no spam indicators",
+    "quality_score": 7
+  },
+  "a3adc6a1e63b64635fcd629a4c8d4faf": {
+    "is_spam": false,
+    "reason": "Low engagement",
+    "quality_score": 4.8
   }
 }
