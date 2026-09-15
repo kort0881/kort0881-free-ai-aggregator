@@ -4663,5 +4663,10 @@
     "is_spam": false,
     "reason": "Low engagement",
     "quality_score": 4.8
+  },
+  "99adce68e4750e7d9fad2b2b208cf0d2": {
+    "is_spam": false,
+    "reason": "Valid educational Terraform examples, actively maintained, no spam indicators",
+    "quality_score": 8
   }
 }
