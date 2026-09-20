@@ -4668,5 +4668,10 @@
     "is_spam": false,
     "reason": "Valid educational Terraform examples, actively maintained, no spam indicators",
     "quality_score": 8
+  },
+  "b0096f86d601ddfa74c3d374ed2693d9": {
+    "is_spam": false,
+    "reason": "Legitimate tutorial repository, no spam indicators",
+    "quality_score": 6
   }
 }
