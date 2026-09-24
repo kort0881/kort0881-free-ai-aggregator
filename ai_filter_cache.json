@@ -4673,5 +4673,10 @@
     "is_spam": false,
     "reason": "Legitimate tutorial repository, no spam indicators",
     "quality_score": 6
+  },
+  "5092664c85abf3512bd89a8839dbb13b": {
+    "is_spam": false,
+    "reason": "Активный образовательный проект по AI с недавними обновлениями, большим количеством звёзд и форков, не относится к перечисленным типам мусора.",
+    "quality_score": 9
   }
 }
