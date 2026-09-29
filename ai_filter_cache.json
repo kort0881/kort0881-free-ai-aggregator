@@ -4678,5 +4678,10 @@
     "is_spam": false,
     "reason": "Активный образовательный проект по AI с недавними обновлениями, большим количеством звёзд и форков, не относится к перечисленным типам мусора.",
     "quality_score": 9
+  },
+  "5d2ebb51a77a2f41f3553c7d2b5e5093": {
+    "is_spam": false,
+    "reason": "Legitimate technical project, no spam indicators",
+    "quality_score": 5
   }
 }
