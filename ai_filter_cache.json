@@ -4683,5 +4683,20 @@
     "is_spam": false,
     "reason": "Legitimate technical project, no spam indicators",
     "quality_score": 5
+  },
+  "648bf38d15e9ea99ece941c5f45292b2": {
+    "is_spam": false,
+    "reason": "не относится к мусору, репозиторий актуален и не содержит запрещённого контента",
+    "quality_score": 5
+  },
+  "0436b454c2a97c916da25becf78a4e3a": {
+    "is_spam": false,
+    "reason": "Ни один из критериев мусора не применим, репозиторий содержит рабочий пример кода, актуален и имеет умеренную популярность.",
+    "quality_score": 6
+  },
+  "93b53d55f5595a3671ba93006649d9a5": {
+    "is_spam": false,
+    "reason": "Не относится к мусору, актуальный учебный проект",
+    "quality_score": 7
   }
 }
