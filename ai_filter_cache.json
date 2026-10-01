@@ -4698,5 +4698,10 @@
     "is_spam": false,
     "reason": "Не относится к мусору, актуальный учебный проект",
     "quality_score": 7
+  },
+  "6fac80b9f8edde4faee60e85832d5955": {
+    "is_spam": false,
+    "reason": "Legitimate demo pack, recent activity, no spam indicators",
+    "quality_score": 6
   }
 }
