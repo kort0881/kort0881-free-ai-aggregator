@@ -4703,5 +4703,10 @@
     "is_spam": false,
     "reason": "Legitimate demo pack, recent activity, no spam indicators",
     "quality_score": 6
+  },
+  "a591a8544176467545b63729b71d63f9": {
+    "is_spam": false,
+    "reason": "Не относится к перечисленным типам мусора, активный проект с большим количеством звёзд и форков",
+    "quality_score": 9
   }
 }
