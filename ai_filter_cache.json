@@ -4708,5 +4708,10 @@
     "is_spam": false,
     "reason": "Не относится к перечисленным типам мусора, активный проект с большим количеством звёзд и форков",
     "quality_score": 9
+  },
+  "a54d7c72c78fe958f4e91d9240812e9c": {
+    "is_spam": false,
+    "reason": "Legitimate tutorial repository with Jupyter notebooks, recent activity, and appropriate license.",
+    "quality_score": 7
   }
 }
