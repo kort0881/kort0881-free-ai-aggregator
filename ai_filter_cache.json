@@ -4713,5 +4713,10 @@
     "is_spam": false,
     "reason": "Legitimate tutorial repository with Jupyter notebooks, recent activity, and appropriate license.",
     "quality_score": 7
+  },
+  "5c1785ac360d43ffdfb8063a0300531e": {
+    "is_spam": false,
+    "reason": "не содержит признаки спама, актуален и содержит полезный контент",
+    "quality_score": 6
   }
 }
