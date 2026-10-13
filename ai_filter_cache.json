@@ -4728,5 +4728,10 @@
     "is_spam": false,
     "reason": "Не относится к перечисленным типам спама, актуален, содержит код, лицензия MIT",
     "quality_score": 5
+  },
+  "b9268f71a06f0c30ae3615eb6f245fe1": {
+    "is_spam": false,
+    "reason": "Educational React tutorial repository, recent activity, no spam indicators",
+    "quality_score": 8
   }
 }

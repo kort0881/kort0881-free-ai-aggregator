@@ -144,9 +144,13 @@ _Новых проектов за последние 7 дней не найде�
 <!-- END_FREE_AI_TRENDING -->
 
 <!-- START_WEB -->
-## 🚀 WEB – новые проекты
+## 🚀 WEB – свежие проекты
 
-_Новых проектов за последние 7 дней не найдено._
+| # | Репозиторий | ⭐ Звёзд | Описание |
+|---|-------------|----------|----------|
+| 1 | [Aleezy-nadeem/React-Newspaper-Project](https://github.com/Aleezy-nadeem/React-Newspaper-Project) | 1 | Сборник практических учебных материалов по React, советов и ... |
+
+📦 **Архив всех проектов**: [links/web_links_filtered_20261013_172723.md](links/web_links_filtered_20261013_172723.md)
 
 
 <!-- END_WEB -->
