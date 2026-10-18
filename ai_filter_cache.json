@@ -4733,5 +4733,10 @@
     "is_spam": false,
     "reason": "Educational React tutorial repository, recent activity, no spam indicators",
     "quality_score": 8
+  },
+  "ba861cd0620ed49a23110e63684d26c9": {
+    "is_spam": false,
+    "reason": "активный репозиторий с содержимым, не содержит запрещённого контента и не выглядит как пустой/скриптовый",
+    "quality_score": 6
   }
 }
