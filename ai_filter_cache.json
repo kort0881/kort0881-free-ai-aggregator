@@ -4738,5 +4738,10 @@
     "is_spam": false,
     "reason": "активный репозиторий с содержимым, не содержит запрещённого контента и не выглядит как пустой/скриптовый",
     "quality_score": 6
+  },
+  "ab37f5a95ab9544585915d51511dd709": {
+    "is_spam": false,
+    "reason": "legitimate study guide, recent activity, no spam indicators",
+    "quality_score": 5
   }
 }
