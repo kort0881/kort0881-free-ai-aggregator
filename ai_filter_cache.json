@@ -4748,5 +4748,10 @@
     "is_spam": false,
     "reason": "Educational R tutorial with substantial content, no spam indicators",
     "quality_score": 8
+  },
+  "e69d1ef4c930b9cabeb5df7dac89eef8": {
+    "is_spam": false,
+    "reason": "не относится к мусору, содержит актуальные примеры и учебные материалы",
+    "quality_score": 7
   }
 }
