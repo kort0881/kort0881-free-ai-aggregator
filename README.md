@@ -2,21 +2,21 @@
 
 
 <!-- START_FREE -->
-## 🚀 FREE – свежие проекты
+## 🚀 FREE – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [tmssoftware/tms.overview](https://github.com/tmssoftware/tms.overview) | 1 | Путеводный тур по каждому публичному репозиторию TMS Softwar... |
-
-📦 **Архив всех проектов**: [links/free_links_filtered_20261026_164022.md](links/free_links_filtered_20261026_164022.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_FREE -->
 
 <!-- START_AI -->
-## 🚀 AI – новые проекты
+## 🚀 AI – свежие проекты
 
-_Новых проектов за последние 7 дней не найдено._
+| # | Репозиторий | ⭐ Звёзд | Описание |
+|---|-------------|----------|----------|
+| 1 | [maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials](https://github.com/maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials) | 3 | Google Colab notebooks and practical coding examples for Mac... |
+
+📦 **Архив всех проектов**: [links/ai_links_filtered_20261027_154752.md](links/ai_links_filtered_20261027_154752.md)
 
 
 <!-- END_AI -->
@@ -92,13 +92,9 @@ text
 
 1. **Бейджи** – настроены под типовой репозиторий. При желании вы можете заменить ссылки на свои или убрать.
 2. **Маркеры `<!-- START_FREE -->
-## 🚀 FREE – свежие проекты
+## 🚀 FREE – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [tmssoftware/tms.overview](https://github.com/tmssoftware/tms.overview) | 1 | Путеводный тур по каждому публичному репозиторию TMS Softwar... |
-
-📦 **Архив всех проектов**: [links/free_links_filtered_20261026_164022.md](links/free_links_filtered_20261026_164022.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_FREE -->`** – именно их будет искать и заменять скрипт. В исходном шаблоне они пустые, после первого запуска внутри появятся таблицы.
@@ -130,10 +126,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [riktar/memledger](https://github.com/riktar/memledger) | 5 | 5.0 | 1д | 0д назад | Память агента ИИ, которой можно доверять |
-| 2 | [OmarH-creator/Autonomous-Forge](https://github.com/OmarH-creator/Autonomous-Forge) | 225 | 112.5 | 2д | 0д назад | Этот репозиторий автоматизирован и представляет со... |
+| 1 | [maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials](https://github.com/maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials) | 3 | 1.0 | 3д | 0д назад | Блокноты Google Colab и практические примеры кода ... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20260709_153124.md](links/ai_trending_links_trending_20260709_153124.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20261027_154753.md](links/ai_trending_links_trending_20261027_154753.md)
 
 
 <!-- END_AI_TRENDING -->

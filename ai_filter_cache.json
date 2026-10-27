@@ -4758,5 +4758,10 @@
     "is_spam": false,
     "reason": "Не относится к перечисленным типам мусора, актуален, содержит полезный контент",
     "quality_score": 5
+  },
+  "5cff963ac8996af19238cf7aaa2146f1": {
+    "is_spam": false,
+    "reason": "Valid educational repository with recent activity",
+    "quality_score": 6
   }
 }
