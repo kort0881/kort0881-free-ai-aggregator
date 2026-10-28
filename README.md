@@ -10,13 +10,9 @@ _Новых проектов за последние 7 дней не найде�
 <!-- END_FREE -->
 
 <!-- START_AI -->
-## 🚀 AI – свежие проекты
+## 🚀 AI – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials](https://github.com/maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials) | 3 | Google Colab notebooks and practical coding examples for Mac... |
-
-📦 **Архив всех проектов**: [links/ai_links_filtered_20261027_154752.md](links/ai_links_filtered_20261027_154752.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_AI -->
