@@ -4763,5 +4763,10 @@
     "is_spam": false,
     "reason": "Valid educational repository with recent activity",
     "quality_score": 6
+  },
+  "45a45498f61d98d51e1873b0d3c315c8": {
+    "is_spam": false,
+    "reason": "Legitimate curated list of TMS software repositories, no spam indicators.",
+    "quality_score": 7
   }
 }
