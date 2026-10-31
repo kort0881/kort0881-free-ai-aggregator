@@ -4768,5 +4768,10 @@
     "is_spam": false,
     "reason": "Legitimate curated list of TMS software repositories, no spam indicators.",
     "quality_score": 7
+  },
+  "5e99cfc99def850f903cdf75872f7275": {
+    "is_spam": false,
+    "reason": "Не относится к перечисленным типам мусора, активный, содержит учебные материалы",
+    "quality_score": 6
   }
 }

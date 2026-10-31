@@ -122,9 +122,9 @@ _Новых проектов за последние 7 дней не найде�
 
 | # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
 |---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials](https://github.com/maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials) | 3 | 0.5 | 6д | 3д назад | Блокноты Google Colab и практические примеры кода ... |
+| 1 | [maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials](https://github.com/maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials) | 3 | 0.429 | 7д | 4д назад | Блокноты Google Colab и практические примеры кода ... |
 
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20261030_163623.md](links/ai_trending_links_trending_20261030_163623.md)
+📦 **Архив всех проектов**: [links/ai_trending_links_trending_20261031_153955.md](links/ai_trending_links_trending_20261031_153955.md)
 
 
 <!-- END_AI_TRENDING -->
