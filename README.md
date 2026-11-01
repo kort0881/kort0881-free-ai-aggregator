@@ -2,9 +2,14 @@
 
 
 <!-- START_FREE -->
-## 🚀 FREE – новые проекты
+## 🚀 FREE – свежие проекты
 
-_Новых проектов за последние 7 дней не найдено._
+| # | Репозиторий | ⭐ Звёзд | Описание |
+|---|-------------|----------|----------|
+| 1 | [zayvin/slidetalk-ppt-to-video-ai](https://github.com/zayvin/slidetalk-ppt-to-video-ai) | 1 | SlideTalk: PPT в видео AI преобразует слайды PowerPoint и PD... |
+| 2 | [tmssoftware/tms.overview](https://github.com/tmssoftware/tms.overview) | 1 | Путеводный тур по каждому публичному репозиторию TMS Softwar... |
+
+📦 **Архив всех проектов**: [links/free_links_filtered_20261101_164126.md](links/free_links_filtered_20261101_164126.md)
 
 
 <!-- END_FREE -->
@@ -88,9 +93,14 @@ text
 
 1. **Бейджи** – настроены под типовой репозиторий. При желании вы можете заменить ссылки на свои или убрать.
 2. **Маркеры `<!-- START_FREE -->
-## 🚀 FREE – новые проекты
+## 🚀 FREE – свежие проекты
 
-_Новых проектов за последние 7 дней не найдено._
+| # | Репозиторий | ⭐ Звёзд | Описание |
+|---|-------------|----------|----------|
+| 1 | [zayvin/slidetalk-ppt-to-video-ai](https://github.com/zayvin/slidetalk-ppt-to-video-ai) | 1 | SlideTalk: PPT в видео AI преобразует слайды PowerPoint и PD... |
+| 2 | [tmssoftware/tms.overview](https://github.com/tmssoftware/tms.overview) | 1 | Путеводный тур по каждому публичному репозиторию TMS Softwar... |
+
+📦 **Архив всех проектов**: [links/free_links_filtered_20261101_164126.md](links/free_links_filtered_20261101_164126.md)
 
 
 <!-- END_FREE -->`** – именно их будет искать и заменять скрипт. В исходном шаблоне они пустые, после первого запуска внутри появятся таблицы.
