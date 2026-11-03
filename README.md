@@ -118,13 +118,9 @@ _Новых проектов за последние 7 дней не найде�
 <!-- END_FREE_TRENDING -->
 
 <!-- START_AI_TRENDING -->
-## 🔥 AI_TRENDING – свежие Trending-проекты
+## 🚀 AI_TRENDING – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | 📈 зв/день | 🕐 Возраст | 🔄 Обновлён | Описание |
-|---|-------------|----------|-----------|-----------|------------|----------|
-| 1 | [maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials](https://github.com/maggujyoti/Python-Machine-Learning-Deep-Learning-YT-Tutorials) | 3 | 0.429 | 7д | 4д назад | Блокноты Google Colab и практические примеры кода ... |
-
-📦 **Архив всех проектов**: [links/ai_trending_links_trending_20261031_153955.md](links/ai_trending_links_trending_20261031_153955.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_AI_TRENDING -->
