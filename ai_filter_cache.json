@@ -4788,5 +4788,10 @@
     "is_spam": false,
     "reason": "не спам, актуальный учебный репозиторий",
     "quality_score": 5
+  },
+  "a167a61a0cc10def40c5d5501cf22448": {
+    "is_spam": false,
+    "reason": "Legitimate study guide, recent updates, no spam indicators",
+    "quality_score": 8
   }
 }
