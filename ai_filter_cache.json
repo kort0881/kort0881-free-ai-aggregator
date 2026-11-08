@@ -4793,5 +4793,10 @@
     "is_spam": false,
     "reason": "Legitimate study guide, recent updates, no spam indicators",
     "quality_score": 8
+  },
+  "bb2e0dc7ab6e025c79e6ccad6d32cbd5": {
+    "is_spam": false,
+    "reason": "Не относится к мусору, актуальный проект, не пустой, не крипта, не взрослый контент",
+    "quality_score": 6
   }
 }
