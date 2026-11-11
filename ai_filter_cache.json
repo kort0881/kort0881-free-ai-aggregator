@@ -4803,5 +4803,15 @@
     "is_spam": false,
     "reason": "Не относится к перечисленным типам мусора, актуален, содержит полезные материалы.",
     "quality_score": 6
+  },
+  "fc174cbc65016348ce4ad0c5759dbfa1": {
+    "is_spam": false,
+    "reason": "не относится к мусору",
+    "quality_score": 4
+  },
+  "89bacc7a2d376d1233ecd81c8794769b": {
+    "is_spam": false,
+    "reason": "Не относится к перечисленным типам мусора, актуален, содержит учебные материалы в Jupyter Notebook",
+    "quality_score": 5
   }
 }
