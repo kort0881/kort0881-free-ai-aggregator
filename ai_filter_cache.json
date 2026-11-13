@@ -4813,5 +4813,15 @@
     "is_spam": false,
     "reason": "Не относится к перечисленным типам мусора, актуален, содержит учебные материалы в Jupyter Notebook",
     "quality_score": 5
+  },
+  "95364249d338ec6ee7dfece99a8fa111": {
+    "is_spam": false,
+    "reason": "Legitimate educational content, no signs of spam or malicious activity",
+    "quality_score": 7
+  },
+  "d2a55a662a19c6614b522ead83293fb8": {
+    "is_spam": false,
+    "reason": "Valid, recent study guide with no spam indicators",
+    "quality_score": 8
   }
 }
