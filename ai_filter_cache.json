@@ -4823,5 +4823,10 @@
     "is_spam": false,
     "reason": "Valid, recent study guide with no spam indicators",
     "quality_score": 8
+  },
+  "7dd6fcaeedf39e830962b8ddf84ffdf6": {
+    "is_spam": false,
+    "reason": "Не относится к мусору: актуальный проект, не крипта, не пустой, не старый, без накрутки, без adult‑контента, содержит исходный код.",
+    "quality_score": 4
   }
 }
