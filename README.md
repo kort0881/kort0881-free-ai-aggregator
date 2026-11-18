@@ -18,13 +18,9 @@ _Новых проектов за последние 7 дней не найде�
 <!-- END_AI -->
 
 <!-- START_FREE_AI -->
-## 🚀 FREE_AI – свежие проекты
+## 🚀 FREE_AI – новые проекты
 
-| # | Репозиторий | ⭐ Звёзд | Описание |
-|---|-------------|----------|----------|
-| 1 | [salmanmohebi/learn.mohebi.ai](https://github.com/salmanmohebi/learn.mohebi.ai) | 1 | Free, interactive tutorials on the mathematics of machine le... |
-
-📦 **Архив всех проектов**: [links/free_ai_links_filtered_20261117_190045.md](links/free_ai_links_filtered_20261117_190045.md)
+_Новых проектов за последние 7 дней не найдено._
 
 
 <!-- END_FREE_AI -->
