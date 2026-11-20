@@ -4838,5 +4838,10 @@
     "is_spam": false,
     "reason": "не относится к перечисленным типам мусора, актуальный проект",
     "quality_score": 6
+  },
+  "754ca2a44c8846ebba4e6cdd56dd61ae": {
+    "is_spam": false,
+    "reason": "не относится к мусору",
+    "quality_score": 6
   }
 }
