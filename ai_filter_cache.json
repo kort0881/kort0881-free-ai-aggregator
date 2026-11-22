@@ -4843,5 +4843,15 @@
     "is_spam": false,
     "reason": "не относится к мусору",
     "quality_score": 6
+  },
+  "981aecc880ddc17181ef667a227e8af5": {
+    "is_spam": false,
+    "reason": "Наличие содержательного руководства, актуальная дата обновления, отсутствие признаков спама",
+    "quality_score": 7
+  },
+  "add57074bee922921a25ddbbb749c24e": {
+    "is_spam": false,
+    "reason": "Legitimate curated resources, recent activity, no spam indicators",
+    "quality_score": 7
   }
 }
